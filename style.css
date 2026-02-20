@@ -1,0 +1,483 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary: #0056b3;        /* Medical Blue */
+    --primary-dark: #004494;
+    --secondary: #f0f4f8;      /* Light Gray/Blue background */
+    --text-dark: #1e293b;
+    --text-light: #64748b;
+    --white: #ffffff;
+    --success: #10b981;        /* Green */
+    --error: #ef4444;          /* Red */
+    --whatsapp: #25D366;       /* WhatsApp Green */
+    --premium: #8b5cf6;        /* Premium Purple */
+    --border-radius: 12px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--secondary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   2. LAYOUT UTILITIES
+   ========================================= */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   3. HEADER
+   ========================================= */
+.site-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 6px; 
+}
+
+.site-header h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* =========================================
+   4. CTA SECTIONS (WhatsApp & App)
+   ========================================= */
+.cta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Side by side on desktop */
+    gap: 20px;
+}
+
+/* Specific styling for the top CTA (Home Page) */
+.hero-cta {
+    margin-bottom: 40px; /* Space BELOW the buttons */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0; /* Separator line below buttons */
+}
+
+.cta-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cta-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.cta-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+/* Specific Styles for WhatsApp Card */
+.whatsapp-style {
+    border-top: 4px solid var(--whatsapp);
+}
+
+/* Specific Styles for Premium App Card */
+.premium-style {
+    border-top: 4px solid var(--premium);
+    background: linear-gradient(to bottom right, #fff, #fefeff);
+}
+
+/* CTA Buttons */
+.btn-cta {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: white;
+    text-align: center;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp);
+}
+
+.btn-premium {
+    background-color: var(--premium);
+}
+
+/* Vertical layout for Results Page */
+.vertical-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 30px auto 0;
+    border-top: none; 
+    align-items: center;
+}
+
+.cta-intro {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e2e8f0;
+    margin: 30px 0;
+}
+
+/* =========================================
+   5. VIEWS & SECTIONS
+   ========================================= */
+.view {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    color: var(--text-light);
+}
+
+/* =========================================
+   6. STANDARD BUTTONS
+   ========================================= */
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--white);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-light);
+    padding: 12px 24px;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.btn-text {
+    background: none;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+/* =========================================
+   7. SUBCOURSE GRID & TOPIC LIST
+   ========================================= */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.topic-item {
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.topic-item:hover {
+    background-color: #f8fafc;
+}
+
+.arrow {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* =========================================
+   8. QUIZ INTERFACE
+   ========================================= */
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+.quiz-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--primary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.question-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.question-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    text-align: left;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #e2e8f0;
+}
+
+.option-btn.correct {
+    background-color: #d1fae5; /* Light green bg */
+    border-color: var(--success);
+    color: #065f46;
+}
+
+.option-btn.wrong {
+    background-color: #fee2e2; /* Light red bg */
+    border-color: var(--error);
+    color: #991b1b;
+}
+
+/* =========================================
+   9. FEEDBACK SECTION
+   ========================================= */
+.feedback-container {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--primary);
+    box-shadow: var(--shadow);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-container h4 {
+    margin-bottom: 5px;
+}
+
+.feedback-container p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.feedback-container.success { border-color: var(--success); }
+.feedback-container.error { border-color: var(--error); }
+.feedback-container.success h4 { color: var(--success); }
+.feedback-container.error h4 { color: var(--error); }
+
+/* =========================================
+   10. RESULTS PAGE
+   ========================================= */
+.result-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.score-display {
+    margin: 30px 0;
+}
+
+#score-percentage {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+#score-text {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.action-buttons {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   11. FOOTER & MOBILE
+   ========================================= */
+.site-footer {
+    margin-top: auto;
+    padding: 30px 0;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .cta-section {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+    
+    .header-content {
+        justify-content: center;
+    }
+}

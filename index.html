@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradelift Anatomy Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
+  
+  
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <div class="brand-identity">
+          <img
+            src="logo.jpeg"
+            alt="Gradelift Logo"
+            class="site-logo"
+          />
+          <h1>Gradelift Anatomy Quiz</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="view-subcourses" class="view active-view">
+        <div class="cta-section hero-cta">
+          <div class="cta-card whatsapp-style">
+            <h3>Join the Community</h3>
+            <p>Get daily anatomy tips, quizzes, and simplified explanation of medical topics.</p>
+            <a
+              href="https://whatsapp.com/channel/0029VbBheDSBPzjbBauMMO03"
+              target="_blank"
+              class="btn-cta btn-whatsapp"
+            >
+              Join GradeLift WhatsApp Channel
+            </a>
+          </div>
+          
+
+        <div class="section-header">
+          <h2>Select an Anatomy Subcourse</h2>
+          <p>Choose a region or subject to begin studying.</p>
+        </div>
+
+        <div id="subcourse-grid" class="grid-layout"></div>
+      </section>
+
+      <section id="view-topics" class="view hidden">
+        <button id="btn-back-home" class="btn-text">
+          ← Back to Subcourses
+        </button>
+        <div class="section-header">
+          <h2 id="selected-subcourse-title">Subcourse Title</h2>
+          <p>Select a specific module to start the quiz.</p>
+        </div>
+        <div id="topic-list" class="list-layout"></div>
+      </section>
+
+      <section id="view-quiz" class="view hidden">
+        <div class="quiz-header">
+          <div class="quiz-meta">
+            <span id="quiz-topic-title">Topic Name</span>
+            <span id="quiz-progress">Question 1 of 20</span>
+          </div>
+          <div class="progress-bar-container">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <h3 id="question-text">Question text?</h3>
+          <div id="options-container" class="options-container"></div>
+        </div>
+
+        <div id="feedback-container" class="feedback-container hidden">
+          <h4 id="feedback-title">Correct!</h4>
+          <p id="feedback-text">Explanation text.</p>
+          <button id="btn-next-question" class="btn-primary">
+            Next Question
+          </button>
+        </div>
+      </section>
+
+      <section id="view-results" class="view hidden">
+        <div class="result-card">
+          <h2>Module Completed!</h2>
+          <div class="score-display">
+            <span id="score-percentage">80%</span>
+            <span id="score-text">You scored 16 out of 20</span>
+          </div>
+          <p id="result-message">Great job! Keep practicing.</p>
+
+          <div class="action-buttons">
+            <button id="btn-retry" class="btn-primary">Retry Module</button>
+            <button id="btn-back-topics" class="btn-secondary">
+              Choose Another Topic
+            </button>
+            <button id="btn-home" class="btn-outline">Back to Home</button>
+          </div>
+
+          <hr class="divider" />
+
+          <div class="cta-section vertical-cta">
+            <p class="cta-intro">Want to improve your score?</p>
+
+            <a
+              href="https://whatsapp.com/channel/0029VbBheDSBPzjbBauMMO03"
+              target="_blank"
+              class="btn-cta btn-whatsapp full-width"
+            >
+              Join GradeLift WhatsApp Channel
+            </a>
+
+            
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built by Gradelift – helping medical students learn smarter</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
