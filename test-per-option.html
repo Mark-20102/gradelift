@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Per-Option Explanations Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .option-btn {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+        background: #f0f0f0;
+        border: 1px solid #ccc;
+        cursor: pointer;
+      }
+      .option-btn:hover {
+        background: #e0e0e0;
+      }
+      .feedback {
+        margin-top: 20px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-left: 4px solid #ccc;
+      }
+      .correct {
+        background: #d4edda;
+        border-color: #c3e6cb;
+      }
+      .incorrect {
+        background: #f8d7da;
+        border-color: #f5c6cb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Per-Option Explanations Test</h1>
+    <p>Click any option to see its specific explanation:</p>
+
+    <div id="options-container">
+      <!-- Options will be rendered here -->
+    </div>
+
+    <div id="feedback-container" class="feedback" style="display: none">
+      <h3 id="feedback-title"></h3>
+      <p id="feedback-text"></p>
+    </div>
+
+    <script>
+      // Test question data
+      const testQuestion = {
+        text: "A fracture at the midshaft of the humerus is most likely to injure which structure?",
+        options: [
+          {
+            text: "Ulnar nerve",
+            explanation:
+              "The ulnar nerve runs on the medial side of the upper arm, but is not specifically at risk during midshaft fractures. The radial groove is on the lateral aspect.",
+          },
+          {
+            text: "Axillary nerve",
+            explanation:
+              "The axillary nerve is at risk with proximal humerus and surgical neck fractures, not midshaft fractures.",
+          },
+          {
+            text: "Radial nerve",
+            explanation:
+              "Correct! The radial nerve runs in the radial groove on the posterior aspect of the midshaft humerus. Midshaft fractures commonly injure this nerve, causing wrist drop.",
+          },
+          {
+            text: "Median nerve",
+            explanation:
+              "The median nerve runs along the medial aspect of the arm and is not at risk during midshaft humerus fractures.",
+          },
+        ],
+        correct: 2,
+      };
+
+      // Render options
+      const optionsContainer = document.getElementById("options-container");
+      const feedbackContainer = document.getElementById("feedback-container");
+      const feedbackTitle = document.getElementById("feedback-title");
+      const feedbackText = document.getElementById("feedback-text");
+
+      testQuestion.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerText = opt.text;
+        btn.setAttribute("data-explanation", opt.explanation);
+        btn.addEventListener("click", () => handleAnswer(index, btn));
+        optionsContainer.appendChild(btn);
+      });
+
+      function handleAnswer(selectedIndex, btnElement) {
+        const isCorrect = selectedIndex === testQuestion.correct;
+        const optionExplanation = btnElement.getAttribute("data-explanation");
+
+        // Update button styles
+        const allButtons = optionsContainer.querySelectorAll(".option-btn");
+        allButtons.forEach((btn) => (btn.disabled = true));
+
+        if (isCorrect) {
+          btnElement.classList.add("correct");
+          feedbackTitle.innerText = "Correct!";
+        } else {
+          btnElement.classList.add("incorrect");
+          feedbackTitle.innerText = "Incorrect";
+          // Highlight correct answer
+          allButtons[testQuestion.correct].classList.add("correct");
+        }
+
+        feedbackText.innerText = optionExplanation;
+        feedbackContainer.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

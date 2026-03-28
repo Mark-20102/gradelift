@@ -100,7 +100,24 @@ const anatomyData = {
       "Blood & Mononuclear System",
     ],
   },
+  "general-anatomy": {
+    title: "General Anatomy Challenge",
+    modules: ["Random Quiz - 30 Questions"],
+  },
 };
+
+const anatomyFacts = [
+  "The femur is the longest and strongest bone in the human body.",
+  "The stapedius muscle in the ear is the smallest skeletal muscle in the body.",
+  "The cornea is the only part of the body with no blood supply; it gets oxygen directly from the air.",
+  "Human bone is 4 times stronger than concrete.",
+  "The tongue is the only muscle in the human body that is attached at only one end.",
+  "Your nose and ears never stop growing.",
+  "The gluteus maximus is the body's largest muscle.",
+  "There are more than 600 muscles in the human body.",
+  "The hyoid bone is the only bone that doesn't articulate with another bone.",
+  "Enamel is the hardest substance in the human body.",
+];
 
 // ==========================================
 // 2. QUESTION BANK
@@ -113,26 +130,54 @@ const questionBank = {
       {
         text: "The surgical neck of the humerus is clinically significant because it is closely related to which structure?",
         options: [
-          "Radial nerve",
-          "Axillary nerve",
-          "Median nerve",
-          "Musculocutaneous nerve",
+          {
+            text: "Radial nerve",
+            explanation:
+              "Incorrect. The radial nerve runs in the radial groove, not the surgical neck.",
+          },
+          {
+            text: "Axillary nerve",
+            explanation:
+              "Correct! The surgical neck of the humerus is related to the axillary nerve and posterior circumflex humeral artery, making them vulnerable in fractures.",
+          },
+          {
+            text: "Median nerve",
+            explanation:
+              "Incorrect. The median nerve passes anteriorly down the arm without wrapping the surgical neck.",
+          },
+          {
+            text: "Musculocutaneous nerve",
+            explanation:
+              "Incorrect. The musculocutaneous nerve pierces the coracobrachialis.",
+          },
         ],
         correct: 1,
-        explanation:
-          "The surgical neck of the humerus is related to the axillary nerve and posterior circumflex humeral artery, making them vulnerable in fractures.",
       },
       {
         text: "A fracture at the midshaft of the humerus is most likely to injure which structure in the radial groove?",
         options: [
-          "Ulnar nerve",
-          "Axillary nerve",
-          "Radial nerve",
-          "Median nerve",
+          {
+            text: "Ulnar nerve",
+            explanation:
+              "Incorrect. The ulnar nerve passes behind the medial epicondyle.",
+          },
+          {
+            text: "Axillary nerve",
+            explanation:
+              "Incorrect. The axillary nerve is located at the surgical neck, not the midshaft.",
+          },
+          {
+            text: "Radial nerve",
+            explanation:
+              "Correct! The radial groove (spiral groove) transmits the radial nerve and profunda brachii artery.",
+          },
+          {
+            text: "Median nerve",
+            explanation:
+              "Incorrect. The median nerve runs anteromedially in the arm.",
+          },
         ],
         correct: 2,
-        explanation:
-          "The radial groove (spiral groove) transmits the radial nerve and profunda brachii artery.",
       },
       {
         text: "Which of the following structures attaches to the lesser tubercle of the humerus?",
@@ -8616,1821 +8661,3119 @@ const questionBank = {
       },
     ],
     "Development of Eye": [
-    {
-      text: "The optic vesicle is an evagination of which brain vesicle?",
-      options: [
-        "A. Telencephalon",
-        "B. Diencephalon",
-        "C. Mesencephalon",
-        "D. Rhombencephalon",
-      ],
-      correct: 1,
-      explanation: "The optic vesicle arises from the diencephalon.",
-    },
-    {
-      text: "The lens placode develops from:",
-      options: [
-        "A. Neural ectoderm",
-        "B. Surface ectoderm",
-        "C. Mesoderm",
-        "D. Endoderm",
-      ],
-      correct: 1,
-      explanation:
-        "The lens placode is formed by thickening of surface ectoderm overlying the optic vesicle.",
-    },
-    {
-      text: "Which structure invaginates to form the optic cup?",
-      options: [
-        "A. Optic vesicle",
-        "B. Lens placode",
-        "C. Surface ectoderm",
-        "D. Neural crest",
-      ],
-      correct: 0,
-      explanation:
-        "The distal part of the optic vesicle invaginates to form the double-layered optic cup.",
-    },
-    {
-      text: "The outer layer of the optic cup gives rise to:",
-      options: ["A. Retina", "B. Pigmented epithelium", "C. Lens", "D. Cornea"],
-      correct: 1,
-      explanation:
-        "The outer layer becomes the pigmented epithelium; the inner layer forms the neural retina.",
-    },
-    {
-      text: "The choroid and sclera are derived from:",
-      options: [
-        "A. Neural ectoderm",
-        "B. Surface ectoderm",
-        "C. Mesoderm",
-        "D. Endoderm",
-      ],
-      correct: 2,
-      explanation:
-        "Mesenchymal cells from neural crest and mesoderm form the choroid and sclera.",
-    },
-    {
-      text: "The hyaloid artery is a branch of:",
-      options: [
-        "A. Ophthalmic artery",
-        "B. Internal carotid",
-        "C. External carotid",
-        "D. Basilar artery",
-      ],
-      correct: 0,
-      explanation:
-        "The hyaloid artery branches from the ophthalmic artery to supply the developing eye.",
-    },
-    {
-      text: "Which of the following is NOT a derivative of the surface ectoderm in eye development?",
-      options: ["A. Lens", "B. Cornea", "C. Conjunctiva", "D. Iris"],
-      correct: 3,
-      explanation:
-        "The iris is derived from the optic cup; lens, cornea, and conjunctiva are from surface ectoderm.",
-    },
-    {
-      text: "The optic nerve develops from:",
-      options: [
-        "A. Axons of ganglion cells",
-        "B. Neural crest cells",
-        "C. Mesenchymal cells",
-        "D. Surface ectoderm",
-      ],
-      correct: 0,
-      explanation:
-        "The optic nerve is formed by axons of retinal ganglion cells.",
-    },
-    {
-      text: "Coloboma of the iris results from failure of:",
-      options: [
-        "A. Optic vesicle formation",
-        "B. Lens induction",
-        "C. Optic cup closure",
-        "D. Neural crest migration",
-      ],
-      correct: 2,
-      explanation:
-        "Incomplete closure of the optic cup ventrally leads to coloboma.",
-    },
-    {
-      text: "The ciliary body develops from:",
-      options: [
-        "A. Outer optic cup",
-        "B. Inner optic cup",
-        "C. Lens",
-        "D. Surface ectoderm",
-      ],
-      correct: 1,
-      explanation:
-        "The inner layer of the optic cup forms the ciliary body and iris.",
-    },
-    {
-      text: "Which signaling molecule is essential for lens induction?",
-      options: ["A. FGF", "B. SHH", "C. BMP4", "D. Wnt"],
-      correct: 0,
-      explanation: "FGF from the optic vesicle induces lens placode formation.",
-    },
-    {
-      text: "The vitreous body is derived from:",
-      options: [
-        "A. Neural ectoderm",
-        "B. Mesoderm",
-        "C. Endoderm",
-        "D. Surface ectoderm",
-      ],
-      correct: 1,
-      explanation:
-        "Mesenchymal cells from neural crest form the vitreous body.",
-    },
-    {
-      text: "The cornea develops from:",
-      options: [
-        "A. Optic cup",
-        "B. Lens placode",
-        "C. Surface ectoderm and mesenchyme",
-        "D. Neural crest only",
-      ],
-      correct: 2,
-      explanation:
-        "Cornea forms from surface ectoderm (epithelium) and underlying mesenchyme.",
-    },
-    {
-      text: "Retinoblastoma is associated with mutation in:",
-      options: ["A. RB1 gene", "B. TP53 gene", "C. BRCA1 gene", "D. APC gene"],
-      correct: 0,
-      explanation:
-        "Retinoblastoma results from mutations in the RB1 tumor suppressor gene.",
-    },
-    {
-      text: "The fovea centralis develops from:",
-      options: [
-        "A. Macula",
-        "B. Optic disc",
-        "C. Peripheral retina",
-        "D. Ciliary body",
-      ],
-      correct: 0,
-      explanation:
-        "The fovea is a specialized area within the macula for high visual acuity.",
-    },
-    {
-      text: "Which structure prevents the lens from regressing?",
-      options: [
-        "A. Tunica vasculosa lentis",
-        "B. Hyaloid artery",
-        "C. Optic cup",
-        "D. Surface ectoderm",
-      ],
-      correct: 0,
-      explanation:
-        "The tunica vasculosa lentis is a vascular network that supports lens development.",
-    },
-    {
-      text: "The eyelids develop from:",
-      options: [
-        "A. Neural ectoderm",
-        "B. Surface ectoderm",
-        "C. Mesoderm",
-        "D. Endoderm",
-      ],
-      correct: 1,
-      explanation: "Eyelids form from folds of surface ectoderm.",
-    },
-    {
-      text: "The lacrimal gland develops from:",
-      options: [
-        "A. Optic vesicle",
-        "B. Lens placode",
-        "C. Surface ectoderm",
-        "D. Neural crest",
-      ],
-      correct: 2,
-      explanation:
-        "Lacrimal gland arises from buds of surface ectoderm in the conjunctival sac.",
-    },
-    {
-      text: "Persistent hyperplastic primary vitreous (PHPV) is due to failure of:",
-      options: [
-        "A. Lens induction",
-        "B. Optic cup formation",
-        "C. Regression of hyaloid vessels",
-        "D. Neural crest migration",
-      ],
-      correct: 2,
-      explanation:
-        "PHPV results from failure of the hyaloid vascular system to regress.",
-    },
-    {
-      text: "The optic chiasm forms at the junction of:",
-      options: [
-        "A. Telencephalon and diencephalon",
-        "B. Diencephalon and mesencephalon",
-        "C. Mesencephalon and rhombencephalon",
-        "D. Rhombencephalon and spinal cord",
-      ],
-      correct: 1,
-      explanation:
-        "The optic chiasm develops at the diencephalon-mesencephalon junction.",
-    },
+      {
+        text: "The optic vesicle is an evagination of which brain vesicle?",
+        options: [
+          "A. Telencephalon",
+          "B. Diencephalon",
+          "C. Mesencephalon",
+          "D. Rhombencephalon",
+        ],
+        correct: 1,
+        explanation: "The optic vesicle arises from the diencephalon.",
+      },
+      {
+        text: "The lens placode develops from:",
+        options: [
+          "A. Neural ectoderm",
+          "B. Surface ectoderm",
+          "C. Mesoderm",
+          "D. Endoderm",
+        ],
+        correct: 1,
+        explanation:
+          "The lens placode is formed by thickening of surface ectoderm overlying the optic vesicle.",
+      },
+      {
+        text: "Which structure invaginates to form the optic cup?",
+        options: [
+          "A. Optic vesicle",
+          "B. Lens placode",
+          "C. Surface ectoderm",
+          "D. Neural crest",
+        ],
+        correct: 0,
+        explanation:
+          "The distal part of the optic vesicle invaginates to form the double-layered optic cup.",
+      },
+      {
+        text: "The outer layer of the optic cup gives rise to:",
+        options: [
+          "A. Retina",
+          "B. Pigmented epithelium",
+          "C. Lens",
+          "D. Cornea",
+        ],
+        correct: 1,
+        explanation:
+          "The outer layer becomes the pigmented epithelium; the inner layer forms the neural retina.",
+      },
+      {
+        text: "The choroid and sclera are derived from:",
+        options: [
+          "A. Neural ectoderm",
+          "B. Surface ectoderm",
+          "C. Mesoderm",
+          "D. Endoderm",
+        ],
+        correct: 2,
+        explanation:
+          "Mesenchymal cells from neural crest and mesoderm form the choroid and sclera.",
+      },
+      {
+        text: "The hyaloid artery is a branch of:",
+        options: [
+          "A. Ophthalmic artery",
+          "B. Internal carotid",
+          "C. External carotid",
+          "D. Basilar artery",
+        ],
+        correct: 0,
+        explanation:
+          "The hyaloid artery branches from the ophthalmic artery to supply the developing eye.",
+      },
+      {
+        text: "Which of the following is NOT a derivative of the surface ectoderm in eye development?",
+        options: ["A. Lens", "B. Cornea", "C. Conjunctiva", "D. Iris"],
+        correct: 3,
+        explanation:
+          "The iris is derived from the optic cup; lens, cornea, and conjunctiva are from surface ectoderm.",
+      },
+      {
+        text: "The optic nerve develops from:",
+        options: [
+          "A. Axons of ganglion cells",
+          "B. Neural crest cells",
+          "C. Mesenchymal cells",
+          "D. Surface ectoderm",
+        ],
+        correct: 0,
+        explanation:
+          "The optic nerve is formed by axons of retinal ganglion cells.",
+      },
+      {
+        text: "Coloboma of the iris results from failure of:",
+        options: [
+          "A. Optic vesicle formation",
+          "B. Lens induction",
+          "C. Optic cup closure",
+          "D. Neural crest migration",
+        ],
+        correct: 2,
+        explanation:
+          "Incomplete closure of the optic cup ventrally leads to coloboma.",
+      },
+      {
+        text: "The ciliary body develops from:",
+        options: [
+          "A. Outer optic cup",
+          "B. Inner optic cup",
+          "C. Lens",
+          "D. Surface ectoderm",
+        ],
+        correct: 1,
+        explanation:
+          "The inner layer of the optic cup forms the ciliary body and iris.",
+      },
+      {
+        text: "Which signaling molecule is essential for lens induction?",
+        options: ["A. FGF", "B. SHH", "C. BMP4", "D. Wnt"],
+        correct: 0,
+        explanation:
+          "FGF from the optic vesicle induces lens placode formation.",
+      },
+      {
+        text: "The vitreous body is derived from:",
+        options: [
+          "A. Neural ectoderm",
+          "B. Mesoderm",
+          "C. Endoderm",
+          "D. Surface ectoderm",
+        ],
+        correct: 1,
+        explanation:
+          "Mesenchymal cells from neural crest form the vitreous body.",
+      },
+      {
+        text: "The cornea develops from:",
+        options: [
+          "A. Optic cup",
+          "B. Lens placode",
+          "C. Surface ectoderm and mesenchyme",
+          "D. Neural crest only",
+        ],
+        correct: 2,
+        explanation:
+          "Cornea forms from surface ectoderm (epithelium) and underlying mesenchyme.",
+      },
+      {
+        text: "Retinoblastoma is associated with mutation in:",
+        options: [
+          "A. RB1 gene",
+          "B. TP53 gene",
+          "C. BRCA1 gene",
+          "D. APC gene",
+        ],
+        correct: 0,
+        explanation:
+          "Retinoblastoma results from mutations in the RB1 tumor suppressor gene.",
+      },
+      {
+        text: "The fovea centralis develops from:",
+        options: [
+          "A. Macula",
+          "B. Optic disc",
+          "C. Peripheral retina",
+          "D. Ciliary body",
+        ],
+        correct: 0,
+        explanation:
+          "The fovea is a specialized area within the macula for high visual acuity.",
+      },
+      {
+        text: "Which structure prevents the lens from regressing?",
+        options: [
+          "A. Tunica vasculosa lentis",
+          "B. Hyaloid artery",
+          "C. Optic cup",
+          "D. Surface ectoderm",
+        ],
+        correct: 0,
+        explanation:
+          "The tunica vasculosa lentis is a vascular network that supports lens development.",
+      },
+      {
+        text: "The eyelids develop from:",
+        options: [
+          "A. Neural ectoderm",
+          "B. Surface ectoderm",
+          "C. Mesoderm",
+          "D. Endoderm",
+        ],
+        correct: 1,
+        explanation: "Eyelids form from folds of surface ectoderm.",
+      },
+      {
+        text: "The lacrimal gland develops from:",
+        options: [
+          "A. Optic vesicle",
+          "B. Lens placode",
+          "C. Surface ectoderm",
+          "D. Neural crest",
+        ],
+        correct: 2,
+        explanation:
+          "Lacrimal gland arises from buds of surface ectoderm in the conjunctival sac.",
+      },
+      {
+        text: "Persistent hyperplastic primary vitreous (PHPV) is due to failure of:",
+        options: [
+          "A. Lens induction",
+          "B. Optic cup formation",
+          "C. Regression of hyaloid vessels",
+          "D. Neural crest migration",
+        ],
+        correct: 2,
+        explanation:
+          "PHPV results from failure of the hyaloid vascular system to regress.",
+      },
+      {
+        text: "The optic chiasm forms at the junction of:",
+        options: [
+          "A. Telencephalon and diencephalon",
+          "B. Diencephalon and mesencephalon",
+          "C. Mesencephalon and rhombencephalon",
+          "D. Rhombencephalon and spinal cord",
+        ],
+        correct: 1,
+        explanation:
+          "The optic chiasm develops at the diencephalon-mesencephalon junction.",
+      },
     ],
     "Development of Central Nervous System": [
       {
         text: "The neural tube closure begins at which somite level in the human embryo?",
         options: ["1st somite", "5th somite", "10th somite", "15th somite"],
         correct: 1,
-        explanation: "Neural tube closure starts in the cervical region around the 5th somite (~day 22), then proceeds both cranially and caudally."
+        explanation:
+          "Neural tube closure starts in the cervical region around the 5th somite (~day 22), then proceeds both cranially and caudally.",
       },
       {
         text: "The rhombencephalon gives rise to which adult brain structures?",
-        options: ["Cerebral hemispheres", "Midbrain and pons", "Pons, medulla, and cerebellum", "Thalamus and hypothalamus"],
+        options: [
+          "Cerebral hemispheres",
+          "Midbrain and pons",
+          "Pons, medulla, and cerebellum",
+          "Thalamus and hypothalamus",
+        ],
         correct: 2,
-        explanation: "The rhombencephalon (hindbrain) differentiates into metencephalon (pons + cerebellum) and myelencephalon (medulla)."
+        explanation:
+          "The rhombencephalon (hindbrain) differentiates into metencephalon (pons + cerebellum) and myelencephalon (medulla).",
       },
       {
         text: "The sulcus limitans separates which regions in the developing neural tube?",
-        options: ["Roof plate and floor plate", "Alar plate and basal plate", "Prosencephalon and mesencephalon", "Neural crest and neural tube"],
+        options: [
+          "Roof plate and floor plate",
+          "Alar plate and basal plate",
+          "Prosencephalon and mesencephalon",
+          "Neural crest and neural tube",
+        ],
         correct: 1,
-        explanation: "The sulcus limitans divides the dorsal sensory (alar) and ventral motor (basal) regions of the neural tube."
+        explanation:
+          "The sulcus limitans divides the dorsal sensory (alar) and ventral motor (basal) regions of the neural tube.",
       },
       {
         text: "The notochord induces the overlying ectoderm to form:",
-        options: ["Neural crest", "Neural tube", "Surface ectoderm", "Mesoderm"],
+        options: [
+          "Neural crest",
+          "Neural tube",
+          "Surface ectoderm",
+          "Mesoderm",
+        ],
         correct: 1,
-        explanation: "The notochord secretes SHH and other signals to induce neural plate formation, which folds to form the neural tube."
+        explanation:
+          "The notochord secretes SHH and other signals to induce neural plate formation, which folds to form the neural tube.",
       },
       {
         text: "Which brain vesicle is associated with the third ventricle?",
-        options: ["Prosencephalon", "Mesencephalon", "Rhombencephalon", "Spinal cord"],
+        options: [
+          "Prosencephalon",
+          "Mesencephalon",
+          "Rhombencephalon",
+          "Spinal cord",
+        ],
         correct: 0,
-        explanation: "The prosencephalon (forebrain) forms the telencephalon and diencephalon; the third ventricle develops within the diencephalon."
+        explanation:
+          "The prosencephalon (forebrain) forms the telencephalon and diencephalon; the third ventricle develops within the diencephalon.",
       },
       {
         text: "The cranial neuropore closes at approximately:",
         options: ["Day 18", "Day 24", "Day 26", "Day 30"],
         correct: 2,
-        explanation: "The cranial (anterior) neuropore closes around day 25–26; failure leads to anencephaly."
+        explanation:
+          "The cranial (anterior) neuropore closes around day 25–26; failure leads to anencephaly.",
       },
       {
         text: "Which signaling molecule is critical for ventral neural tube patterning?",
         options: ["BMP", "FGF", "SHH", "WNT"],
         correct: 2,
-        explanation: "Sonic hedgehog (SHH) from the notochord and floor plate specifies ventral neural tube fates, including motor neurons."
+        explanation:
+          "Sonic hedgehog (SHH) from the notochord and floor plate specifies ventral neural tube fates, including motor neurons.",
       },
       {
         text: "Neural crest cells give rise to all of the following EXCEPT:",
-        options: ["Dorsal root ganglia", "Schwann cells", "Microglia", "Melanocytes"],
+        options: [
+          "Dorsal root ganglia",
+          "Schwann cells",
+          "Microglia",
+          "Melanocytes",
+        ],
         correct: 2,
-        explanation: "Microglia are derived from yolk sac mesoderm, not neural crest. Neural crest forms peripheral neurons, glia, and melanocytes."
+        explanation:
+          "Microglia are derived from yolk sac mesoderm, not neural crest. Neural crest forms peripheral neurons, glia, and melanocytes.",
       },
       {
         text: "The mesencephalon develops into which adult structure?",
         options: ["Cerebral hemispheres", "Midbrain", "Pons", "Medulla"],
         correct: 1,
-        explanation: "The midbrain is derived from the mesencephalon, which does not further subdivide."
+        explanation:
+          "The midbrain is derived from the mesencephalon, which does not further subdivide.",
       },
       {
         text: "The ventricular zone of the neural tube primarily contains:",
-        options: ["Migrating neurons", "Progenitor neuroepithelial cells", "Mature oligodendrocytes", "Microglia"],
+        options: [
+          "Migrating neurons",
+          "Progenitor neuroepithelial cells",
+          "Mature oligodendrocytes",
+          "Microglia",
+        ],
         correct: 1,
-        explanation: "Neuroepithelial cells in the ventricular zone proliferate to produce neurons and glia."
+        explanation:
+          "Neuroepithelial cells in the ventricular zone proliferate to produce neurons and glia.",
       },
       {
         text: "The rhombic lip is important for development of:",
         options: ["Cerebral cortex", "Cerebellum", "Hippocampus", "Thalamus"],
         correct: 1,
-        explanation: "The rhombic lip, located at the dorsal metencephalon, generates cerebellar granule neurons."
+        explanation:
+          "The rhombic lip, located at the dorsal metencephalon, generates cerebellar granule neurons.",
       },
       {
         text: "Which structure forms the central canal of the spinal cord?",
-        options: ["Neural crest", "Alar plate", "Basal plate", "Lumen of neural tube"],
+        options: [
+          "Neural crest",
+          "Alar plate",
+          "Basal plate",
+          "Lumen of neural tube",
+        ],
         correct: 3,
-        explanation: "The neural tube lumen becomes the ventricular system in the brain and the central canal in the spinal cord."
+        explanation:
+          "The neural tube lumen becomes the ventricular system in the brain and the central canal in the spinal cord.",
       },
       {
         text: "Which embryonic brain structure is associated with the aqueduct of Sylvius?",
-        options: ["Telencephalon", "Diencephalon", "Mesencephalon", "Metencephalon"],
+        options: [
+          "Telencephalon",
+          "Diencephalon",
+          "Mesencephalon",
+          "Metencephalon",
+        ],
         correct: 2,
-        explanation: "The cerebral aqueduct connects the third and fourth ventricles and develops in the mesencephalon."
+        explanation:
+          "The cerebral aqueduct connects the third and fourth ventricles and develops in the mesencephalon.",
       },
       {
         text: "Radial glial cells serve as:",
-        options: ["Motor neurons", "Guides for migrating neurons", "Microglia precursors", "Schwann cell precursors"],
+        options: [
+          "Motor neurons",
+          "Guides for migrating neurons",
+          "Microglia precursors",
+          "Schwann cell precursors",
+        ],
         correct: 1,
-        explanation: "Radial glia extend from the ventricular zone to the pial surface, guiding neuron migration during cortical development."
+        explanation:
+          "Radial glia extend from the ventricular zone to the pial surface, guiding neuron migration during cortical development.",
       },
       {
         text: "The floor plate is primarily involved in:",
-        options: ["Dorsal sensory neuron development", "Ventral patterning of motor neurons", "Formation of neural crest", "Myelination of axons"],
+        options: [
+          "Dorsal sensory neuron development",
+          "Ventral patterning of motor neurons",
+          "Formation of neural crest",
+          "Myelination of axons",
+        ],
         correct: 1,
-        explanation: "The floor plate secretes SHH, specifying ventral cell fates in the neural tube."
+        explanation:
+          "The floor plate secretes SHH, specifying ventral cell fates in the neural tube.",
       },
       {
         text: "Spina bifida occulta results from:",
-        options: ["Failure of cranial neuropore closure", "Failure of caudal neuropore closure", "Neural crest migration defect", "Abnormal SHH signaling"],
+        options: [
+          "Failure of cranial neuropore closure",
+          "Failure of caudal neuropore closure",
+          "Neural crest migration defect",
+          "Abnormal SHH signaling",
+        ],
         correct: 1,
-        explanation: "The caudal neuropore closes around day 28; its failure causes spina bifida."
+        explanation:
+          "The caudal neuropore closes around day 28; its failure causes spina bifida.",
       },
       {
         text: "The marginal zone of the developing neural tube contains:",
-        options: ["Cell bodies of neurons", "Axonal projections and neuropil", "Neural progenitor cells", "Microglia"],
+        options: [
+          "Cell bodies of neurons",
+          "Axonal projections and neuropil",
+          "Neural progenitor cells",
+          "Microglia",
+        ],
         correct: 1,
-        explanation: "The marginal zone is the outer layer of the neural tube where axons extend and synapse."
+        explanation:
+          "The marginal zone is the outer layer of the neural tube where axons extend and synapse.",
       },
       {
         text: "Holoprosencephaly results from abnormal development of:",
-        options: ["Neural crest", "Prosencephalon", "Rhombencephalon", "Mesencephalon"],
+        options: [
+          "Neural crest",
+          "Prosencephalon",
+          "Rhombencephalon",
+          "Mesencephalon",
+        ],
         correct: 1,
-        explanation: "Holoprosencephaly is a failure of the forebrain (prosencephalon) to divide properly, often due to SHH pathway defects."
+        explanation:
+          "Holoprosencephaly is a failure of the forebrain (prosencephalon) to divide properly, often due to SHH pathway defects.",
       },
       {
         text: "Which structure is the origin of cranial sensory ganglia?",
-        options: ["Neural tube floor plate", "Neural crest", "Roof plate", "Radial glia"],
+        options: [
+          "Neural tube floor plate",
+          "Neural crest",
+          "Roof plate",
+          "Radial glia",
+        ],
         correct: 1,
-        explanation: "Neural crest cells migrate to form cranial sensory (e.g., trigeminal) ganglia."
+        explanation:
+          "Neural crest cells migrate to form cranial sensory (e.g., trigeminal) ganglia.",
       },
       {
         text: "The choroid plexus is derived from:",
-        options: ["Ependymal cells and vascular mesenchyme", "Neural crest", "Radial glial cells only", "Alar plate only"],
+        options: [
+          "Ependymal cells and vascular mesenchyme",
+          "Neural crest",
+          "Radial glial cells only",
+          "Alar plate only",
+        ],
         correct: 0,
-        explanation: "The choroid plexus develops from invaginating ependymal cells of the ventricles plus adjacent mesenchyme forming vasculature."
-      }
+        explanation:
+          "The choroid plexus develops from invaginating ependymal cells of the ventricles plus adjacent mesenchyme forming vasculature.",
+      },
     ],
   },
 
-  
-
   // --- 6. HISTOLOGY ---
- "special-senses": {
-    "Spinal Cord, Brainstem": [ 
+  "special-senses": {
+    "Spinal Cord, Brainstem": [
       {
         text: "Which of the following neurons in the spinal cord is multipolar and primarily involved in inhibitory signaling via GABA?",
-        options: ["Alpha motor neurons", "Renshaw cells", "Clarke’s column neurons", "Intermediolateral neurons"],
+        options: [
+          "Alpha motor neurons",
+          "Renshaw cells",
+          "Clarke’s column neurons",
+          "Intermediolateral neurons",
+        ],
         correct: 1,
-        explanation: "Renshaw cells are inhibitory interneurons in the ventral horn that modulate alpha motor neuron activity using GABA/glycine."
-      },      
+        explanation:
+          "Renshaw cells are inhibitory interneurons in the ventral horn that modulate alpha motor neuron activity using GABA/glycine.",
+      },
       {
         text: "Which layer of the spinal cord meninges contains the largest number of fibroblasts and elastic fibers?",
         options: ["Pia mater", "Arachnoid mater", "Dura mater", "Ependyma"],
         correct: 2,
-        explanation: "The dura mater is dense fibrous connective tissue with fibroblasts and elastic fibers, providing tensile strength."
+        explanation:
+          "The dura mater is dense fibrous connective tissue with fibroblasts and elastic fibers, providing tensile strength.",
       },
       {
         text: "The primary afferent fibers that terminate in the nucleus dorsalis (Clarke’s column) are mostly:",
-        options: ["Ia proprioceptive fibers", "Ib Golgi tendon fibers", "A-delta pain fibers", "C fibers"],
+        options: [
+          "Ia proprioceptive fibers",
+          "Ib Golgi tendon fibers",
+          "A-delta pain fibers",
+          "C fibers",
+        ],
         correct: 0,
-        explanation: "Clarke’s column receives proprioceptive input from muscle spindles via Ia fibers for the spinocerebellar tract."
+        explanation:
+          "Clarke’s column receives proprioceptive input from muscle spindles via Ia fibers for the spinocerebellar tract.",
       },
       {
         text: "Which of the following brainstem nuclei is exclusively parasympathetic in function?",
-        options: ["Dorsal motor nucleus of vagus", "Nucleus ambiguus", "Facial motor nucleus", "Trigeminal motor nucleus"],
+        options: [
+          "Dorsal motor nucleus of vagus",
+          "Nucleus ambiguus",
+          "Facial motor nucleus",
+          "Trigeminal motor nucleus",
+        ],
         correct: 0,
-        explanation: "This nucleus provides parasympathetic preganglionic fibers to thoracic and abdominal viscera."
+        explanation:
+          "This nucleus provides parasympathetic preganglionic fibers to thoracic and abdominal viscera.",
       },
       {
         text: "In the spinal cord, which tract is located in the lateral funiculus and carries unconscious proprioceptive information to the cerebellum?",
-        options: ["Lateral corticospinal tract", "Posterior spinocerebellar tract", "Anterior spinothalamic tract", "Medial lemniscus"],
+        options: [
+          "Lateral corticospinal tract",
+          "Posterior spinocerebellar tract",
+          "Anterior spinothalamic tract",
+          "Medial lemniscus",
+        ],
         correct: 1,
-        explanation: "The posterior spinocerebellar tract ascends ipsilaterally in the lateral funiculus carrying proprioceptive signals."
+        explanation:
+          "The posterior spinocerebellar tract ascends ipsilaterally in the lateral funiculus carrying proprioceptive signals.",
       },
       {
         text: "Which type of glial cell forms the myelin in the brainstem?",
-        options: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Ependymal cells"],
+        options: [
+          "Schwann cells",
+          "Oligodendrocytes",
+          "Astrocytes",
+          "Ependymal cells",
+        ],
         correct: 1,
-        explanation: "CNS axons in the brainstem are myelinated by oligodendrocytes, unlike peripheral nerves (Schwann cells)."
+        explanation:
+          "CNS axons in the brainstem are myelinated by oligodendrocytes, unlike peripheral nerves (Schwann cells).",
       },
       {
         text: "The central canal of the spinal cord is lined by:",
-        options: ["Simple cuboidal epithelium", "Ciliated columnar ependymal cells", "Pseudostratified epithelium", "Squamous epithelium"],
+        options: [
+          "Simple cuboidal epithelium",
+          "Ciliated columnar ependymal cells",
+          "Pseudostratified epithelium",
+          "Squamous epithelium",
+        ],
         correct: 1,
-        explanation: "Ependymal cells line the central canal and aid in CSF circulation via cilia."
+        explanation:
+          "Ependymal cells line the central canal and aid in CSF circulation via cilia.",
       },
       {
         text: "Which brainstem structure contains the origin of the trochlear nerve (CN IV)?",
-        options: ["Midbrain at the level of inferior colliculus", "Pons at the level of facial colliculus", "Medulla near the pyramids", "Midbrain at the level of superior colliculus"],
+        options: [
+          "Midbrain at the level of inferior colliculus",
+          "Pons at the level of facial colliculus",
+          "Medulla near the pyramids",
+          "Midbrain at the level of superior colliculus",
+        ],
         correct: 0,
-        explanation: "The trochlear nerve is unique as it emerges dorsally from the midbrain just below the inferior colliculus."
+        explanation:
+          "The trochlear nerve is unique as it emerges dorsally from the midbrain just below the inferior colliculus.",
       },
       {
         text: "Which tract decussates in the medullary pyramids?",
-        options: ["Spinothalamic tract", "Lateral corticospinal tract", "Dorsal column-medial lemniscus", "Rubrospinal tract"],
+        options: [
+          "Spinothalamic tract",
+          "Lateral corticospinal tract",
+          "Dorsal column-medial lemniscus",
+          "Rubrospinal tract",
+        ],
         correct: 1,
-        explanation: "The majority of corticospinal fibers cross in the pyramidal decussation to control contralateral voluntary movement."
+        explanation:
+          "The majority of corticospinal fibers cross in the pyramidal decussation to control contralateral voluntary movement.",
       },
       {
         text: "In the medulla oblongata, which nucleus is responsible for sensory input from the carotid body and sinus?",
-        options: ["Solitary nucleus", "Spinal trigeminal nucleus", "Nucleus ambiguus", "Vestibular nucleus"],
+        options: [
+          "Solitary nucleus",
+          "Spinal trigeminal nucleus",
+          "Nucleus ambiguus",
+          "Vestibular nucleus",
+        ],
         correct: 0,
-        explanation: "The solitary nucleus processes visceral sensory information including baroreceptors and chemoreceptors."
+        explanation:
+          "The solitary nucleus processes visceral sensory information including baroreceptors and chemoreceptors.",
       },
       {
         text: "Which spinal cord interneurons mediate recurrent inhibition of motor neurons?",
-        options: ["Ia inhibitory interneurons", "Renshaw cells", "Ib inhibitory interneurons", "Golgi tendon interneurons"],
+        options: [
+          "Ia inhibitory interneurons",
+          "Renshaw cells",
+          "Ib inhibitory interneurons",
+          "Golgi tendon interneurons",
+        ],
         correct: 1,
-        explanation: "Renshaw cells inhibit alpha motor neurons through a negative feedback loop to prevent excessive contraction."
+        explanation:
+          "Renshaw cells inhibit alpha motor neurons through a negative feedback loop to prevent excessive contraction.",
       },
       {
         text: "The periaqueductal gray of the midbrain primarily contains neurons involved in:",
         options: ["Pain modulation", "Eye movement", "Hearing", "Taste"],
         correct: 0,
-        explanation: "Periaqueductal gray activates descending inhibitory pathways that suppress nociceptive transmission."
+        explanation:
+          "Periaqueductal gray activates descending inhibitory pathways that suppress nociceptive transmission.",
       },
       {
         text: "Which fiber type predominates in the lateral funiculus of the spinal cord?",
-        options: ["Ascending sensory fibers only", "Descending motor fibers only", "Both ascending and descending fibers", "Commissural fibers only"],
+        options: [
+          "Ascending sensory fibers only",
+          "Descending motor fibers only",
+          "Both ascending and descending fibers",
+          "Commissural fibers only",
+        ],
         correct: 2,
-        explanation: "The lateral funiculus contains lateral corticospinal (descending) and spinocerebellar (ascending) tracts."
+        explanation:
+          "The lateral funiculus contains lateral corticospinal (descending) and spinocerebellar (ascending) tracts.",
       },
       {
         text: "The inferior olivary nucleus is involved in:",
-        options: ["Cerebellar motor coordination", "Vestibular reflexes", "Pain modulation", "Autonomic regulation"],
+        options: [
+          "Cerebellar motor coordination",
+          "Vestibular reflexes",
+          "Pain modulation",
+          "Autonomic regulation",
+        ],
         correct: 0,
-        explanation: "Inferior olivary neurons send climbing fibers to Purkinje cells for fine motor control."
+        explanation:
+          "Inferior olivary neurons send climbing fibers to Purkinje cells for fine motor control.",
       },
       {
         text: "Which cells form the blood–brain barrier in the spinal cord and brainstem?",
-        options: ["Astrocytes", "Microglia", "Oligodendrocytes", "Ependymal cells"],
+        options: [
+          "Astrocytes",
+          "Microglia",
+          "Oligodendrocytes",
+          "Ependymal cells",
+        ],
         correct: 0,
-        explanation: "Astrocytic end-feet envelop capillaries to regulate permeability of the BBB."
+        explanation:
+          "Astrocytic end-feet envelop capillaries to regulate permeability of the BBB.",
       },
       {
         text: "Which brainstem nucleus gives rise to parasympathetic fibers to the lacrimal and salivary glands?",
-        options: ["Superior salivatory nucleus", "Dorsal motor nucleus of vagus", "Nucleus ambiguus", "Inferior salivatory nucleus"],
+        options: [
+          "Superior salivatory nucleus",
+          "Dorsal motor nucleus of vagus",
+          "Nucleus ambiguus",
+          "Inferior salivatory nucleus",
+        ],
         correct: 0,
-        explanation: "This nucleus supplies preganglionic parasympathetic fibers to lacrimal, submandibular, and sublingual glands."
+        explanation:
+          "This nucleus supplies preganglionic parasympathetic fibers to lacrimal, submandibular, and sublingual glands.",
       },
       {
         text: "In the spinal cord, lateral horn neurons are primarily found at which levels?",
-        options: ["Cervical and lumbar", "Thoracic and upper lumbar", "Sacral only", "Entire cord"],
+        options: [
+          "Cervical and lumbar",
+          "Thoracic and upper lumbar",
+          "Sacral only",
+          "Entire cord",
+        ],
         correct: 1,
-        explanation: "The intermediolateral cell column houses preganglionic sympathetic neurons from T1–L2."
+        explanation:
+          "The intermediolateral cell column houses preganglionic sympathetic neurons from T1–L2.",
       },
       {
         text: "Which spinal tract mediates fast pain and temperature sensation?",
-        options: ["Dorsal column", "Lateral spinothalamic tract", "Spinocerebellar tract", "Corticospinal tract"],
+        options: [
+          "Dorsal column",
+          "Lateral spinothalamic tract",
+          "Spinocerebellar tract",
+          "Corticospinal tract",
+        ],
         correct: 1,
-        explanation: "The lateral spinothalamic tract transmits sharp pain and temperature signals to the thalamus."
+        explanation:
+          "The lateral spinothalamic tract transmits sharp pain and temperature signals to the thalamus.",
       },
       {
         text: "Which brainstem structure contains the nuclei for CN IX, X, and XI?",
         options: ["Medulla", "Pons", "Midbrain", "Cerebellum"],
         correct: 0,
-        explanation: "The medulla houses the nucleus ambiguus and other motor nuclei of glossopharyngeal, vagus, and accessory nerves."
+        explanation:
+          "The medulla houses the nucleus ambiguus and other motor nuclei of glossopharyngeal, vagus, and accessory nerves.",
       },
       {
         text: "Which of the following is TRUE regarding the substantia gelatinosa of the spinal cord?",
-        options: ["It is part of the dorsal horn involved in pain modulation", "It contains only motor neurons", "It is located in the ventral horn", "It directly sends fibers to the cerebellum"],
+        options: [
+          "It is part of the dorsal horn involved in pain modulation",
+          "It contains only motor neurons",
+          "It is located in the ventral horn",
+          "It directly sends fibers to the cerebellum",
+        ],
         correct: 0,
-        explanation: "The substantia gelatinosa (Rexed lamina II) modulates nociceptive input before it ascends via spinothalamic tracts."
-      }
-    ],   
+        explanation:
+          "The substantia gelatinosa (Rexed lamina II) modulates nociceptive input before it ascends via spinothalamic tracts.",
+      },
+    ],
     "Cerebrum and Cerebellum": [
-            {
-                text: "Which cortical layer of the cerebrum primarily contains pyramidal neurons responsible for corticospinal projections?",
-                options: ["Molecular layer (I)", "External granular layer (II)", "Internal pyramidal layer (V)", "Multiform layer (VI)"],
-                correct: 2,
-                explanation: "Layer V (internal pyramidal layer) contains large pyramidal neurons, such as Betz cells, which project to the spinal cord (corticospinal tract)."
-            },
-            {
-                text: "Which type of glial cell is most abundant in the cerebellar cortex and forms a physical barrier around Purkinje neurons?",
-                options: ["Astrocytes", "Oligodendrocytes", "Bergmann glia", "Microglia"],
-                correct: 2,
-                explanation: "Bergmann glia are specialized astrocytes in the cerebellum that closely associate with Purkinje cells, supporting their structure and signaling."
-            },
-            {
-                text: "In the cerebellar cortex, the granule cell layer is primarily composed of:",
-                options: ["Large multipolar neurons", "Small excitatory neurons with T-shaped axons", "Inhibitory interneurons only", "Myelinated projection fibers"],
-                correct: 1,
-                explanation: "Granule cells are small excitatory neurons; their axons ascend to the molecular layer and bifurcate as parallel fibers, synapsing with Purkinje dendrites."
-            },
-            {
-                text: "Which layer of the cerebral cortex contains densely packed small neurons and receives thalamocortical input?",
-                options: ["Molecular layer (I)", "External granular layer (II)", "Internal granular layer (IV)", "Multiform layer (VI)"],
-                correct: 2,
-                explanation: "Layer IV (internal granular) is rich in small granule neurons and is the primary target for thalamic sensory inputs."
-            },
-            {
-                text: "Which of the following statements about Purkinje cells is INCORRECT?",
-                options: ["They are inhibitory neurons releasing GABA", "Their dendrites extend into the molecular layer", "They are found in the cerebrum", "They receive excitatory input from parallel fibers"],
-                correct: 2,
-                explanation: "Purkinje cells are unique to the cerebellum, not the cerebrum."
-            },
-            {
-                text: "Which fiber type in the cerebellum forms climbing fibers that wrap around Purkinje cell dendrites?",
-                options: ["Parallel fibers", "Mossy fibers", "Climbing fibers", "Association fibers"],
-                correct: 2,
-                explanation: "Climbing fibers originate from the inferior olivary nucleus and form powerful excitatory synapses on Purkinje dendrites."
-            },
-            {
-                text: "In the cerebral cortex, which cells are primarily responsible for lateral inhibition and shaping cortical output?",
-                options: ["Pyramidal neurons", "Basket cells and chandelier cells", "Granule cells", "Betz cells"],
-                correct: 1,
-                explanation: "Basket and chandelier interneurons are inhibitory GABAergic neurons that modulate pyramidal neuron activity via lateral inhibition."
-            },
-            {
-                text: "Which of the following best describes the input to cerebellar Purkinje cells?",
-                options: ["Exclusively from mossy fibers", "Exclusively from climbing fibers", "From mossy fibers via granule cells and directly from climbing fibers", "Only from parallel fibers"],
-                correct: 2,
-                explanation: "Purkinje cells integrate input from both climbing fibers (direct) and mossy fibers (indirectly via granule cells and parallel fibers)."
-            },
-            {
-                text: "Which layer of the cerebellar cortex contains Golgi type II inhibitory interneurons?",
-                options: ["Molecular layer", "Purkinje layer", "Granule layer", "White matter"],
-                correct: 2,
-                explanation: "Golgi cells are inhibitory interneurons located in the granule cell layer, regulating granule cell excitatory output."
-            },
-            {
-                text: "Betz cells in the primary motor cortex are:",
-                options: ["Small interneurons in layer II", "Large pyramidal neurons in layer V", "Inhibitory neurons in layer IV", "Granule cells in layer III"],
-                correct: 1,
-                explanation: "Betz cells are giant pyramidal neurons in layer V of the motor cortex responsible for direct corticospinal projections."
-            },
-            {
-                text: "Which cortical layer of the cerebrum is most developed in sensory areas?",
-                options: ["Layer I", "Layer IV", "Layer V", "Layer VI"],
-                correct: 1,
-                explanation: "Layer IV (internal granular) is thick in sensory areas (e.g., visual cortex) to receive thalamic input, known as the 'granular cortex'."
-            },
-            {
-                text: "The molecular layer of the cerebellum contains all EXCEPT:",
-                options: ["Dendritic trees of Purkinje cells", "Parallel fibers of granule cells", "Soma of Purkinje cells", "Basket and stellate interneurons"],
-                correct: 2,
-                explanation: "Purkinje somata lie in the Purkinje layer, not in the molecular layer, which contains dendrites and axons."
-            },
-            {
-                text: "Which cells are the principal output neurons of the cerebellum?",
-                options: ["Granule cells", "Purkinje cells", "Basket cells", "Stellate cells"],
-                correct: 1,
-                explanation: "Purkinje cells send inhibitory GABAergic output to the deep cerebellar nuclei, which then project to other CNS regions."
-            },
-            {
-                text: "Which feature distinguishes the internal pyramidal layer (V) of the motor cortex from sensory cortical areas?",
-                options: ["Abundant granule cells", "Presence of giant Betz pyramidal neurons", "Thin and poorly defined layer", "Absence of pyramidal cells"],
-                correct: 1,
-                explanation: "Layer V in the motor cortex has giant Betz cells, which are much larger than neurons in sensory areas."
-            },
-            {
-                text: "In the cerebellum, mossy fibers originate from all EXCEPT:",
-                options: ["Spinocerebellar tracts", "Vestibular nuclei", "Inferior olivary nucleus", "Pontine nuclei"],
-                correct: 2,
-                explanation: "Mossy fibers come from multiple sources (spinal cord, vestibular system, pons), while climbing fibers arise specifically from the inferior olive."
-            },
-            {
-                text: "Which interneuron of the molecular layer of the cerebellum is inhibitory?",
-                options: ["Granule cell", "Golgi cell", "Basket cell", "Climbing fiber"],
-                correct: 2,
-                explanation: "Basket cells are inhibitory interneurons that modulate Purkinje cell activity in the molecular layer."
-            },
-            {
-                text: "Which cerebral cortical layer is most prominent in association areas and has many pyramidal neurons projecting to other cortical regions?",
-                options: ["Layer II (External granular)", "Layer III (External pyramidal)", "Layer IV (Internal granular)", "Layer VI (Multiform)"],
-                correct: 1,
-                explanation: "Layer III (external pyramidal) contains pyramidal neurons that primarily send corticocortical projections."
-            },
-            {
-                text: "Which of the following statements about cerebellar white matter is TRUE?",
-                options: ["It contains Purkinje cell bodies", "It forms the arbor vitae", "It receives output directly from mossy fibers", "It is not myelinated"],
-                correct: 1,
-                explanation: "Cerebellar white matter forms the arbor vitae, a branching pattern connecting cortical layers to deep cerebellar nuclei."
-            },
-            {
-                text: "Which cortical layer is thickest in motor areas and thinnest in primary sensory cortex?",
-                options: ["Layer II", "Layer III", "Layer IV", "Layer V"],
-                correct: 3,
-                explanation: "Layer V (internal pyramidal) is thick in motor cortex due to large pyramidal neurons (e.g., Betz cells) and thinner in sensory areas."
-            },
-            {
-                text: "Which statement best describes Golgi type I vs. Golgi type II neurons in the cerebellum?",
-                options: ["Both are projection neurons", "Type I are local interneurons, Type II are projection neurons", "Type I are projection neurons, Type II are local interneurons", "Both are glial cells"],
-                correct: 2,
-                explanation: "Golgi type I neurons are long-axon projection neurons (e.g., pyramidal, Purkinje), while Golgi type II neurons are short-axon inhibitory interneurons (e.g., Golgi cells, basket cells)."
-            }
+      {
+        text: "Which cortical layer of the cerebrum primarily contains pyramidal neurons responsible for corticospinal projections?",
+        options: [
+          "Molecular layer (I)",
+          "External granular layer (II)",
+          "Internal pyramidal layer (V)",
+          "Multiform layer (VI)",
         ],
+        correct: 2,
+        explanation:
+          "Layer V (internal pyramidal layer) contains large pyramidal neurons, such as Betz cells, which project to the spinal cord (corticospinal tract).",
+      },
+      {
+        text: "Which type of glial cell is most abundant in the cerebellar cortex and forms a physical barrier around Purkinje neurons?",
+        options: [
+          "Astrocytes",
+          "Oligodendrocytes",
+          "Bergmann glia",
+          "Microglia",
+        ],
+        correct: 2,
+        explanation:
+          "Bergmann glia are specialized astrocytes in the cerebellum that closely associate with Purkinje cells, supporting their structure and signaling.",
+      },
+      {
+        text: "In the cerebellar cortex, the granule cell layer is primarily composed of:",
+        options: [
+          "Large multipolar neurons",
+          "Small excitatory neurons with T-shaped axons",
+          "Inhibitory interneurons only",
+          "Myelinated projection fibers",
+        ],
+        correct: 1,
+        explanation:
+          "Granule cells are small excitatory neurons; their axons ascend to the molecular layer and bifurcate as parallel fibers, synapsing with Purkinje dendrites.",
+      },
+      {
+        text: "Which layer of the cerebral cortex contains densely packed small neurons and receives thalamocortical input?",
+        options: [
+          "Molecular layer (I)",
+          "External granular layer (II)",
+          "Internal granular layer (IV)",
+          "Multiform layer (VI)",
+        ],
+        correct: 2,
+        explanation:
+          "Layer IV (internal granular) is rich in small granule neurons and is the primary target for thalamic sensory inputs.",
+      },
+      {
+        text: "Which of the following statements about Purkinje cells is INCORRECT?",
+        options: [
+          "They are inhibitory neurons releasing GABA",
+          "Their dendrites extend into the molecular layer",
+          "They are found in the cerebrum",
+          "They receive excitatory input from parallel fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Purkinje cells are unique to the cerebellum, not the cerebrum.",
+      },
+      {
+        text: "Which fiber type in the cerebellum forms climbing fibers that wrap around Purkinje cell dendrites?",
+        options: [
+          "Parallel fibers",
+          "Mossy fibers",
+          "Climbing fibers",
+          "Association fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Climbing fibers originate from the inferior olivary nucleus and form powerful excitatory synapses on Purkinje dendrites.",
+      },
+      {
+        text: "In the cerebral cortex, which cells are primarily responsible for lateral inhibition and shaping cortical output?",
+        options: [
+          "Pyramidal neurons",
+          "Basket cells and chandelier cells",
+          "Granule cells",
+          "Betz cells",
+        ],
+        correct: 1,
+        explanation:
+          "Basket and chandelier interneurons are inhibitory GABAergic neurons that modulate pyramidal neuron activity via lateral inhibition.",
+      },
+      {
+        text: "Which of the following best describes the input to cerebellar Purkinje cells?",
+        options: [
+          "Exclusively from mossy fibers",
+          "Exclusively from climbing fibers",
+          "From mossy fibers via granule cells and directly from climbing fibers",
+          "Only from parallel fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Purkinje cells integrate input from both climbing fibers (direct) and mossy fibers (indirectly via granule cells and parallel fibers).",
+      },
+      {
+        text: "Which layer of the cerebellar cortex contains Golgi type II inhibitory interneurons?",
+        options: [
+          "Molecular layer",
+          "Purkinje layer",
+          "Granule layer",
+          "White matter",
+        ],
+        correct: 2,
+        explanation:
+          "Golgi cells are inhibitory interneurons located in the granule cell layer, regulating granule cell excitatory output.",
+      },
+      {
+        text: "Betz cells in the primary motor cortex are:",
+        options: [
+          "Small interneurons in layer II",
+          "Large pyramidal neurons in layer V",
+          "Inhibitory neurons in layer IV",
+          "Granule cells in layer III",
+        ],
+        correct: 1,
+        explanation:
+          "Betz cells are giant pyramidal neurons in layer V of the motor cortex responsible for direct corticospinal projections.",
+      },
+      {
+        text: "Which cortical layer of the cerebrum is most developed in sensory areas?",
+        options: ["Layer I", "Layer IV", "Layer V", "Layer VI"],
+        correct: 1,
+        explanation:
+          "Layer IV (internal granular) is thick in sensory areas (e.g., visual cortex) to receive thalamic input, known as the 'granular cortex'.",
+      },
+      {
+        text: "The molecular layer of the cerebellum contains all EXCEPT:",
+        options: [
+          "Dendritic trees of Purkinje cells",
+          "Parallel fibers of granule cells",
+          "Soma of Purkinje cells",
+          "Basket and stellate interneurons",
+        ],
+        correct: 2,
+        explanation:
+          "Purkinje somata lie in the Purkinje layer, not in the molecular layer, which contains dendrites and axons.",
+      },
+      {
+        text: "Which cells are the principal output neurons of the cerebellum?",
+        options: [
+          "Granule cells",
+          "Purkinje cells",
+          "Basket cells",
+          "Stellate cells",
+        ],
+        correct: 1,
+        explanation:
+          "Purkinje cells send inhibitory GABAergic output to the deep cerebellar nuclei, which then project to other CNS regions.",
+      },
+      {
+        text: "Which feature distinguishes the internal pyramidal layer (V) of the motor cortex from sensory cortical areas?",
+        options: [
+          "Abundant granule cells",
+          "Presence of giant Betz pyramidal neurons",
+          "Thin and poorly defined layer",
+          "Absence of pyramidal cells",
+        ],
+        correct: 1,
+        explanation:
+          "Layer V in the motor cortex has giant Betz cells, which are much larger than neurons in sensory areas.",
+      },
+      {
+        text: "In the cerebellum, mossy fibers originate from all EXCEPT:",
+        options: [
+          "Spinocerebellar tracts",
+          "Vestibular nuclei",
+          "Inferior olivary nucleus",
+          "Pontine nuclei",
+        ],
+        correct: 2,
+        explanation:
+          "Mossy fibers come from multiple sources (spinal cord, vestibular system, pons), while climbing fibers arise specifically from the inferior olive.",
+      },
+      {
+        text: "Which interneuron of the molecular layer of the cerebellum is inhibitory?",
+        options: [
+          "Granule cell",
+          "Golgi cell",
+          "Basket cell",
+          "Climbing fiber",
+        ],
+        correct: 2,
+        explanation:
+          "Basket cells are inhibitory interneurons that modulate Purkinje cell activity in the molecular layer.",
+      },
+      {
+        text: "Which cerebral cortical layer is most prominent in association areas and has many pyramidal neurons projecting to other cortical regions?",
+        options: [
+          "Layer II (External granular)",
+          "Layer III (External pyramidal)",
+          "Layer IV (Internal granular)",
+          "Layer VI (Multiform)",
+        ],
+        correct: 1,
+        explanation:
+          "Layer III (external pyramidal) contains pyramidal neurons that primarily send corticocortical projections.",
+      },
+      {
+        text: "Which of the following statements about cerebellar white matter is TRUE?",
+        options: [
+          "It contains Purkinje cell bodies",
+          "It forms the arbor vitae",
+          "It receives output directly from mossy fibers",
+          "It is not myelinated",
+        ],
+        correct: 1,
+        explanation:
+          "Cerebellar white matter forms the arbor vitae, a branching pattern connecting cortical layers to deep cerebellar nuclei.",
+      },
+      {
+        text: "Which cortical layer is thickest in motor areas and thinnest in primary sensory cortex?",
+        options: ["Layer II", "Layer III", "Layer IV", "Layer V"],
+        correct: 3,
+        explanation:
+          "Layer V (internal pyramidal) is thick in motor cortex due to large pyramidal neurons (e.g., Betz cells) and thinner in sensory areas.",
+      },
+      {
+        text: "Which statement best describes Golgi type I vs. Golgi type II neurons in the cerebellum?",
+        options: [
+          "Both are projection neurons",
+          "Type I are local interneurons, Type II are projection neurons",
+          "Type I are projection neurons, Type II are local interneurons",
+          "Both are glial cells",
+        ],
+        correct: 2,
+        explanation:
+          "Golgi type I neurons are long-axon projection neurons (e.g., pyramidal, Purkinje), while Golgi type II neurons are short-axon inhibitory interneurons (e.g., Golgi cells, basket cells).",
+      },
+    ],
     "Histology of Ear": [
-            {
-                text: "The organ of Corti is located on which membrane of the cochlea?",
-                options: ["Reissner’s membrane", "Basilar membrane", "Tectorial membrane", "Vestibular membrane"],
-                correct: 1,
-                explanation: "The organ of Corti rests on the basilar membrane, while the tectorial membrane overlies the hair cells. "
-            },
-            {
-                text: "Which cells in the cochlea are primarily responsible for maintaining the ionic composition of endolymph?",
-                options: ["Inner hair cells", "Outer hair cells", "Marginal cells of stria vascularis", "Supporting cells of spiral ligament"],
-                correct: 2,
-                explanation: "Marginal cells of the stria vascularis secrete potassium-rich endolymph essential for hair cell depolarization."
-            },
-            {
-                text: "Which type of epithelium lines the endolymphatic sac?",
-                options: ["Stratified squamous", "Simple squamous", "Simple cuboidal with microvilli", "Pseudostratified columnar"],
-                correct: 2,
-                explanation: "The endolymphatic sac is lined by cuboidal cells with microvilli for absorption and secretion of endolymph."
-            },
-            {
-                text: "What is the main distinguishing histological feature of outer hair cells compared to inner hair cells?",
-                options: ["Stereocilia arranged in a U-shape", "Stereocilia arranged in a V-shape", "More afferent innervation", "Less motility"],
-                correct: 1,
-                explanation: "Outer hair cells have V-shaped stereocilia bundles and are mainly efferent-innervated for cochlear amplification."
-            },
-            {
-                text: "The spiral ganglion contains the cell bodies of which fibers?",
-                options: ["Efferent fibers to outer hair cells", "Afferent fibers from inner hair cells", "Fibers from the vestibular apparatus", "Parasympathetic fibers to cochlea"],
-                correct: 1,
-                explanation: "Spiral ganglion neurons are primary sensory neurons transmitting auditory information from hair cells to the CNS."
-            },
-            {
-                text: "Which structure in the vestibular system detects linear acceleration?",
-                options: ["Crista ampullaris", "Macula of utricle and saccule", "Organ of Corti", "Basilar membrane"],
-                correct: 1,
-                explanation: "Maculae contain hair cells with otoliths to sense linear acceleration and gravity. "
-            },
-            {
-                text: "The stereocilia of vestibular hair cells are embedded in:",
-                options: ["Tectorial membrane", "Otolithic membrane", "Basilar membrane", "Cupula"],
-                correct: 1,
-                explanation: "The otolithic membrane contains calcium carbonate crystals (otoconia) that bend hair cell stereocilia in response to linear motion."
-            },
-            {
-                text: "Cupula is associated with which sensory organ?",
-                options: ["Organ of Corti", "Macula of saccule", "Crista ampullaris", "Spiral ligament"],
-                correct: 2,
-                explanation: "Cupula is a gelatinous structure in the ampullae of semicircular canals that deflects stereocilia during angular motion. "
-            },
-            {
-                text: "Which type of fibers innervates outer hair cells predominantly?",
-                options: ["Type I afferent fibers", "Type II afferent fibers", "Efferent fibers from olivocochlear bundle", "Parasympathetic fibers"],
-                correct: 2,
-                explanation: "Outer hair cells receive mostly efferent fibers that modulate cochlear sensitivity."
-            },
-            {
-                text: "Stria vascularis is composed of which cell types?",
-                options: ["Marginal, intermediate, and basal cells", "Hair cells and supporting cells", "Fibroblasts and Schwann cells", "Crista and cupula cells"],
-                correct: 0,
-                explanation: "These three cell types maintain endolymph production and potassium recycling."
-            },
-            {
-                text: "Which connective tissue layer surrounds the cochlear duct?",
-                options: ["Spiral ligament", "Reissner’s membrane", "Tectorial membrane", "Cupula"],
-                correct: 0,
-                explanation: "The spiral ligament anchors the cochlear duct to the bony wall and supports the stria vascularis."
-            },
-            {
-                text: "The inner ear develops embryologically from:",
-                options: ["Ectodermal otic placode", "Endodermal pouch", "Neural crest", "Mesodermal condensation"],
-                correct: 0,
-                explanation: "The otic placode invaginates to form the otic vesicle, giving rise to cochlea and vestibular apparatus."
-            },
-            {
-                text: "What is the primary histological difference between utricle and saccule maculae?",
-                options: ["Utricle has vertical stereocilia orientation, saccule horizontal", "Utricle horizontal, saccule vertical", "Utricle lacks otoliths", "Saccule lacks hair cells"],
-                correct: 1,
-                explanation: "This orientation allows detection of different axes of linear acceleration (Utricle = horizontal, Saccule = vertical)."
-            },
-            {
-                text: "Which part of the cochlea shows maximum sensitivity to high-frequency sounds?",
-                options: ["Apex of cochlea", "Base of cochlea", "Middle turn", "Spiral ligament"],
-                correct: 1,
-                explanation: "The basilar membrane is narrow and stiff at the base, responding to high-frequency stimuli."
-            },
-            {
-                text: "Supporting cells of the organ of Corti that separate hair cells are called:",
-                options: ["Pillar cells", "Marginal cells", "Claudius cells", "Hensen cells"],
-                correct: 0,
-                explanation: "Inner and outer pillar cells form the tunnel of Corti and provide structural support."
-            },
-            {
-                text: "The primary function of Claudius cells in the cochlea is:",
-                options: ["Secrete endolymph", "Remove potassium from perilymph", "Support outer hair cells and maintain ionic balance", "Transmit sensory signals"],
-                correct: 2,
-                explanation: "Claudius cells lie lateral to outer hair cells and help maintain cochlear homeostasis."
-            },
-            {
-                text: "Which nerve carries vestibular signals to the brain?",
-                options: ["Cochlear nerve", "Vestibular nerve", "Facial nerve", "Glossopharyngeal nerve"],
-                correct: 1,
-                explanation: "Vestibular nerve fibers from semicircular canals, utricle, and saccule transmit balance information to the CNS."
-            },
-            {
-                text: "The kinocilium in vestibular hair cells:",
-                options: ["Degenerates in adult cochlear hair cells", "Is present in cochlear hair cells", "Detects sound frequency", "Forms the tectorial membrane"],
-                correct: 0,
-                explanation: "The kinocilium is retained in vestibular hair cells but regresses in cochlear hair cells after development."
-            },
-            {
-                text: "Which feature differentiates type I and type II vestibular hair cells?",
-                options: ["Type I surrounded by calyx nerve ending", "Type I has multiple stereocilia bundles", "Type II lacks stereocilia", "Type II is only in maculae"],
-                correct: 0,
-                explanation: "Type I hair cells are flask-shaped with calyceal afferent endings, while type II are cylindrical with bouton endings. "
-            },
-            {
-                text: "Tectorial membrane is primarily composed of:",
-                options: ["Collagen type II and glycoproteins", "Collagen type I only", "Elastic fibers", "Keratin"],
-                correct: 0,
-                explanation: "Its acellular structure overlays hair cells and plays a role in mechanoelectrical transduction."
-            }
+      {
+        text: "The organ of Corti is located on which membrane of the cochlea?",
+        options: [
+          "Reissner’s membrane",
+          "Basilar membrane",
+          "Tectorial membrane",
+          "Vestibular membrane",
         ],
+        correct: 1,
+        explanation:
+          "The organ of Corti rests on the basilar membrane, while the tectorial membrane overlies the hair cells. ",
+      },
+      {
+        text: "Which cells in the cochlea are primarily responsible for maintaining the ionic composition of endolymph?",
+        options: [
+          "Inner hair cells",
+          "Outer hair cells",
+          "Marginal cells of stria vascularis",
+          "Supporting cells of spiral ligament",
+        ],
+        correct: 2,
+        explanation:
+          "Marginal cells of the stria vascularis secrete potassium-rich endolymph essential for hair cell depolarization.",
+      },
+      {
+        text: "Which type of epithelium lines the endolymphatic sac?",
+        options: [
+          "Stratified squamous",
+          "Simple squamous",
+          "Simple cuboidal with microvilli",
+          "Pseudostratified columnar",
+        ],
+        correct: 2,
+        explanation:
+          "The endolymphatic sac is lined by cuboidal cells with microvilli for absorption and secretion of endolymph.",
+      },
+      {
+        text: "What is the main distinguishing histological feature of outer hair cells compared to inner hair cells?",
+        options: [
+          "Stereocilia arranged in a U-shape",
+          "Stereocilia arranged in a V-shape",
+          "More afferent innervation",
+          "Less motility",
+        ],
+        correct: 1,
+        explanation:
+          "Outer hair cells have V-shaped stereocilia bundles and are mainly efferent-innervated for cochlear amplification.",
+      },
+      {
+        text: "The spiral ganglion contains the cell bodies of which fibers?",
+        options: [
+          "Efferent fibers to outer hair cells",
+          "Afferent fibers from inner hair cells",
+          "Fibers from the vestibular apparatus",
+          "Parasympathetic fibers to cochlea",
+        ],
+        correct: 1,
+        explanation:
+          "Spiral ganglion neurons are primary sensory neurons transmitting auditory information from hair cells to the CNS.",
+      },
+      {
+        text: "Which structure in the vestibular system detects linear acceleration?",
+        options: [
+          "Crista ampullaris",
+          "Macula of utricle and saccule",
+          "Organ of Corti",
+          "Basilar membrane",
+        ],
+        correct: 1,
+        explanation:
+          "Maculae contain hair cells with otoliths to sense linear acceleration and gravity. ",
+      },
+      {
+        text: "The stereocilia of vestibular hair cells are embedded in:",
+        options: [
+          "Tectorial membrane",
+          "Otolithic membrane",
+          "Basilar membrane",
+          "Cupula",
+        ],
+        correct: 1,
+        explanation:
+          "The otolithic membrane contains calcium carbonate crystals (otoconia) that bend hair cell stereocilia in response to linear motion.",
+      },
+      {
+        text: "Cupula is associated with which sensory organ?",
+        options: [
+          "Organ of Corti",
+          "Macula of saccule",
+          "Crista ampullaris",
+          "Spiral ligament",
+        ],
+        correct: 2,
+        explanation:
+          "Cupula is a gelatinous structure in the ampullae of semicircular canals that deflects stereocilia during angular motion. ",
+      },
+      {
+        text: "Which type of fibers innervates outer hair cells predominantly?",
+        options: [
+          "Type I afferent fibers",
+          "Type II afferent fibers",
+          "Efferent fibers from olivocochlear bundle",
+          "Parasympathetic fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Outer hair cells receive mostly efferent fibers that modulate cochlear sensitivity.",
+      },
+      {
+        text: "Stria vascularis is composed of which cell types?",
+        options: [
+          "Marginal, intermediate, and basal cells",
+          "Hair cells and supporting cells",
+          "Fibroblasts and Schwann cells",
+          "Crista and cupula cells",
+        ],
+        correct: 0,
+        explanation:
+          "These three cell types maintain endolymph production and potassium recycling.",
+      },
+      {
+        text: "Which connective tissue layer surrounds the cochlear duct?",
+        options: [
+          "Spiral ligament",
+          "Reissner’s membrane",
+          "Tectorial membrane",
+          "Cupula",
+        ],
+        correct: 0,
+        explanation:
+          "The spiral ligament anchors the cochlear duct to the bony wall and supports the stria vascularis.",
+      },
+      {
+        text: "The inner ear develops embryologically from:",
+        options: [
+          "Ectodermal otic placode",
+          "Endodermal pouch",
+          "Neural crest",
+          "Mesodermal condensation",
+        ],
+        correct: 0,
+        explanation:
+          "The otic placode invaginates to form the otic vesicle, giving rise to cochlea and vestibular apparatus.",
+      },
+      {
+        text: "What is the primary histological difference between utricle and saccule maculae?",
+        options: [
+          "Utricle has vertical stereocilia orientation, saccule horizontal",
+          "Utricle horizontal, saccule vertical",
+          "Utricle lacks otoliths",
+          "Saccule lacks hair cells",
+        ],
+        correct: 1,
+        explanation:
+          "This orientation allows detection of different axes of linear acceleration (Utricle = horizontal, Saccule = vertical).",
+      },
+      {
+        text: "Which part of the cochlea shows maximum sensitivity to high-frequency sounds?",
+        options: [
+          "Apex of cochlea",
+          "Base of cochlea",
+          "Middle turn",
+          "Spiral ligament",
+        ],
+        correct: 1,
+        explanation:
+          "The basilar membrane is narrow and stiff at the base, responding to high-frequency stimuli.",
+      },
+      {
+        text: "Supporting cells of the organ of Corti that separate hair cells are called:",
+        options: [
+          "Pillar cells",
+          "Marginal cells",
+          "Claudius cells",
+          "Hensen cells",
+        ],
+        correct: 0,
+        explanation:
+          "Inner and outer pillar cells form the tunnel of Corti and provide structural support.",
+      },
+      {
+        text: "The primary function of Claudius cells in the cochlea is:",
+        options: [
+          "Secrete endolymph",
+          "Remove potassium from perilymph",
+          "Support outer hair cells and maintain ionic balance",
+          "Transmit sensory signals",
+        ],
+        correct: 2,
+        explanation:
+          "Claudius cells lie lateral to outer hair cells and help maintain cochlear homeostasis.",
+      },
+      {
+        text: "Which nerve carries vestibular signals to the brain?",
+        options: [
+          "Cochlear nerve",
+          "Vestibular nerve",
+          "Facial nerve",
+          "Glossopharyngeal nerve",
+        ],
+        correct: 1,
+        explanation:
+          "Vestibular nerve fibers from semicircular canals, utricle, and saccule transmit balance information to the CNS.",
+      },
+      {
+        text: "The kinocilium in vestibular hair cells:",
+        options: [
+          "Degenerates in adult cochlear hair cells",
+          "Is present in cochlear hair cells",
+          "Detects sound frequency",
+          "Forms the tectorial membrane",
+        ],
+        correct: 0,
+        explanation:
+          "The kinocilium is retained in vestibular hair cells but regresses in cochlear hair cells after development.",
+      },
+      {
+        text: "Which feature differentiates type I and type II vestibular hair cells?",
+        options: [
+          "Type I surrounded by calyx nerve ending",
+          "Type I has multiple stereocilia bundles",
+          "Type II lacks stereocilia",
+          "Type II is only in maculae",
+        ],
+        correct: 0,
+        explanation:
+          "Type I hair cells are flask-shaped with calyceal afferent endings, while type II are cylindrical with bouton endings. ",
+      },
+      {
+        text: "Tectorial membrane is primarily composed of:",
+        options: [
+          "Collagen type II and glycoproteins",
+          "Collagen type I only",
+          "Elastic fibers",
+          "Keratin",
+        ],
+        correct: 0,
+        explanation:
+          "Its acellular structure overlays hair cells and plays a role in mechanoelectrical transduction.",
+      },
+    ],
     "Histology of Eye": [
-            {
-                text: "Which layer of the cornea is primarily responsible for its transparency due to regular arrangement of collagen fibrils?",
-                options: ["Epithelium", "Bowman's layer", "Stroma", "Descemet's membrane"],
-                correct: 2,
-                explanation: "The stroma forms ~90% of corneal thickness. Its collagen fibrils are uniformly arranged in lamellae, minimizing light scattering and maintaining transparency."
-            },
-            {
-                text: "Which retinal cells are directly responsible for lateral inhibition to enhance visual contrast?",
-                options: ["Photoreceptors", "Horizontal cells", "Bipolar cells", "Amacrine cells"],
-                correct: 1,
-                explanation: "Horizontal cells mediate lateral inhibition between photoreceptors and bipolar cells, sharpening contrast and edges in visual perception."
-            },
-            {
-                text: "In the lens, which junction type is crucial for maintaining metabolic coupling between lens fibers?",
-                options: ["Tight junctions", "Gap junctions", "Desmosomes", "Hemidesmosomes"],
-                correct: 1,
-                explanation: "Lens fibers are avascular; gap junctions allow diffusion of ions, metabolites, and small molecules between fibers, maintaining lens transparency."
-            },
-            {
-                text: "Which retinal layer contains the synapses between photoreceptors and bipolar cells?",
-                options: ["Outer nuclear layer", "Outer plexiform layer", "Inner nuclear layer", "Inner plexiform layer"],
-                correct: 1,
-                explanation: "The outer plexiform layer is where photoreceptors form synapses with bipolar and horizontal cells."
-            },
-            {
-                text: "Which component of the uveal tract contains fenestrated capillaries to supply the outer retina?",
-                options: ["Choroid", "Iris", "Ciliary body", "Sclera"],
-                correct: 0,
-                explanation: "Choroidal vessels are highly fenestrated, providing oxygen and nutrients to the photoreceptor layer."
-            },
-            {
-                text: "Which retinal cells are responsible for the regeneration of the visual pigment?",
-                options: ["Müller cells", "Retinal pigment epithelium (RPE) cells", "Bipolar cells", "Ganglion cells"],
-                correct: 1,
-                explanation: "RPE cells phagocytose shed photoreceptor outer segments and recycle retinal for phototransduction."
-            },
-            {
-                text: "Which part of the eye develops from neural ectoderm?",
-                options: ["Lens", "Corneal epithelium", "Retina", "Sclera"],
-                correct: 2,
-                explanation: "The retina arises from the optic cup (neural ectoderm). Lens develops from surface ectoderm."
-            },
-            {
-                text: "Which retinal layer is absent at the fovea centralis to allow high-acuity vision?",
-                options: ["Photoreceptor layer", "Inner nuclear layer", "Ganglion cell layer", "RPE"],
-                correct: 2,
-                explanation: "At the fovea, inner layers (like the ganglion cell layer) are displaced laterally to minimize light scattering, allowing sharp central vision."
-            },
-            {
-                text: "Which structure in the ciliary body produces aqueous humor?",
-                options: ["Ciliary muscle", "Ciliary processes", "Zonular fibers", "Pars plana"],
-                correct: 1,
-                explanation: "Non-pigmented epithelium of the ciliary processes secretes aqueous humor into the posterior chamber."
-            },
-            {
-                text: "Which layer of the cornea acts as the basement membrane for the endothelium?",
-                options: ["Bowman's layer", "Stroma", "Descemet's membrane", "Epithelium"],
-                correct: 2,
-                explanation: "Descemet’s membrane is the thick basal lamina of corneal endothelium and regenerates throughout life."
-            },
-            {
-                text: "Which photoreceptors are more numerous and highly sensitive in dim light conditions?",
-                options: ["Cones", "Rods", "Both equally", "None"],
-                correct: 1,
-                explanation: "Rods have high sensitivity, function in scotopic (low-light) vision, but do not mediate color perception."
-            },
-            {
-                text: "Which layer of the retina is closest to the choroid?",
-                options: ["Ganglion cell layer", "Photoreceptor layer", "Inner nuclear layer", "Nerve fiber layer"],
-                correct: 1,
-                explanation: "The photoreceptor outer segments lie adjacent to the RPE and choroid for nutrient support."
-            },
-            {
-                text: "Which junctions maintain the blood-retinal barrier in the RPE?",
-                options: ["Gap junctions", "Tight junctions", "Adherens junctions", "Desmosomes"],
-                correct: 1,
-                explanation: "Zonula occludens (tight junctions) between RPE cells restrict free passage of molecules, forming the outer blood-retinal barrier."
-            },
-            {
-                text: "Which layer of the retina contains the cell bodies of bipolar, horizontal, and amacrine cells?",
-                options: ["Outer nuclear layer", "Inner nuclear layer", "Ganglion cell layer", "Inner plexiform layer"],
-                correct: 1,
-                explanation: "The inner nuclear layer houses the nuclei of bipolar, horizontal, and amacrine cells."
-            },
-            {
-                text: "Which layer of the retina is responsible for action potential generation?",
-                options: ["Photoreceptor layer", "Bipolar cell layer", "Ganglion cell layer", "Outer plexiform layer"],
-                correct: 2,
-                explanation: "Ganglion cells generate action potentials transmitted via the optic nerve to the brain."
-            },
-            {
-                text: "Which of the following corneal layers does not regenerate if damaged?",
-                options: ["Epithelium", "Bowman's layer", "Stroma", "Endothelium"],
-                correct: 1,
-                explanation: "Bowman's layer is acellular; injury leads to scarring rather than regeneration."
-            },
-            {
-                text: "Which type of photoreceptor contains iodopsins for color vision?",
-                options: ["Rods", "Cones", "Ganglion cells", "Horizontal cells"],
-                correct: 1,
-                explanation: "Cones contain three types of opsins (iodopsins) for red, green, and blue light perception."
-            },
-            {
-                text: "Which cells in the retina function as glial support and maintain extracellular ion balance?",
-                options: ["Horizontal cells", "Müller cells", "Amacrine cells", "Bipolar cells"],
-                correct: 1,
-                explanation: "Müller cells span the retina, support neurons, regulate ions, and contribute to the inner limiting membrane."
-            },
-            {
-                text: "Which type of lens fibers are formed first during embryonic development and persist throughout life?",
-                options: ["Secondary fibers", "Tertiary fibers", "Primary fibers", "Cortical fibers"],
-                correct: 2,
-                explanation: "Primary fibers form the embryonic nucleus of the lens and remain lifelong; secondary fibers form the cortex."
-            },
-            {
-                text: "Which retinal layer contains the axons of ganglion cells forming the optic nerve?",
-                options: ["Inner nuclear layer", "Outer plexiform layer", "Nerve fiber layer", "Photoreceptor layer"],
-                correct: 2,
-                explanation: "Ganglion cell axons converge at the optic disc forming the optic nerve; this layer is closest to the vitreous."
-            }
-        ],  
+      {
+        text: "Which layer of the cornea is primarily responsible for its transparency due to regular arrangement of collagen fibrils?",
+        options: [
+          "Epithelium",
+          "Bowman's layer",
+          "Stroma",
+          "Descemet's membrane",
+        ],
+        correct: 2,
+        explanation:
+          "The stroma forms ~90% of corneal thickness. Its collagen fibrils are uniformly arranged in lamellae, minimizing light scattering and maintaining transparency.",
+      },
+      {
+        text: "Which retinal cells are directly responsible for lateral inhibition to enhance visual contrast?",
+        options: [
+          "Photoreceptors",
+          "Horizontal cells",
+          "Bipolar cells",
+          "Amacrine cells",
+        ],
+        correct: 1,
+        explanation:
+          "Horizontal cells mediate lateral inhibition between photoreceptors and bipolar cells, sharpening contrast and edges in visual perception.",
+      },
+      {
+        text: "In the lens, which junction type is crucial for maintaining metabolic coupling between lens fibers?",
+        options: [
+          "Tight junctions",
+          "Gap junctions",
+          "Desmosomes",
+          "Hemidesmosomes",
+        ],
+        correct: 1,
+        explanation:
+          "Lens fibers are avascular; gap junctions allow diffusion of ions, metabolites, and small molecules between fibers, maintaining lens transparency.",
+      },
+      {
+        text: "Which retinal layer contains the synapses between photoreceptors and bipolar cells?",
+        options: [
+          "Outer nuclear layer",
+          "Outer plexiform layer",
+          "Inner nuclear layer",
+          "Inner plexiform layer",
+        ],
+        correct: 1,
+        explanation:
+          "The outer plexiform layer is where photoreceptors form synapses with bipolar and horizontal cells.",
+      },
+      {
+        text: "Which component of the uveal tract contains fenestrated capillaries to supply the outer retina?",
+        options: ["Choroid", "Iris", "Ciliary body", "Sclera"],
+        correct: 0,
+        explanation:
+          "Choroidal vessels are highly fenestrated, providing oxygen and nutrients to the photoreceptor layer.",
+      },
+      {
+        text: "Which retinal cells are responsible for the regeneration of the visual pigment?",
+        options: [
+          "Müller cells",
+          "Retinal pigment epithelium (RPE) cells",
+          "Bipolar cells",
+          "Ganglion cells",
+        ],
+        correct: 1,
+        explanation:
+          "RPE cells phagocytose shed photoreceptor outer segments and recycle retinal for phototransduction.",
+      },
+      {
+        text: "Which part of the eye develops from neural ectoderm?",
+        options: ["Lens", "Corneal epithelium", "Retina", "Sclera"],
+        correct: 2,
+        explanation:
+          "The retina arises from the optic cup (neural ectoderm). Lens develops from surface ectoderm.",
+      },
+      {
+        text: "Which retinal layer is absent at the fovea centralis to allow high-acuity vision?",
+        options: [
+          "Photoreceptor layer",
+          "Inner nuclear layer",
+          "Ganglion cell layer",
+          "RPE",
+        ],
+        correct: 2,
+        explanation:
+          "At the fovea, inner layers (like the ganglion cell layer) are displaced laterally to minimize light scattering, allowing sharp central vision.",
+      },
+      {
+        text: "Which structure in the ciliary body produces aqueous humor?",
+        options: [
+          "Ciliary muscle",
+          "Ciliary processes",
+          "Zonular fibers",
+          "Pars plana",
+        ],
+        correct: 1,
+        explanation:
+          "Non-pigmented epithelium of the ciliary processes secretes aqueous humor into the posterior chamber.",
+      },
+      {
+        text: "Which layer of the cornea acts as the basement membrane for the endothelium?",
+        options: [
+          "Bowman's layer",
+          "Stroma",
+          "Descemet's membrane",
+          "Epithelium",
+        ],
+        correct: 2,
+        explanation:
+          "Descemet’s membrane is the thick basal lamina of corneal endothelium and regenerates throughout life.",
+      },
+      {
+        text: "Which photoreceptors are more numerous and highly sensitive in dim light conditions?",
+        options: ["Cones", "Rods", "Both equally", "None"],
+        correct: 1,
+        explanation:
+          "Rods have high sensitivity, function in scotopic (low-light) vision, but do not mediate color perception.",
+      },
+      {
+        text: "Which layer of the retina is closest to the choroid?",
+        options: [
+          "Ganglion cell layer",
+          "Photoreceptor layer",
+          "Inner nuclear layer",
+          "Nerve fiber layer",
+        ],
+        correct: 1,
+        explanation:
+          "The photoreceptor outer segments lie adjacent to the RPE and choroid for nutrient support.",
+      },
+      {
+        text: "Which junctions maintain the blood-retinal barrier in the RPE?",
+        options: [
+          "Gap junctions",
+          "Tight junctions",
+          "Adherens junctions",
+          "Desmosomes",
+        ],
+        correct: 1,
+        explanation:
+          "Zonula occludens (tight junctions) between RPE cells restrict free passage of molecules, forming the outer blood-retinal barrier.",
+      },
+      {
+        text: "Which layer of the retina contains the cell bodies of bipolar, horizontal, and amacrine cells?",
+        options: [
+          "Outer nuclear layer",
+          "Inner nuclear layer",
+          "Ganglion cell layer",
+          "Inner plexiform layer",
+        ],
+        correct: 1,
+        explanation:
+          "The inner nuclear layer houses the nuclei of bipolar, horizontal, and amacrine cells.",
+      },
+      {
+        text: "Which layer of the retina is responsible for action potential generation?",
+        options: [
+          "Photoreceptor layer",
+          "Bipolar cell layer",
+          "Ganglion cell layer",
+          "Outer plexiform layer",
+        ],
+        correct: 2,
+        explanation:
+          "Ganglion cells generate action potentials transmitted via the optic nerve to the brain.",
+      },
+      {
+        text: "Which of the following corneal layers does not regenerate if damaged?",
+        options: ["Epithelium", "Bowman's layer", "Stroma", "Endothelium"],
+        correct: 1,
+        explanation:
+          "Bowman's layer is acellular; injury leads to scarring rather than regeneration.",
+      },
+      {
+        text: "Which type of photoreceptor contains iodopsins for color vision?",
+        options: ["Rods", "Cones", "Ganglion cells", "Horizontal cells"],
+        correct: 1,
+        explanation:
+          "Cones contain three types of opsins (iodopsins) for red, green, and blue light perception.",
+      },
+      {
+        text: "Which cells in the retina function as glial support and maintain extracellular ion balance?",
+        options: [
+          "Horizontal cells",
+          "Müller cells",
+          "Amacrine cells",
+          "Bipolar cells",
+        ],
+        correct: 1,
+        explanation:
+          "Müller cells span the retina, support neurons, regulate ions, and contribute to the inner limiting membrane.",
+      },
+      {
+        text: "Which type of lens fibers are formed first during embryonic development and persist throughout life?",
+        options: [
+          "Secondary fibers",
+          "Tertiary fibers",
+          "Primary fibers",
+          "Cortical fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Primary fibers form the embryonic nucleus of the lens and remain lifelong; secondary fibers form the cortex.",
+      },
+      {
+        text: "Which retinal layer contains the axons of ganglion cells forming the optic nerve?",
+        options: [
+          "Inner nuclear layer",
+          "Outer plexiform layer",
+          "Nerve fiber layer",
+          "Photoreceptor layer",
+        ],
+        correct: 2,
+        explanation:
+          "Ganglion cell axons converge at the optic disc forming the optic nerve; this layer is closest to the vitreous.",
+      },
+    ],
   },
 
-"basic-tissues": {
-      "Cell Structure": [
-            {
-                text: "A cell with abundant free ribosomes but poorly developed rough endoplasmic reticulum is most likely specialized for:",
-                options: ["Secretion of glycoproteins", "Intracellular protein synthesis for cytosolic use", "Steroid hormone synthesis", "Detoxification reactions"],
-                correct: 1,
-                explanation: "Free ribosomes synthesize proteins destined for the cytosol, nucleus, mitochondria, or peroxisomes—not for secretion or membranes."
-            },
-            {
-                text: "Which feature best distinguishes euchromatin from heterochromatin at the ultrastructural level?",
-                options: ["Presence of histones", "Degree of DNA methylation", "Electron density and transcriptional activity", "Association with nuclear lamina"],
-                correct: 2,
-                explanation: "Euchromatin is lightly stained (electron-lucent) and transcriptionally active; heterochromatin is electron-dense and inactive."
-            },
-            {
-                text: "Which organelle would be most affected by a mutation preventing insertion of signal recognition particle (SRP) receptors?",
-                options: ["Golgi apparatus", "Smooth endoplasmic reticulum", "Rough endoplasmic reticulum", "Mitochondria"],
-                correct: 2,
-                explanation: "SRP receptors are required for docking ribosomes synthesizing secretory proteins onto the rough ER."
-            },
-            {
-                text: "A cell actively synthesizing steroid hormones would show hypertrophy of which organelle?",
-                options: ["Rough endoplasmic reticulum", "Golgi apparatus", "Smooth endoplasmic reticulum", "Lysosomes"],
-                correct: 2,
-                explanation: "Steroid synthesis depends on enzymes embedded in the smooth ER membrane."
-            },
-            {
-                text: "Which nuclear structure is directly responsible for ribosomal RNA synthesis?",
-                options: ["Nuclear pore complex", "Chromatin", "Nucleolus", "Nuclear lamina"],
-                correct: 2,
-                explanation: "The nucleolus synthesizes rRNA and assembles ribosomal subunits."
-            },
-            {
-                text: "If a drug selectively disrupts microtubules, which cellular function is most immediately impaired?",
-                options: ["Cell adhesion", "Protein synthesis", "Intracellular vesicle transport", "Glycolysis"],
-                correct: 2,
-                explanation: "Microtubules are tracks for motor proteins transporting vesicles and organelles."
-            },
-            {
-                text: "Which statement about mitochondria is TRUE?",
-                options: ["They contain circular DNA without histones", "They are synthesized de novo during cell division", "All mitochondrial proteins are encoded by mitochondrial DNA", "Their inner membrane is freely permeable to ions"],
-                correct: 0,
-                explanation: "Mitochondrial DNA is circular and lacks histones; most mitochondrial proteins are nuclear-encoded."
-            },
-            {
-                text: "A cell with a prominent Golgi apparatus and well-developed rough ER is most likely:",
-                options: ["Actively dividing", "Actively secreting proteins", "Undergoing apoptosis", "Specialized for lipid metabolism"],
-                correct: 1,
-                explanation: "RER synthesizes secretory proteins; Golgi modifies and packages them."
-            },
-            {
-                text: "Which component of the nuclear envelope regulates selective transport between nucleus and cytoplasm?",
-                options: ["Nuclear lamina", "Nuclear pores", "Inner nuclear membrane", "Perinuclear cistern"],
-                correct: 1,
-                explanation: "Nuclear pore complexes actively regulate macromolecular transport."
-            },
-            {
-                text: "Failure of lysosomal acidification would MOST directly impair:",
-                options: ["Protein synthesis", "Autophagy", "Glycosylation", "ATP generation"],
-                correct: 1,
-                explanation: "Lysosomal enzymes require an acidic pH to degrade intracellular components during autophagy."
-            },
-            {
-                text: "Which cytoskeletal element resists tensile (stretching) forces?",
-                options: ["Microtubules", "Actin filaments", "Intermediate filaments", "Centrioles"],
-                correct: 2,
-                explanation: "Intermediate filaments provide mechanical strength and resist tension."
-            },
-            {
-                text: "Which organelle lacks a surrounding membrane?",
-                options: ["Lysosome", "Ribosome", "Peroxisome", "Golgi cisterna"],
-                correct: 1,
-                explanation: "Ribosomes are non-membranous ribonucleoprotein complexes."
-            },
-            {
-                text: "Which modification of proteins primarily occurs in the cis-Golgi network?",
-                options: ["Sulfation", "O-linked glycosylation", "Initial trimming of N-linked oligosaccharides", "Packaging into secretory granules"],
-                correct: 2,
-                explanation: "The cis-Golgi performs early processing of N-linked carbohydrates received from the ER."
-            },
-            {
-                text: "Which cellular change is most characteristic of apoptosis?",
-                options: ["Cell swelling", "Mitochondrial rupture", "Chromatin condensation and fragmentation", "Inflammatory response"],
-                correct: 2,
-                explanation: "Apoptosis involves nuclear condensation without inflammation."
-            },
-            {
-                text: "A cell lacking functional peroxisomes would most likely accumulate:",
-                options: ["Glycogen", "Hydrogen peroxide", "Very long-chain fatty acids", "Lactic acid"],
-                correct: 2,
-                explanation: "Peroxisomes oxidize very long-chain fatty acids."
-            },
-            {
-                text: "Which structure anchors chromatin to the inner nuclear membrane?",
-                options: ["Nuclear pore complex", "Nucleolus", "Nuclear lamina", "Centromere"],
-                correct: 2,
-                explanation: "The nuclear lamina provides structural support and chromatin anchorage."
-            },
-            {
-                text: "Which event occurs FIRST during protein secretion?",
-                options: ["Vesicle budding from Golgi", "Translation on membrane-bound ribosomes", "Post-translational modification", "Exocytosis"],
-                correct: 1,
-                explanation: "Translation on RER-bound ribosomes initiates the secretory pathway."
-            },
-            {
-                text: "Which cytoskeletal structure forms the core of cilia and flagella?",
-                options: ["Actin filaments", "Intermediate filaments", "Microtubules in a 9+2 arrangement", "Microtubules in a 9+0 arrangement"],
-                correct: 2,
-                explanation: "Motile cilia have a classic 9+2 microtubule axoneme."
-            },
-            {
-                text: "Which cellular component is MOST sensitive to hypoxia?",
-                options: ["Ribosomes", "Lysosomes", "Mitochondria", "Golgi apparatus"],
-                correct: 2,
-                explanation: "Mitochondria require oxygen for oxidative phosphorylation."
-            },
-            {
-                text: "A cell showing extensive SER, abundant mitochondria, and lipid droplets is most likely:",
-                options: ["Neuron", "Plasma cell", "Steroid-secreting cell", "Goblet cell"],
-                correct: 2,
-                explanation: "Steroid-producing cells rely on SER and mitochondria for lipid metabolism."
-            }
+  "basic-tissues": {
+    "Cell Structure": [
+      {
+        text: "A cell with abundant free ribosomes but poorly developed rough endoplasmic reticulum is most likely specialized for:",
+        options: [
+          "Secretion of glycoproteins",
+          "Intracellular protein synthesis for cytosolic use",
+          "Steroid hormone synthesis",
+          "Detoxification reactions",
         ],
-      "Epithelia": [
-            {
-                text: "A stratified epithelium is best identified histologically by:",
-                options: ["The number of cell layers visible at high magnification", "The number of cell layers contacting the basement membrane", "The number of cell layers containing nuclei", "The thickness of the epithelium"],
-                correct: 1,
-                explanation: "Classification depends on how many layers contact the basement membrane, not how many layers appear or contain nuclei."
-            },
-            {
-                text: "Which feature most reliably distinguishes pseudostratified columnar epithelium from stratified columnar epithelium?",
-                options: ["Variable nuclear height", "Presence of cilia", "All cells rest on the basement membrane", "Presence of goblet cells"],
-                correct: 2,
-                explanation: "In pseudostratified epithelium, all cells contact the basement membrane, even if they don’t reach the surface."
-            },
-            {
-                text: "Loss of which junctional complex would most directly increase paracellular permeability?",
-                options: ["Desmosomes", "Gap junctions", "Tight junctions", "Hemidesmosomes"],
-                correct: 2,
-                explanation: "Tight junctions (zonula occludens) seal the intercellular space and regulate paracellular transport."
-            },
-            {
-                text: "Which epithelial specialization primarily increases surface area without significantly affecting diffusion distance?",
-                options: ["Cilia", "Stereocilia", "Microvilli", "Keratin filaments"],
-                correct: 2,
-                explanation: "Microvilli dramatically increase surface area while remaining extremely thin."
-            },
-            {
-                text: "Which epithelium is best adapted to withstand mechanical stress AND water impermeability?",
-                options: ["Stratified squamous non-keratinized", "Simple squamous", "Transitional epithelium", "Stratified squamous keratinized"],
-                correct: 3,
-                explanation: "Keratinized epithelium resists abrasion and prevents water loss due to keratin and lipid barriers."
-            },
-            {
-                text: "Which statement about epithelial polarity is MOST accurate?",
-                options: ["Basal surfaces lack cytoskeletal attachments", "Apical membranes have identical protein composition across epithelia", "Polarity is maintained by tight junctions", "Polarity is independent of basement membrane contact"],
-                correct: 2,
-                explanation: "Tight junctions prevent lateral diffusion of membrane proteins, maintaining polarity."
-            },
-            {
-                text: "A tumor derived from epithelial tissue is classified as:",
-                options: ["Sarcoma", "Lymphoma", "Carcinoma", "Adenoma"],
-                correct: 2,
-                explanation: "Carcinomas arise from epithelial tissues (adenoma is benign glandular epithelium)."
-            },
-            {
-                text: "Which epithelium shows the greatest capacity for rapid regeneration?",
-                options: ["Stratified squamous epithelium", "Simple cuboidal epithelium", "Simple squamous epithelium", "Transitional epithelium"],
-                correct: 0,
-                explanation: "Basal cells in stratified squamous epithelium undergo continuous mitosis."
-            },
-            {
-                text: "Which cell junction provides mechanical strength by anchoring intermediate filaments?",
-                options: ["Tight junction", "Gap junction", "Adherens junction", "Desmosome"],
-                correct: 3,
-                explanation: "Desmosomes link intermediate filaments (keratin) between cells."
-            },
-            {
-                text: "Failure of hemidesmosomes would most directly impair:",
-                options: ["Cell-to-cell communication", "Attachment to basement membrane", "Apical surface stability", "Paracellular diffusion"],
-                correct: 1,
-                explanation: "Hemidesmosomes anchor epithelial cells to the basal lamina."
-            },
-            {
-                text: "Which epithelium allows stretching while maintaining barrier function?",
-                options: ["Stratified squamous non-keratinized", "Simple cuboidal", "Pseudostratified columnar", "Transitional epithelium"],
-                correct: 3,
-                explanation: "Transitional epithelium has specialized umbrella cells that flatten during distension."
-            },
-            {
-                text: "Which feature is unique to epithelial tissue?",
-                options: ["Presence of extracellular matrix", "High cellularity and avascularity", "Presence of fibroblasts", "Elastic fibers"],
-                correct: 1,
-                explanation: "Epithelia are highly cellular and avascular, relying on diffusion."
-            },
-            {
-                text: "Which epithelial cell type contributes directly to mucosal immunity?",
-                options: ["Goblet cells", "Basal cells", "Enterocytes", "M cells"],
-                correct: 3,
-                explanation: "M cells transport antigens to immune cells in mucosa-associated lymphoid tissue."
-            },
-            {
-                text: "Which change would most impair epithelial transport of ions?",
-                options: ["Loss of cilia", "Loss of tight junctions", "Loss of desmosomes", "Loss of keratin"],
-                correct: 1,
-                explanation: "Tight junctions maintain electrochemical gradients necessary for ion transport."
-            },
-            {
-                text: "A section shows tall cells with basally placed nuclei, abundant mitochondria, and apical microvilli. This epithelium is specialized primarily for:",
-                options: ["Protection", "Diffusion", "Secretion", "Absorption"],
-                correct: 3,
-                explanation: "These features indicate absorptive epithelium (e.g., intestinal)."
-            },
-            {
-                text: "Which epithelial feature best explains rapid turnover after injury?",
-                options: ["Tight junctions", "Basal lamina", "High mitotic rate of basal cells", "Presence of cilia"],
-                correct: 2,
-                explanation: "Stem-like basal cells divide continuously."
-            },
-            {
-                text: "Which epithelium is most susceptible to damage by ischemia?",
-                options: ["Stratified squamous keratinized", "Simple cuboidal", "Simple squamous", "Transitional"],
-                correct: 2,
-                explanation: "Simple squamous epithelium is extremely thin and metabolically sensitive."
-            },
-            {
-                text: "Which statement about basement membrane is TRUE?",
-                options: ["It is produced only by connective tissue", "It stains poorly with PAS", "It anchors epithelium and regulates diffusion", "It contains elastic fibers"],
-                correct: 2,
-                explanation: "Basement membrane provides structural support and selective permeability."
-            },
-            {
-                text: "Loss of gap junctions would most directly impair:",
-                options: ["Mechanical stability", "Cell signaling", "Water retention", "Cell adhesion to ECM"],
-                correct: 1,
-                explanation: "Gap junctions allow direct cytoplasmic communication between cells."
-            },
-            {
-                text: "Which epithelial adaptation best supports directional transport?",
-                options: ["Stratification", "Cell polarity", "Keratinization", "Ciliation"],
-                correct: 1,
-                explanation: "Polarized distribution of transporters enables vectorial movement."
-            }
+        correct: 1,
+        explanation:
+          "Free ribosomes synthesize proteins destined for the cytosol, nucleus, mitochondria, or peroxisomes—not for secretion or membranes.",
+      },
+      {
+        text: "Which feature best distinguishes euchromatin from heterochromatin at the ultrastructural level?",
+        options: [
+          "Presence of histones",
+          "Degree of DNA methylation",
+          "Electron density and transcriptional activity",
+          "Association with nuclear lamina",
         ],
-      "General Connective Tissue": [
-            {
-                text: "Which feature best distinguishes mesenchymal connective tissue from loose connective tissue proper in routine histological sections?",
-                options: ["Abundance of ground substance", "Presence of undifferentiated stellate cells", "Sparse collagen fibers", "High vascularity"],
-                correct: 1,
-                explanation: "Mesenchymal tissue is characterized by undifferentiated stellate cells with long processes, unlike loose connective tissue which contains differentiated fibroblasts."
-            },
-            {
-                text: "The primary reason reticular fibers are poorly visualized with H&E stain is due to their:",
-                options: ["Elastic protein content", "Thin diameter and glycosylation", "Lack of cross-linking", "Intracellular location"],
-                correct: 1,
-                explanation: "Reticular fibers are thin type III collagen fibers coated with carbohydrates, requiring silver stains for visualization."
-            },
-            {
-                text: "Which cell type is most responsible for initiating inflammatory responses in connective tissue?",
-                options: ["Fibroblast", "Mast cell", "Plasma cell", "Macrophage"],
-                correct: 1,
-                explanation: "Mast cells release histamine, heparin, and cytokines, triggering vascular changes early in inflammation."
-            },
-            {
-                text: "A connective tissue sample shows densely packed collagen fibers arranged in multiple directions. This tissue most likely functions to:",
-                options: ["Resist unidirectional tensile stress", "Provide elastic recoil", "Withstand stress from various directions", "Support hematopoiesis"],
-                correct: 2,
-                explanation: "Dense irregular connective tissue resists multidirectional mechanical forces."
-            },
-            {
-                text: "Which molecular component contributes most to the hydration and compressive resistance of ground substance?",
-                options: ["Fibronectin", "Collagen", "Proteoglycans", "Elastin"],
-                correct: 2,
-                explanation: "Proteoglycans bind water via glycosaminoglycans, providing turgidity and resistance to compression."
-            },
-            {
-                text: "Plasma cells can be confidently identified histologically by:",
-                options: ["Central euchromatic nucleus", "Prominent nucleolus", "Clock-face chromatin pattern", "Scant rough endoplasmic reticulum"],
-                correct: 2,
-                explanation: "Plasma cells show eccentric nuclei with clumped heterochromatin, creating a clock-face appearance."
-            },
-            {
-                text: "Which connective tissue cell is derived from monocytes and exhibits phagocytic activity?",
-                options: ["Fibroblast", "Mast cell", "Macrophage", "Plasma cell"],
-                correct: 2,
-                explanation: "Macrophages originate from monocytes and serve immune and phagocytic roles."
-            },
-            {
-                text: "Elastic fibers differ from collagen fibers primarily due to their:",
-                options: ["Resistance to enzymatic degradation", "Ability to recoil after stretching", "Intracellular assembly", "Higher tensile strength"],
-                correct: 1,
-                explanation: "Elastic fibers contain elastin and fibrillin, allowing stretch and recoil."
-            },
-            {
-                text: "Which connective tissue component is MOST responsible for cell adhesion and migration?",
-                options: ["Hyaluronic acid", "Fibronectin", "Elastin", "Type I collagen"],
-                correct: 1,
-                explanation: "Fibronectin links cells to extracellular matrix and facilitates cell migration and adhesion."
-            },
-            {
-                text: "Which feature best differentiates dense regular connective tissue from dense irregular connective tissue?",
-                options: ["Vascularity", "Fiber thickness", "Orientation of collagen fibers", "Cell density"],
-                correct: 2,
-                explanation: "Dense regular CT has parallel collagen bundles, aligned with the direction of stress."
-            },
-            {
-                text: "Ground substance is electron-lucent under electron microscopy primarily because it:",
-                options: ["Lacks protein", "Is highly hydrated", "Contains elastic fibers", "Is intracellular"],
-                correct: 1,
-                explanation: "The high water content of ground substance makes it electron-lucent."
-            },
-            {
-                text: "Which cell is responsible for collagen synthesis in normal connective tissue?",
-                options: ["Mast cell", "Macrophage", "Fibroblast", "Plasma cell"],
-                correct: 2,
-                explanation: "Fibroblasts synthesize collagen, elastin, and ground substance components."
-            },
-            {
-                text: "Which staining method is BEST for demonstrating elastic fibers?",
-                options: ["Periodic acid–Schiff", "Masson's trichrome", "Verhoeff’s stain", "Silver impregnation"],
-                correct: 2,
-                explanation: "Verhoeff’s stain selectively highlights elastic fibers."
-            },
-            {
-                text: "The predominant collagen type in reticular fibers is:",
-                options: ["Type I", "Type II", "Type III", "Type IV"],
-                correct: 2,
-                explanation: "Reticular fibers are composed of Type III collagen."
-            },
-            {
-                text: "Which connective tissue cell shows basophilic cytoplasm due to abundant rough ER?",
-                options: ["Fibrocyte", "Plasma cell", "Mast cell", "Adipocyte"],
-                correct: 1,
-                explanation: "Plasma cells synthesize antibodies and thus contain extensive rough ER."
-            },
-            {
-                text: "Which connective tissue component provides a pathway for diffusion of nutrients and metabolites?",
-                options: ["Collagen fibers", "Elastic fibers", "Ground substance", "Reticular fibers"],
-                correct: 2,
-                explanation: "Ground substance permits diffusion of substances between capillaries and cells."
-            },
-            {
-                text: "A tissue rich in reticular fibers would most likely be found in:",
-                options: ["Tendons", "Dermis", "Lymphoid organs", "Ligaments"],
-                correct: 2,
-                explanation: "Reticular fibers form a supportive framework in lymphoid and hematopoietic organs."
-            },
-            {
-                text: "Which feature indicates a fibroblast is metabolically active?",
-                options: ["Dark elongated nucleus", "Abundant cytoplasm", "Sparse organelles", "Condensed chromatin"],
-                correct: 1,
-                explanation: "Active fibroblasts have large cytoplasm and euchromatic nuclei."
-            },
-            {
-                text: "Which connective tissue cell plays a key role in antigen presentation?",
-                options: ["Mast cell", "Fibroblast", "Plasma cell", "Macrophage"],
-                correct: 3,
-                explanation: "Macrophages process and present antigens to immune cells."
-            },
-            {
-                text: "Which extracellular matrix component is MOST resistant to tensile stress?",
-                options: ["Elastin", "Reticular fibers", "Type I collagen", "Proteoglycans"],
-                correct: 2,
-                explanation: "Type I collagen provides maximum tensile strength in connective tissues."
-            }
+        correct: 2,
+        explanation:
+          "Euchromatin is lightly stained (electron-lucent) and transcriptionally active; heterochromatin is electron-dense and inactive.",
+      },
+      {
+        text: "Which organelle would be most affected by a mutation preventing insertion of signal recognition particle (SRP) receptors?",
+        options: [
+          "Golgi apparatus",
+          "Smooth endoplasmic reticulum",
+          "Rough endoplasmic reticulum",
+          "Mitochondria",
         ],
-      "Cartilage": [
-            {
-                text: "Which feature best explains the inability of adult articular cartilage to regenerate effectively after injury?",
-                options: ["Absence of proteoglycans", "Low mitotic activity of chondrocytes", "Lack of vascularity and perichondrium", "High water content of the matrix"],
-                correct: 2,
-                explanation: "Articular cartilage lacks both blood vessels and perichondrium, eliminating sources of progenitor cells and nutrients needed for repair."
-            },
-            {
-                text: "Which molecular component is primarily responsible for the resilience to compression in hyaline cartilage?",
-                options: ["Type II collagen", "Aggrecan", "Chondronectin", "Elastin"],
-                correct: 1,
-                explanation: "Aggrecan binds hyaluronic acid and attracts water, creating osmotic swelling pressure that resists compression."
-            },
-            {
-                text: "A histological section shows cartilage with visible fibers, abundant chondrocytes, and no perichondrium. Which cartilage is most likely?",
-                options: ["Hyaline cartilage", "Elastic cartilage", "Fibrocartilage", "Articular cartilage"],
-                correct: 2,
-                explanation: "Fibrocartilage has visible collagen fibers, no perichondrium, and abundant chondrocytes arranged in rows."
-            },
-            {
-                text: "Which cell population is directly responsible for interstitial growth of cartilage?",
-                options: ["Perichondrial fibroblasts", "Mesenchymal stem cells", "Chondroblasts", "Chondrocytes"],
-                correct: 3,
-                explanation: "Interstitial growth occurs via mitotic division of chondrocytes within lacunae, forming isogenous groups."
-            },
-            {
-                text: "Why is elastic cartilage less prone to calcification compared to hyaline cartilage?",
-                options: ["Higher proteoglycan content", "Presence of elastic fibers inhibiting mineral deposition", "Greater vascular supply", "Increased chondrocyte turnover"],
-                correct: 1,
-                explanation: "Elastic fibers interfere with mineral deposition, reducing calcification tendency."
-            },
-            {
-                text: "Which structural arrangement best defines an isogenous group?",
-                options: ["Chondrocytes sharing a perichondrial origin", "Chondrocytes formed by appositional growth", "Clusters of chondrocytes derived from a single parent cell", "Aggregates of degenerating chondrocytes"],
-                correct: 2,
-                explanation: "Isogenous groups result from mitotic division of one chondrocyte, reflecting interstitial growth."
-            },
-            {
-                text: "The basophilia of cartilage matrix is mainly due to:",
-                options: ["Sulfated glycosaminoglycans", "Elastic fibers", "Type II collagen", "Chondronectin"],
-                correct: 0,
-                explanation: "Sulfated GAGs (e.g., chondroitin sulfate) bind basic dyes, producing basophilia."
-            },
-            {
-                text: "Which cartilage type is best adapted to resist both compression and tensile forces?",
-                options: ["Hyaline cartilage", "Elastic cartilage", "Fibrocartilage", "Articular cartilage"],
-                correct: 2,
-                explanation: "Fibrocartilage contains dense type I collagen, enabling resistance to tensile stress while proteoglycans handle compression."
-            },
-            {
-                text: "Which feature distinguishes articular cartilage histologically?",
-                options: ["Presence of elastic fibers", "Thick perichondrium", "Zonal arrangement of chondrocytes", "Numerous isogenous groups"],
-                correct: 2,
-                explanation: "Articular cartilage has superficial, transitional, deep, and calcified zones, each with distinct chondrocyte orientation."
-            },
-            {
-                text: "Which statement regarding the perichondrium is TRUE?",
-                options: ["It is essential for interstitial growth", "It contains chondrocytes in lacunae", "It contributes to appositional growth", "It is present in all cartilages"],
-                correct: 2,
-                explanation: "Perichondrium supplies chondroblasts for appositional growth. It is absent in fibrocartilage and articular cartilage."
-            },
-            {
-                text: "Loss of which molecule would most severely impair cartilage hydration?",
-                options: ["Type II collagen", "Elastin", "Aggrecan", "Fibronectin"],
-                correct: 2,
-                explanation: "Aggrecan binds water via negatively charged GAGs, maintaining matrix hydration."
-            },
-            {
-                text: "Which cartilage type is most metabolically active?",
-                options: ["Hyaline cartilage", "Elastic cartilage", "Fibrocartilage", "Articular cartilage"],
-                correct: 1,
-                explanation: "Elastic cartilage has more chondrocytes and richer matrix turnover due to elastic fiber maintenance."
-            },
-            {
-                text: "The territorial matrix is best described as:",
-                options: ["Light-staining matrix between isogenous groups", "Matrix rich in collagen fibers", "Basophilic matrix immediately surrounding lacunae", "Matrix continuous with perichondrium"],
-                correct: 2,
-                explanation: "Territorial matrix stains deeply due to high proteoglycan concentration around lacunae."
-            },
-            {
-                text: "Which change occurs in aging cartilage?",
-                options: ["Increased proteoglycan synthesis", "Increased elasticity", "Decreased water content", "Enhanced repair capacity"],
-                correct: 2,
-                explanation: "Aging reduces proteoglycan content, lowering water retention and resilience."
-            },
-            {
-                text: "Which cartilage is most likely to undergo physiological calcification?",
-                options: ["Elastic cartilage", "Hyaline cartilage of trachea", "Fibrocartilage of intervertebral disc", "Articular cartilage"],
-                correct: 1,
-                explanation: "Hyaline cartilage often calcifies with age, especially in costal and tracheal cartilage."
-            },
-            {
-                text: "The primary function of chondronectin is to:",
-                options: ["Bind calcium", "Attach chondrocytes to collagen fibers", "Promote angiogenesis", "Degrade proteoglycans"],
-                correct: 1,
-                explanation: "Chondronectin mediates adhesion between chondrocytes and collagen matrix."
-            },
-            {
-                text: "Which feature explains the glassy appearance of hyaline cartilage?",
-                options: ["High elastin content", "Masking of collagen fibers by proteoglycans", "Absence of collagen", "Low water content"],
-                correct: 1,
-                explanation: "Type II collagen fibers are present but masked by proteoglycans, creating a smooth, glassy look."
-            },
-            {
-                text: "Which cartilage lacks both perichondrium AND type II collagen?",
-                options: ["Elastic cartilage", "Hyaline cartilage", "Fibrocartilage", "Articular cartilage"],
-                correct: 2,
-                explanation: "Fibrocartilage contains dense type I collagen and lacks perichondrium."
-            },
-            {
-                text: "Nutrient diffusion in cartilage primarily occurs through:",
-                options: ["Blood vessels", "Canaliculi", "Ground substance", "Perichondrium only"],
-                correct: 2,
-                explanation: "Cartilage relies on diffusion through hydrated ground substance due to avascularity."
-            },
-            {
-                text: "Which histological feature best correlates with load-bearing function in cartilage?",
-                options: ["Elastic fiber density", "Chondrocyte mitotic rate", "Proteoglycan concentration", "Perichondrial thickness"],
-                correct: 2,
-                explanation: "High proteoglycan concentration allows resistance to compressive loads."
-            }
+        correct: 2,
+        explanation:
+          "SRP receptors are required for docking ribosomes synthesizing secretory proteins onto the rough ER.",
+      },
+      {
+        text: "A cell actively synthesizing steroid hormones would show hypertrophy of which organelle?",
+        options: [
+          "Rough endoplasmic reticulum",
+          "Golgi apparatus",
+          "Smooth endoplasmic reticulum",
+          "Lysosomes",
         ],
-      "Bones": [
-            {
-                text: "Which ultrastructural feature most directly explains the birefringence of bone under polarized light?",
-                options: ["Osteocyte canaliculi", "Hydroxyapatite crystals", "Parallel orientation of collagen fibrils", "Lamellar vascular arrangement"],
-                correct: 2,
-                explanation: "Bone birefringence results from the ordered, parallel arrangement of type I collagen fibrils within lamellae—not from minerals or vessels."
-            },
-            {
-                text: "The reversal line in bone histology most accurately represents:",
-                options: ["Boundary between compact and cancellous bone", "Site of osteoblast apoptosis", "Interface between bone resorption and deposition", "Junction between woven and lamellar bone"],
-                correct: 2,
-                explanation: "A reversal line marks the transition where osteoclastic resorption ends and osteoblastic deposition begins."
-            },
-            {
-                text: "Which statement best explains why osteocytes survive despite being embedded in mineralized matrix?",
-                options: ["They are metabolically inactive", "Lacunae contain interstitial fluid under pressure", "Gap junctions permit nutrient diffusion via canaliculi", "Bone matrix is semi-permeable"],
-                correct: 2,
-                explanation: "Gap junctions through canaliculi allow metabolic exchange between osteocytes and surface cells."
-            },
-            {
-                text: "Which bone cell shows the highest expression of alkaline phosphatase?",
-                options: ["Osteoclast", "Osteoblast", "Osteocyte", "Bone lining cell"],
-                correct: 1,
-                explanation: "Alkaline phosphatase is critical for mineralization and is most abundant in active osteoblasts."
-            },
-            {
-                text: "The cement line of an osteon differs from surrounding lamellae primarily because it:",
-                options: ["Contains type II collagen", "Is hypermineralized and collagen-poor", "Contains elastic fibers", "Lacks osteocytes"],
-                correct: 1,
-                explanation: "Cement lines are highly mineralized and poor in collagen, making them mechanically weak planes."
-            },
-            {
-                text: "Which feature distinguishes woven bone from lamellar bone histologically?",
-                options: ["Presence of osteons", "High mineral content", "Random collagen fiber orientation", "Absence of osteocytes"],
-                correct: 2,
-                explanation: "Woven bone has randomly arranged collagen fibers, unlike orderly lamellae."
-            },
-            {
-                text: "The Haversian canal differs from Volkmann’s canal because it:",
-                options: ["Is lined by endosteum", "Contains lymphatics", "Runs perpendicular to bone surface", "Lacks nerves"],
-                correct: 0,
-                explanation: "Haversian canals are endosteum-lined and run parallel to the long axis of the bone."
-            },
-            {
-                text: "Which component primarily accounts for bone’s tensile strength?",
-                options: ["Hydroxyapatite", "Proteoglycans", "Type I collagen", "Osteoid fluid"],
-                correct: 2,
-                explanation: "Type I collagen provides tensile strength, while minerals provide compressive strength."
-            },
-            {
-                text: "Failure of osteoid mineralization would most directly affect which zone?",
-                options: ["Cement line", "Interstitial lamellae", "Osteoid seam", "Canaliculi"],
-                correct: 2,
-                explanation: "The osteoid seam is newly formed, unmineralized bone matrix."
-            },
-            {
-                text: "Which statement regarding osteoclasts is histologically correct?",
-                options: ["Derived from mesenchymal stem cells", "Possess a ruffled border facing bone surface", "Reside in lacunae called osteons", "Secrete alkaline phosphatase"],
-                correct: 1,
-                explanation: "Osteoclasts are multinucleated, hematopoietic-derived cells with a ruffled border for resorption."
-            },
-            {
-                text: "How does compact bone primarily differ from cancellous bone histologically?",
-                options: ["Presence of osteocytes", "Presence of osteoblasts", "Organization into osteons", "Mineral composition"],
-                correct: 2,
-                explanation: "Compact bone is organized into osteons, whereas cancellous bone is not."
-            },
-            {
-                text: "Which feature best explains rapid calcium exchange in cancellous bone?",
-                options: ["Thick lamellae", "Numerous cement lines", "Large surface-to-volume ratio", "Abundant osteocytes"],
-                correct: 2,
-                explanation: "Cancellous bone has a high surface-to-volume ratio, facilitating mineral exchange."
-            },
-            {
-                text: "The endosteum is best described as:",
-                options: ["Dense irregular connective tissue", "Simple squamous epithelium", "Osteogenic connective tissue lining internal bone surfaces", "Mineralized extracellular matrix"],
-                correct: 2,
-                explanation: "Endosteum is thin, osteogenic connective tissue lining marrow cavities and canals."
-            },
-            {
-                text: "Which change would most directly impair osteocyte mechanosensation?",
-                options: ["Loss of lacunae", "Reduction in canalicular network", "Increased mineralization", "Thickened cement lines"],
-                correct: 1,
-                explanation: "Mechanosensation depends on canaliculi transmitting mechanical signals."
-            },
-            {
-                text: "Why do interstitial lamellae lack a central canal?",
-                options: ["They are newly formed bone", "They are remnants of remodeled osteons", "They are avascular", "They contain woven bone"],
-                correct: 1,
-                explanation: "Interstitial lamellae are remnants of old osteons left after remodeling."
-            },
-            {
-                text: "Which histological feature indicates active bone remodeling?",
-                options: ["Uniform lamellae", "Numerous reversal lines", "Thick cement lines", "Absence of osteoclasts"],
-                correct: 1,
-                explanation: "Reversal lines indicate cycles of resorption and deposition."
-            },
-            {
-                text: "The organic component of bone matrix is primarily synthesized by:",
-                options: ["Osteocytes", "Osteoclasts", "Osteoblasts", "Bone lining cells"],
-                correct: 2,
-                explanation: "Osteoblasts synthesize osteoid, the organic matrix of bone."
-            },
-            {
-                text: "Which structure allows diffusion of nutrients in mineralized bone?",
-                options: ["Haversian canal", "Volkmann’s canal", "Canaliculi", "Cement line"],
-                correct: 2,
-                explanation: "Canaliculi permit diffusion between osteocytes and blood supply."
-            },
-            {
-                text: "Which histological finding is most characteristic of pathological bone softening?",
-                options: ["Increased osteon density", "Thickened cement lines", "Accumulation of unmineralized osteoid", "Loss of canaliculi"],
-                correct: 2,
-                explanation: "Bone softening (e.g., osteomalacia) shows excess unmineralized osteoid."
-            },
-            {
-                text: "Why is bone considered a dynamic tissue histologically?",
-                options: ["Presence of marrow", "Constant mineral deposition", "Continuous remodeling by opposing cell populations", "High collagen turnover"],
-                correct: 2,
-                explanation: "Bone is dynamic due to continuous remodeling by osteoblasts and osteoclasts."
-            }
+        correct: 2,
+        explanation:
+          "Steroid synthesis depends on enzymes embedded in the smooth ER membrane.",
+      },
+      {
+        text: "Which nuclear structure is directly responsible for ribosomal RNA synthesis?",
+        options: [
+          "Nuclear pore complex",
+          "Chromatin",
+          "Nucleolus",
+          "Nuclear lamina",
         ],
-      "Muscular Tissue": [
-            {
-                text: "Which structural feature distinguishes cardiac muscle from skeletal muscle under a light microscope?",
-                options: ["Presence of striations", "Multinucleation", "Intercalated discs", "Peripheral nuclei"],
-                correct: 2,
-                explanation: "Cardiac muscle cells are connected via intercalated discs, specialized junctions for mechanical and electrical coupling; skeletal muscle lacks them."
-            },
-            {
-                text: "Which protein is primarily responsible for the passive elasticity of muscle?",
-                options: ["Actin", "Myosin", "Titin", "Nebulin"],
-                correct: 2,
-                explanation: "Titin spans from Z line to M line and acts as a molecular spring, contributing to passive tension."
-            },
-            {
-                text: "Which type of skeletal muscle fiber has the highest oxidative capacity and fatigue resistance?",
-                options: ["Type I", "Type IIa", "Type IIb", "Type IIx"],
-                correct: 0,
-                explanation: "Type I fibers are slow-twitch, rich in mitochondria and myoglobin, ideal for endurance."
-            },
-            {
-                text: "In smooth muscle, contraction is initiated primarily by:",
-                options: ["Troponin-tropomyosin complex", "Calmodulin binding to Ca²⁺", "Action of titin", "Direct actin-myosin ATPase activation"],
-                correct: 1,
-                explanation: "Smooth muscle lacks troponin; Ca²⁺ binds calmodulin, activating myosin light chain kinase."
-            },
-            {
-                text: "Which histological stain best demonstrates the Z line of striated muscle?",
-                options: ["H&E", "Masson’s trichrome", "Phalloidin staining", "PAS"],
-                correct: 2,
-                explanation: "Phalloidin binds F-actin, highlighting Z lines specifically in striated muscle fibers."
-            },
-            {
-                text: "The feature “diad” in cardiac muscle refers to:",
-                options: ["One T-tubule + one SR terminal cistern", "Two nuclei per cell", "Two sarcomeres per fiber", "Paired intercalated discs"],
-                correct: 0,
-                explanation: "Cardiac muscle diads consist of T-tubule + single SR cistern, unlike skeletal muscle triads."
-            },
-            {
-                text: "Which skeletal muscle fiber type predominantly relies on glycolysis?",
-                options: ["Type I", "Type IIa", "Type IIb", "Smooth muscle"],
-                correct: 2,
-                explanation: "Type IIb fibers are fast-twitch, low mitochondria, high glycogen, suited for short bursts."
-            },
-            {
-                text: "Dense bodies in smooth muscle are analogous to which skeletal muscle structure?",
-                options: ["Z line", "M line", "I band", "A band"],
-                correct: 0,
-                explanation: "Dense bodies anchor actin filaments in smooth muscle, functionally equivalent to Z lines."
-            },
-            {
-                text: "Which of the following structures ensures electrical coupling in cardiac muscle?",
-                options: ["Gap junctions", "Tight junctions", "Desmosomes", "Hemidesmosomes"],
-                correct: 0,
-                explanation: "Gap junctions allow ions to pass directly, enabling synchronized contraction."
-            },
-            {
-                text: "Which protein regulates actin-myosin interaction in smooth muscle?",
-                options: ["Troponin C", "Calmodulin", "Nebulin", "Dystrophin"],
-                correct: 1,
-                explanation: "Calmodulin binds Ca²⁺, activating myosin light chain kinase, regulating contraction."
-            },
-            {
-                text: "Skeletal muscle regeneration is primarily mediated by:",
-                options: ["Fibroblasts", "Satellite cells", "Myoblasts in adults", "Pericytes"],
-                correct: 1,
-                explanation: "Satellite cells are quiescent myogenic stem cells activated after injury."
-            },
-            {
-                text: "Which muscle type exhibits spontaneous rhythmic contractions?",
-                options: ["Skeletal muscle", "Cardiac muscle", "Smooth muscle of large arteries only", "None"],
-                correct: 1,
-                explanation: "Cardiac muscle cells are autorhythmic, generating spontaneous APs via pacemaker cells."
-            },
-            {
-                text: "The T-tubules in skeletal muscle are located at:",
-                options: ["Z line", "M line", "A-I junction", "H zone"],
-                correct: 2,
-                explanation: "Skeletal T-tubules penetrate at A-I junctions for optimal excitation-contraction coupling."
-            },
-            {
-                text: "Which ion is essential for cross-bridge detachment in all muscle types?",
-                options: ["Na⁺", "K⁺", "Mg²⁺", "Ca²⁺"],
-                correct: 2,
-                explanation: "Mg²⁺ is a cofactor for ATP hydrolysis, allowing myosin head detachment from actin."
-            },
-            {
-                text: "Intercalated discs contain all EXCEPT:",
-                options: ["Fascia adherens", "Desmosomes", "Gap junctions", "Neuromuscular junctions"],
-                correct: 3,
-                explanation: "Intercalated discs mediate mechanical/electrical coupling, not synaptic innervation."
-            },
-            {
-                text: "Smooth muscle contraction is slower than skeletal due to:",
-                options: ["Faster calcium removal", "Absence of troponin", "Latch-bridge mechanism", "Lower actin content"],
-                correct: 2,
-                explanation: "Latch-bridge allows sustained tension with minimal ATP, slowing contraction/relaxation."
-            },
-            {
-                text: "Which histological feature differentiates Type IIa and IIb fibers?",
-                options: ["Nucleus position", "Mitochondrial density", "Presence of striations", "Fiber length"],
-                correct: 1,
-                explanation: "Type IIa are oxidative-glycolytic (more mitochondria), Type IIb are glycolytic (fewer mitochondria)."
-            },
-            {
-                text: "Which of the following is true about cardiac muscle nuclei?",
-                options: ["Always peripheral", "Single, central", "Multinucleated, peripheral", "Multinucleated, central"],
-                correct: 1,
-                explanation: "Cardiac myocytes usually have one centrally located nucleus; skeletal fibers are multinucleated with peripheral nuclei."
-            },
-            {
-                text: "The neuromuscular junction in skeletal muscle is specialized for:",
-                options: ["Hormone release", "Electrical conduction only", "Chemical transmission", "Mechanical junction"],
-                correct: 2,
-                explanation: "Acetylcholine release at NMJ triggers skeletal muscle depolarization and contraction."
-            },
-            {
-                text: "Which feature of smooth muscle allows it to maintain tone over long periods?",
-                options: ["High mitochondria content", "Latch-bridge mechanism", "Extensive T-tubules", "Triad structures"],
-                correct: 1,
-                explanation: "Smooth muscle can sustain tonic contraction efficiently via latch bridges without ATP depletion."
-            }
+        correct: 2,
+        explanation:
+          "The nucleolus synthesizes rRNA and assembles ribosomal subunits.",
+      },
+      {
+        text: "If a drug selectively disrupts microtubules, which cellular function is most immediately impaired?",
+        options: [
+          "Cell adhesion",
+          "Protein synthesis",
+          "Intracellular vesicle transport",
+          "Glycolysis",
         ],
-      "Nervous System": [
-            {
-                text: "Which of the following neuroglial cells is derived from mesoderm rather than ectoderm?",
-                options: ["Astrocytes", "Oligodendrocytes", "Microglia", "Ependymal cells"],
-                correct: 2,
-                explanation: "Microglia are derived from mesodermal (yolk sac) precursors, unlike other glial cells, which are of neuroectodermal origin."
-            },
-            {
-                text: "Which region of the neuron contains the highest density of voltage-gated sodium channels?",
-                options: ["Dendritic spine", "Soma", "Axon initial segment", "Node of Ranvier"],
-                correct: 2,
-                explanation: "The axon initial segment is specialized for action potential initiation due to its high density of voltage-gated Na⁺ channels."
-            },
-            {
-                text: "In the central nervous system, myelin sheaths are produced by:",
-                options: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Ependymal cells"],
-                correct: 1,
-                explanation: "Oligodendrocytes myelinate multiple axons in the CNS; Schwann cells do so in the PNS."
-            },
-            {
-                text: "Nissl bodies in neurons represent:",
-                options: ["Smooth endoplasmic reticulum", "Golgi apparatus", "Rough endoplasmic reticulum and ribosomes", "Mitochondria clusters"],
-                correct: 2,
-                explanation: "Nissl bodies are aggregates of RER and ribosomes, involved in protein synthesis."
-            },
-            {
-                text: "Which type of synapse predominantly mediates fast inhibitory neurotransmission in the CNS?",
-                options: ["Glutamatergic synapse", "GABAergic synapse", "Cholinergic synapse", "Dopaminergic synapse"],
-                correct: 1,
-                explanation: "GABAergic synapses open Cl⁻ channels causing hyperpolarization and fast inhibition."
-            },
-            {
-                text: "Which of the following structures is NOT part of the blood-brain barrier?",
-                options: ["Endothelial tight junctions", "Pericytes", "Astrocyte end-feet", "Microglial phagocytes"],
-                correct: 3,
-                explanation: "Microglia are immune cells, not structural components of the BBB."
-            },
-            {
-                text: "The primary difference between unipolar and bipolar neurons is:",
-                options: ["Bipolar neurons have one axon only", "Unipolar neurons have dendrites and axon fused", "Bipolar neurons are always motor neurons", "Unipolar neurons are only in the CNS"],
-                correct: 1,
-                explanation: "Unipolar (pseudounipolar) neurons have a single process splitting into dendritic and axonal branches."
-            },
-            {
-                text: "Which glial cell participates actively in the formation of scar tissue following CNS injury?",
-                options: ["Microglia", "Oligodendrocytes", "Astrocytes", "Schwann cells"],
-                correct: 2,
-                explanation: "Reactive astrocytes form glial scars and secrete extracellular matrix components after injury."
-            },
-            {
-                text: "Which statement about nodes of Ranvier is correct?",
-                options: ["They are continuous myelin segments", "Ion channels are sparse", "They enable saltatory conduction", "Found only in CNS"],
-                correct: 2,
-                explanation: "Nodes of Ranvier are gaps in myelin where ion exchange allows rapid signal conduction."
-            },
-            {
-                text: "Which neurotransmitter is predominantly excitatory in the CNS?",
-                options: ["GABA", "Glycine", "Glutamate", "Dopamine"],
-                correct: 2,
-                explanation: "Glutamate depolarizes postsynaptic neurons via AMPA and NMDA receptors."
-            },
-            {
-                text: "The ependymal cells lining the ventricles are characterized by:",
-                options: ["Tight junctions forming a complete barrier", "Cilia and microvilli", "Myelination of axons", "Phagocytic activity"],
-                correct: 1,
-                explanation: "Ependymal cells have cilia for CSF movement and microvilli for absorption."
-            },
-            {
-                text: "Which type of neuron has the fastest conduction velocity?",
-                options: ["Small, unmyelinated C fibers", "Large, myelinated Aα fibers", "Medium, myelinated Aδ fibers", "Small, myelinated B fibers"],
-                correct: 1,
-                explanation: "Conduction velocity increases with axon diameter and myelination."
-            },
-            {
-                text: "Which statement about oligodendrocytes is FALSE?",
-                options: ["They myelinate multiple axons", "Found only in CNS", "Derived from neuroectoderm", "Capable of phagocytosing debris"],
-                correct: 3,
-                explanation: "Only microglia are phagocytic in CNS; oligodendrocytes produce myelin."
-            },
-            {
-                text: "The axon hillock is histologically distinct because:",
-                options: ["It contains dense Nissl bodies", "Lacks Nissl bodies", "Has abundant Golgi complexes", "Is the site of synapse formation"],
-                correct: 1,
-                explanation: "Nissl bodies are absent in axon hillock; this region initiates action potentials."
-            },
-            {
-                text: "Which glial cell can present antigens in CNS?",
-                options: ["Astrocytes", "Oligodendrocytes", "Microglia", "Ependymal cells"],
-                correct: 2,
-                explanation: "Microglia are the resident immune cells and can present antigens to T cells."
-            },
-            {
-                text: "Which component of the neuron is primarily responsible for retrograde transport?",
-                options: ["Kinesin along microtubules", "Dynein along microtubules", "Actin filaments", "Myosin along actin"],
-                correct: 1,
-                explanation: "Dynein carries materials from axon terminals back to the soma."
-            },
-            {
-                text: "Which of the following is true regarding Schwann cells?",
-                options: ["Myelinate multiple axons simultaneously", "Form nodes of Ranvier in CNS", "Participate in peripheral nerve regeneration", "Derived from mesoderm"],
-                correct: 2,
-                explanation: "Schwann cells support axon regrowth by forming regeneration tubes; they myelinate single axons."
-            },
-            {
-                text: "Which type of synapse allows direct electrical communication between neurons?",
-                options: ["Chemical excitatory synapse", "Electrical gap junction", "GABAergic inhibitory synapse", "Cholinergic neuromuscular junction"],
-                correct: 1,
-                explanation: "Gap junctions allow ions to flow directly between cells for rapid transmission."
-            },
-            {
-                text: "Which statement about dendritic spines is TRUE?",
-                options: ["They contain myelin", "Site of axonal action potential initiation", "Are dynamic structures influenced by synaptic activity", "Found only in the PNS"],
-                correct: 2,
-                explanation: "Dendritic spines remodel with synaptic strength and plasticity."
-            },
-            {
-                text: "Which neuroglial cell regulates extracellular ion concentrations and neurotransmitter levels?",
-                options: ["Oligodendrocytes", "Astrocytes", "Microglia", "Ependymal cells"],
-                correct: 1,
-                explanation: "Astrocytes maintain K⁺ and glutamate homeostasis in the CNS."
-            }
+        correct: 2,
+        explanation:
+          "Microtubules are tracks for motor proteins transporting vesicles and organelles.",
+      },
+      {
+        text: "Which statement about mitochondria is TRUE?",
+        options: [
+          "They contain circular DNA without histones",
+          "They are synthesized de novo during cell division",
+          "All mitochondrial proteins are encoded by mitochondrial DNA",
+          "Their inner membrane is freely permeable to ions",
         ],
-      "Blood & Mononuclear System": [
-            {
-                text: "Which of the following granules is unique to neutrophils and contains myeloperoxidase?",
-                options: ["Azurophilic granules", "Specific granules", "Tertiary granules", "Secretory vesicles"],
-                correct: 0,
-                explanation: "Azurophilic (primary) granules contain myeloperoxidase and are characteristic of neutrophils, unlike specific (secondary) granules, which lack MPO."
-            },
-            {
-                text: "Which plasma protein is mainly responsible for maintaining osmotic pressure in blood?",
-                options: ["Albumin", "Fibrinogen", "Immunoglobulin G", "Complement C3"],
-                correct: 0,
-                explanation: "Albumin, synthesized by the liver, is the major contributor to plasma osmotic (colloid) pressure."
-            },
-            {
-                text: "Which leukocyte has a bilobed nucleus and strongly eosinophilic granules?",
-                options: ["Neutrophil", "Eosinophil", "Basophil", "Monocyte"],
-                correct: 1,
-                explanation: "Eosinophils have bilobed nuclei and red-orange granules due to major basic protein staining with eosin."
-            },
-            {
-                text: "Kupffer cells in the liver are derived from:",
-                options: ["Lymphoid stem cells", "Myeloid progenitors in bone marrow", "Erythroid progenitors", "Endothelial cells"],
-                correct: 1,
-                explanation: "Kupffer cells are tissue macrophages part of MPS, originating from monocytes in the myeloid lineage."
-            },
-            {
-                text: "Which blood cells have no mitochondria and rely entirely on glycolysis?",
-                options: ["Lymphocytes", "Neutrophils", "Erythrocytes", "Monocytes"],
-                correct: 2,
-                explanation: "Mature erythrocytes lack mitochondria, relying on anaerobic glycolysis for energy."
-            },
-            {
-                text: "Monocytes transform into macrophages upon entering tissues. Which marker is highly expressed in mature macrophages?",
-                options: ["CD3", "CD68", "CD19", "CD56"],
-                correct: 1,
-                explanation: "CD68 is a lysosomal marker highly expressed in macrophages and tissue monocytes."
-            },
-            {
-                text: "Which of the following granulocytes has histamine-rich granules that stain intensely with basic dyes?",
-                options: ["Neutrophils", "Eosinophils", "Basophils", "Monocytes"],
-                correct: 2,
-                explanation: "Basophils contain basophilic granules rich in histamine and heparin."
-            },
-            {
-                text: "Platelets derive from:",
-                options: ["Lymphocytes", "Megakaryocytes", "Monocytes", "Erythrocytes"],
-                correct: 1,
-                explanation: "Platelets are cytoplasmic fragments of megakaryocytes in the bone marrow."
-            },
-            {
-                text: "The half-life of circulating neutrophils is approximately:",
-                options: ["6–8 hours", "2–3 days", "10–14 days", "1 month"],
-                correct: 0,
-                explanation: "Neutrophils are short-lived in circulation; tissue half-life is longer."
-            },
-            {
-                text: "Which mononuclear phagocyte is specialized in antigen presentation?",
-                options: ["Kupffer cells", "Langerhans cells", "Alveolar macrophages", "Osteoclasts"],
-                correct: 1,
-                explanation: "Langerhans cells in the epidermis are specialized dendritic cells presenting antigens to T cells."
-            },
-            {
-                text: "In histology, azurophilic granules in neutrophils are derived from:",
-                options: ["Endoplasmic reticulum", "Golgi complex", "Mitochondria", "Lysosomal fusion"],
-                correct: 1,
-                explanation: "Primary granules form in the Golgi during neutrophil development and are lysosome-like."
-            },
-            {
-                text: "Which plasma cell marker indicates active immunoglobulin secretion?",
-                options: ["CD3", "CD20", "CD138", "CD68"],
-                correct: 2,
-                explanation: "CD138 (syndecan-1) is highly expressed on plasma cells actively secreting antibodies."
-            },
-            {
-                text: "Which of the following is NOT a function of the mononuclear phagocyte system?",
-                options: ["Phagocytosis of pathogens", "Antigen presentation", "Oxygen transport", "Tissue remodeling"],
-                correct: 2,
-                explanation: "Oxygen transport is the role of erythrocytes, not macrophages or MPS cells."
-            },
-            {
-                text: "The primary site of hematopoiesis in adults is:",
-                options: ["Liver", "Spleen", "Red bone marrow", "Lymph nodes"],
-                correct: 2,
-                explanation: "Red bone marrow is the main site of production for all blood cell lineages in adults."
-            },
-            {
-                text: "Which enzyme in monocytes/macrophages generates reactive oxygen species to kill microbes?",
-                options: ["Lysozyme", "NADPH oxidase", "Elastase", "Myeloperoxidase"],
-                correct: 1,
-                explanation: "NADPH oxidase generates superoxide radicals in the respiratory burst during phagocytosis."
-            },
-            {
-                text: "Erythrocyte sedimentation rate (ESR) is influenced primarily by:",
-                options: ["Platelet count", "Plasma fibrinogen and globulins", "Erythrocyte size alone", "Leukocyte numbers"],
-                correct: 1,
-                explanation: "ESR increases with plasma proteins that promote RBC aggregation."
-            },
-            {
-                text: "Which cell type in the MPS is multinucleated and participates in bone resorption?",
-                options: ["Kupffer cells", "Osteoclasts", "Langerhans cells", "Alveolar macrophages"],
-                correct: 1,
-                explanation: "Osteoclasts are large, multinucleated macrophage-derived cells that resorb bone."
-            },
-            {
-                text: "Which leukocyte contains specific granules with collagenase and lactoferrin?",
-                options: ["Neutrophil", "Eosinophil", "Basophil", "Monocyte"],
-                correct: 0,
-                explanation: "Secondary granules in neutrophils contain collagenase, lactoferrin, and other enzymes aiding tissue infiltration."
-            },
-            {
-                text: "Hemosiderin-laden macrophages are most commonly seen in:",
-                options: ["Healthy liver", "Pulmonary alveoli after hemorrhage", "Circulating blood", "Lymph nodes"],
-                correct: 1,
-                explanation: "Macrophages phagocytose extravasated RBCs, degrading hemoglobin to iron-containing hemosiderin."
-            },
-            {
-                text: "Which cytokine is most critical for monocyte differentiation into macrophages?",
-                options: ["IL-2", "GM-CSF", "TNF-α", "IL-10"],
-                correct: 1,
-                explanation: "Granulocyte-macrophage colony-stimulating factor (GM-CSF) drives differentiation of monocytes into tissue macrophages."
-            }
-        ]
-    },
-
+        correct: 0,
+        explanation:
+          "Mitochondrial DNA is circular and lacks histones; most mitochondrial proteins are nuclear-encoded.",
+      },
+      {
+        text: "A cell with a prominent Golgi apparatus and well-developed rough ER is most likely:",
+        options: [
+          "Actively dividing",
+          "Actively secreting proteins",
+          "Undergoing apoptosis",
+          "Specialized for lipid metabolism",
+        ],
+        correct: 1,
+        explanation:
+          "RER synthesizes secretory proteins; Golgi modifies and packages them.",
+      },
+      {
+        text: "Which component of the nuclear envelope regulates selective transport between nucleus and cytoplasm?",
+        options: [
+          "Nuclear lamina",
+          "Nuclear pores",
+          "Inner nuclear membrane",
+          "Perinuclear cistern",
+        ],
+        correct: 1,
+        explanation:
+          "Nuclear pore complexes actively regulate macromolecular transport.",
+      },
+      {
+        text: "Failure of lysosomal acidification would MOST directly impair:",
+        options: [
+          "Protein synthesis",
+          "Autophagy",
+          "Glycosylation",
+          "ATP generation",
+        ],
+        correct: 1,
+        explanation:
+          "Lysosomal enzymes require an acidic pH to degrade intracellular components during autophagy.",
+      },
+      {
+        text: "Which cytoskeletal element resists tensile (stretching) forces?",
+        options: [
+          "Microtubules",
+          "Actin filaments",
+          "Intermediate filaments",
+          "Centrioles",
+        ],
+        correct: 2,
+        explanation:
+          "Intermediate filaments provide mechanical strength and resist tension.",
+      },
+      {
+        text: "Which organelle lacks a surrounding membrane?",
+        options: ["Lysosome", "Ribosome", "Peroxisome", "Golgi cisterna"],
+        correct: 1,
+        explanation:
+          "Ribosomes are non-membranous ribonucleoprotein complexes.",
+      },
+      {
+        text: "Which modification of proteins primarily occurs in the cis-Golgi network?",
+        options: [
+          "Sulfation",
+          "O-linked glycosylation",
+          "Initial trimming of N-linked oligosaccharides",
+          "Packaging into secretory granules",
+        ],
+        correct: 2,
+        explanation:
+          "The cis-Golgi performs early processing of N-linked carbohydrates received from the ER.",
+      },
+      {
+        text: "Which cellular change is most characteristic of apoptosis?",
+        options: [
+          "Cell swelling",
+          "Mitochondrial rupture",
+          "Chromatin condensation and fragmentation",
+          "Inflammatory response",
+        ],
+        correct: 2,
+        explanation:
+          "Apoptosis involves nuclear condensation without inflammation.",
+      },
+      {
+        text: "A cell lacking functional peroxisomes would most likely accumulate:",
+        options: [
+          "Glycogen",
+          "Hydrogen peroxide",
+          "Very long-chain fatty acids",
+          "Lactic acid",
+        ],
+        correct: 2,
+        explanation: "Peroxisomes oxidize very long-chain fatty acids.",
+      },
+      {
+        text: "Which structure anchors chromatin to the inner nuclear membrane?",
+        options: [
+          "Nuclear pore complex",
+          "Nucleolus",
+          "Nuclear lamina",
+          "Centromere",
+        ],
+        correct: 2,
+        explanation:
+          "The nuclear lamina provides structural support and chromatin anchorage.",
+      },
+      {
+        text: "Which event occurs FIRST during protein secretion?",
+        options: [
+          "Vesicle budding from Golgi",
+          "Translation on membrane-bound ribosomes",
+          "Post-translational modification",
+          "Exocytosis",
+        ],
+        correct: 1,
+        explanation:
+          "Translation on RER-bound ribosomes initiates the secretory pathway.",
+      },
+      {
+        text: "Which cytoskeletal structure forms the core of cilia and flagella?",
+        options: [
+          "Actin filaments",
+          "Intermediate filaments",
+          "Microtubules in a 9+2 arrangement",
+          "Microtubules in a 9+0 arrangement",
+        ],
+        correct: 2,
+        explanation: "Motile cilia have a classic 9+2 microtubule axoneme.",
+      },
+      {
+        text: "Which cellular component is MOST sensitive to hypoxia?",
+        options: ["Ribosomes", "Lysosomes", "Mitochondria", "Golgi apparatus"],
+        correct: 2,
+        explanation:
+          "Mitochondria require oxygen for oxidative phosphorylation.",
+      },
+      {
+        text: "A cell showing extensive SER, abundant mitochondria, and lipid droplets is most likely:",
+        options: [
+          "Neuron",
+          "Plasma cell",
+          "Steroid-secreting cell",
+          "Goblet cell",
+        ],
+        correct: 2,
+        explanation:
+          "Steroid-producing cells rely on SER and mitochondria for lipid metabolism.",
+      },
+    ],
+    Epithelia: [
+      {
+        text: "A stratified epithelium is best identified histologically by:",
+        options: [
+          "The number of cell layers visible at high magnification",
+          "The number of cell layers contacting the basement membrane",
+          "The number of cell layers containing nuclei",
+          "The thickness of the epithelium",
+        ],
+        correct: 1,
+        explanation:
+          "Classification depends on how many layers contact the basement membrane, not how many layers appear or contain nuclei.",
+      },
+      {
+        text: "Which feature most reliably distinguishes pseudostratified columnar epithelium from stratified columnar epithelium?",
+        options: [
+          "Variable nuclear height",
+          "Presence of cilia",
+          "All cells rest on the basement membrane",
+          "Presence of goblet cells",
+        ],
+        correct: 2,
+        explanation:
+          "In pseudostratified epithelium, all cells contact the basement membrane, even if they don’t reach the surface.",
+      },
+      {
+        text: "Loss of which junctional complex would most directly increase paracellular permeability?",
+        options: [
+          "Desmosomes",
+          "Gap junctions",
+          "Tight junctions",
+          "Hemidesmosomes",
+        ],
+        correct: 2,
+        explanation:
+          "Tight junctions (zonula occludens) seal the intercellular space and regulate paracellular transport.",
+      },
+      {
+        text: "Which epithelial specialization primarily increases surface area without significantly affecting diffusion distance?",
+        options: ["Cilia", "Stereocilia", "Microvilli", "Keratin filaments"],
+        correct: 2,
+        explanation:
+          "Microvilli dramatically increase surface area while remaining extremely thin.",
+      },
+      {
+        text: "Which epithelium is best adapted to withstand mechanical stress AND water impermeability?",
+        options: [
+          "Stratified squamous non-keratinized",
+          "Simple squamous",
+          "Transitional epithelium",
+          "Stratified squamous keratinized",
+        ],
+        correct: 3,
+        explanation:
+          "Keratinized epithelium resists abrasion and prevents water loss due to keratin and lipid barriers.",
+      },
+      {
+        text: "Which statement about epithelial polarity is MOST accurate?",
+        options: [
+          "Basal surfaces lack cytoskeletal attachments",
+          "Apical membranes have identical protein composition across epithelia",
+          "Polarity is maintained by tight junctions",
+          "Polarity is independent of basement membrane contact",
+        ],
+        correct: 2,
+        explanation:
+          "Tight junctions prevent lateral diffusion of membrane proteins, maintaining polarity.",
+      },
+      {
+        text: "A tumor derived from epithelial tissue is classified as:",
+        options: ["Sarcoma", "Lymphoma", "Carcinoma", "Adenoma"],
+        correct: 2,
+        explanation:
+          "Carcinomas arise from epithelial tissues (adenoma is benign glandular epithelium).",
+      },
+      {
+        text: "Which epithelium shows the greatest capacity for rapid regeneration?",
+        options: [
+          "Stratified squamous epithelium",
+          "Simple cuboidal epithelium",
+          "Simple squamous epithelium",
+          "Transitional epithelium",
+        ],
+        correct: 0,
+        explanation:
+          "Basal cells in stratified squamous epithelium undergo continuous mitosis.",
+      },
+      {
+        text: "Which cell junction provides mechanical strength by anchoring intermediate filaments?",
+        options: [
+          "Tight junction",
+          "Gap junction",
+          "Adherens junction",
+          "Desmosome",
+        ],
+        correct: 3,
+        explanation:
+          "Desmosomes link intermediate filaments (keratin) between cells.",
+      },
+      {
+        text: "Failure of hemidesmosomes would most directly impair:",
+        options: [
+          "Cell-to-cell communication",
+          "Attachment to basement membrane",
+          "Apical surface stability",
+          "Paracellular diffusion",
+        ],
+        correct: 1,
+        explanation:
+          "Hemidesmosomes anchor epithelial cells to the basal lamina.",
+      },
+      {
+        text: "Which epithelium allows stretching while maintaining barrier function?",
+        options: [
+          "Stratified squamous non-keratinized",
+          "Simple cuboidal",
+          "Pseudostratified columnar",
+          "Transitional epithelium",
+        ],
+        correct: 3,
+        explanation:
+          "Transitional epithelium has specialized umbrella cells that flatten during distension.",
+      },
+      {
+        text: "Which feature is unique to epithelial tissue?",
+        options: [
+          "Presence of extracellular matrix",
+          "High cellularity and avascularity",
+          "Presence of fibroblasts",
+          "Elastic fibers",
+        ],
+        correct: 1,
+        explanation:
+          "Epithelia are highly cellular and avascular, relying on diffusion.",
+      },
+      {
+        text: "Which epithelial cell type contributes directly to mucosal immunity?",
+        options: ["Goblet cells", "Basal cells", "Enterocytes", "M cells"],
+        correct: 3,
+        explanation:
+          "M cells transport antigens to immune cells in mucosa-associated lymphoid tissue.",
+      },
+      {
+        text: "Which change would most impair epithelial transport of ions?",
+        options: [
+          "Loss of cilia",
+          "Loss of tight junctions",
+          "Loss of desmosomes",
+          "Loss of keratin",
+        ],
+        correct: 1,
+        explanation:
+          "Tight junctions maintain electrochemical gradients necessary for ion transport.",
+      },
+      {
+        text: "A section shows tall cells with basally placed nuclei, abundant mitochondria, and apical microvilli. This epithelium is specialized primarily for:",
+        options: ["Protection", "Diffusion", "Secretion", "Absorption"],
+        correct: 3,
+        explanation:
+          "These features indicate absorptive epithelium (e.g., intestinal).",
+      },
+      {
+        text: "Which epithelial feature best explains rapid turnover after injury?",
+        options: [
+          "Tight junctions",
+          "Basal lamina",
+          "High mitotic rate of basal cells",
+          "Presence of cilia",
+        ],
+        correct: 2,
+        explanation: "Stem-like basal cells divide continuously.",
+      },
+      {
+        text: "Which epithelium is most susceptible to damage by ischemia?",
+        options: [
+          "Stratified squamous keratinized",
+          "Simple cuboidal",
+          "Simple squamous",
+          "Transitional",
+        ],
+        correct: 2,
+        explanation:
+          "Simple squamous epithelium is extremely thin and metabolically sensitive.",
+      },
+      {
+        text: "Which statement about basement membrane is TRUE?",
+        options: [
+          "It is produced only by connective tissue",
+          "It stains poorly with PAS",
+          "It anchors epithelium and regulates diffusion",
+          "It contains elastic fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Basement membrane provides structural support and selective permeability.",
+      },
+      {
+        text: "Loss of gap junctions would most directly impair:",
+        options: [
+          "Mechanical stability",
+          "Cell signaling",
+          "Water retention",
+          "Cell adhesion to ECM",
+        ],
+        correct: 1,
+        explanation:
+          "Gap junctions allow direct cytoplasmic communication between cells.",
+      },
+      {
+        text: "Which epithelial adaptation best supports directional transport?",
+        options: [
+          "Stratification",
+          "Cell polarity",
+          "Keratinization",
+          "Ciliation",
+        ],
+        correct: 1,
+        explanation:
+          "Polarized distribution of transporters enables vectorial movement.",
+      },
+    ],
+    "General Connective Tissue": [
+      {
+        text: "Which feature best distinguishes mesenchymal connective tissue from loose connective tissue proper in routine histological sections?",
+        options: [
+          "Abundance of ground substance",
+          "Presence of undifferentiated stellate cells",
+          "Sparse collagen fibers",
+          "High vascularity",
+        ],
+        correct: 1,
+        explanation:
+          "Mesenchymal tissue is characterized by undifferentiated stellate cells with long processes, unlike loose connective tissue which contains differentiated fibroblasts.",
+      },
+      {
+        text: "The primary reason reticular fibers are poorly visualized with H&E stain is due to their:",
+        options: [
+          "Elastic protein content",
+          "Thin diameter and glycosylation",
+          "Lack of cross-linking",
+          "Intracellular location",
+        ],
+        correct: 1,
+        explanation:
+          "Reticular fibers are thin type III collagen fibers coated with carbohydrates, requiring silver stains for visualization.",
+      },
+      {
+        text: "Which cell type is most responsible for initiating inflammatory responses in connective tissue?",
+        options: ["Fibroblast", "Mast cell", "Plasma cell", "Macrophage"],
+        correct: 1,
+        explanation:
+          "Mast cells release histamine, heparin, and cytokines, triggering vascular changes early in inflammation.",
+      },
+      {
+        text: "A connective tissue sample shows densely packed collagen fibers arranged in multiple directions. This tissue most likely functions to:",
+        options: [
+          "Resist unidirectional tensile stress",
+          "Provide elastic recoil",
+          "Withstand stress from various directions",
+          "Support hematopoiesis",
+        ],
+        correct: 2,
+        explanation:
+          "Dense irregular connective tissue resists multidirectional mechanical forces.",
+      },
+      {
+        text: "Which molecular component contributes most to the hydration and compressive resistance of ground substance?",
+        options: ["Fibronectin", "Collagen", "Proteoglycans", "Elastin"],
+        correct: 2,
+        explanation:
+          "Proteoglycans bind water via glycosaminoglycans, providing turgidity and resistance to compression.",
+      },
+      {
+        text: "Plasma cells can be confidently identified histologically by:",
+        options: [
+          "Central euchromatic nucleus",
+          "Prominent nucleolus",
+          "Clock-face chromatin pattern",
+          "Scant rough endoplasmic reticulum",
+        ],
+        correct: 2,
+        explanation:
+          "Plasma cells show eccentric nuclei with clumped heterochromatin, creating a clock-face appearance.",
+      },
+      {
+        text: "Which connective tissue cell is derived from monocytes and exhibits phagocytic activity?",
+        options: ["Fibroblast", "Mast cell", "Macrophage", "Plasma cell"],
+        correct: 2,
+        explanation:
+          "Macrophages originate from monocytes and serve immune and phagocytic roles.",
+      },
+      {
+        text: "Elastic fibers differ from collagen fibers primarily due to their:",
+        options: [
+          "Resistance to enzymatic degradation",
+          "Ability to recoil after stretching",
+          "Intracellular assembly",
+          "Higher tensile strength",
+        ],
+        correct: 1,
+        explanation:
+          "Elastic fibers contain elastin and fibrillin, allowing stretch and recoil.",
+      },
+      {
+        text: "Which connective tissue component is MOST responsible for cell adhesion and migration?",
+        options: [
+          "Hyaluronic acid",
+          "Fibronectin",
+          "Elastin",
+          "Type I collagen",
+        ],
+        correct: 1,
+        explanation:
+          "Fibronectin links cells to extracellular matrix and facilitates cell migration and adhesion.",
+      },
+      {
+        text: "Which feature best differentiates dense regular connective tissue from dense irregular connective tissue?",
+        options: [
+          "Vascularity",
+          "Fiber thickness",
+          "Orientation of collagen fibers",
+          "Cell density",
+        ],
+        correct: 2,
+        explanation:
+          "Dense regular CT has parallel collagen bundles, aligned with the direction of stress.",
+      },
+      {
+        text: "Ground substance is electron-lucent under electron microscopy primarily because it:",
+        options: [
+          "Lacks protein",
+          "Is highly hydrated",
+          "Contains elastic fibers",
+          "Is intracellular",
+        ],
+        correct: 1,
+        explanation:
+          "The high water content of ground substance makes it electron-lucent.",
+      },
+      {
+        text: "Which cell is responsible for collagen synthesis in normal connective tissue?",
+        options: ["Mast cell", "Macrophage", "Fibroblast", "Plasma cell"],
+        correct: 2,
+        explanation:
+          "Fibroblasts synthesize collagen, elastin, and ground substance components.",
+      },
+      {
+        text: "Which staining method is BEST for demonstrating elastic fibers?",
+        options: [
+          "Periodic acid–Schiff",
+          "Masson's trichrome",
+          "Verhoeff’s stain",
+          "Silver impregnation",
+        ],
+        correct: 2,
+        explanation: "Verhoeff’s stain selectively highlights elastic fibers.",
+      },
+      {
+        text: "The predominant collagen type in reticular fibers is:",
+        options: ["Type I", "Type II", "Type III", "Type IV"],
+        correct: 2,
+        explanation: "Reticular fibers are composed of Type III collagen.",
+      },
+      {
+        text: "Which connective tissue cell shows basophilic cytoplasm due to abundant rough ER?",
+        options: ["Fibrocyte", "Plasma cell", "Mast cell", "Adipocyte"],
+        correct: 1,
+        explanation:
+          "Plasma cells synthesize antibodies and thus contain extensive rough ER.",
+      },
+      {
+        text: "Which connective tissue component provides a pathway for diffusion of nutrients and metabolites?",
+        options: [
+          "Collagen fibers",
+          "Elastic fibers",
+          "Ground substance",
+          "Reticular fibers",
+        ],
+        correct: 2,
+        explanation:
+          "Ground substance permits diffusion of substances between capillaries and cells.",
+      },
+      {
+        text: "A tissue rich in reticular fibers would most likely be found in:",
+        options: ["Tendons", "Dermis", "Lymphoid organs", "Ligaments"],
+        correct: 2,
+        explanation:
+          "Reticular fibers form a supportive framework in lymphoid and hematopoietic organs.",
+      },
+      {
+        text: "Which feature indicates a fibroblast is metabolically active?",
+        options: [
+          "Dark elongated nucleus",
+          "Abundant cytoplasm",
+          "Sparse organelles",
+          "Condensed chromatin",
+        ],
+        correct: 1,
+        explanation:
+          "Active fibroblasts have large cytoplasm and euchromatic nuclei.",
+      },
+      {
+        text: "Which connective tissue cell plays a key role in antigen presentation?",
+        options: ["Mast cell", "Fibroblast", "Plasma cell", "Macrophage"],
+        correct: 3,
+        explanation:
+          "Macrophages process and present antigens to immune cells.",
+      },
+      {
+        text: "Which extracellular matrix component is MOST resistant to tensile stress?",
+        options: [
+          "Elastin",
+          "Reticular fibers",
+          "Type I collagen",
+          "Proteoglycans",
+        ],
+        correct: 2,
+        explanation:
+          "Type I collagen provides maximum tensile strength in connective tissues.",
+      },
+    ],
+    Cartilage: [
+      {
+        text: "Which feature best explains the inability of adult articular cartilage to regenerate effectively after injury?",
+        options: [
+          "Absence of proteoglycans",
+          "Low mitotic activity of chondrocytes",
+          "Lack of vascularity and perichondrium",
+          "High water content of the matrix",
+        ],
+        correct: 2,
+        explanation:
+          "Articular cartilage lacks both blood vessels and perichondrium, eliminating sources of progenitor cells and nutrients needed for repair.",
+      },
+      {
+        text: "Which molecular component is primarily responsible for the resilience to compression in hyaline cartilage?",
+        options: ["Type II collagen", "Aggrecan", "Chondronectin", "Elastin"],
+        correct: 1,
+        explanation:
+          "Aggrecan binds hyaluronic acid and attracts water, creating osmotic swelling pressure that resists compression.",
+      },
+      {
+        text: "A histological section shows cartilage with visible fibers, abundant chondrocytes, and no perichondrium. Which cartilage is most likely?",
+        options: [
+          "Hyaline cartilage",
+          "Elastic cartilage",
+          "Fibrocartilage",
+          "Articular cartilage",
+        ],
+        correct: 2,
+        explanation:
+          "Fibrocartilage has visible collagen fibers, no perichondrium, and abundant chondrocytes arranged in rows.",
+      },
+      {
+        text: "Which cell population is directly responsible for interstitial growth of cartilage?",
+        options: [
+          "Perichondrial fibroblasts",
+          "Mesenchymal stem cells",
+          "Chondroblasts",
+          "Chondrocytes",
+        ],
+        correct: 3,
+        explanation:
+          "Interstitial growth occurs via mitotic division of chondrocytes within lacunae, forming isogenous groups.",
+      },
+      {
+        text: "Why is elastic cartilage less prone to calcification compared to hyaline cartilage?",
+        options: [
+          "Higher proteoglycan content",
+          "Presence of elastic fibers inhibiting mineral deposition",
+          "Greater vascular supply",
+          "Increased chondrocyte turnover",
+        ],
+        correct: 1,
+        explanation:
+          "Elastic fibers interfere with mineral deposition, reducing calcification tendency.",
+      },
+      {
+        text: "Which structural arrangement best defines an isogenous group?",
+        options: [
+          "Chondrocytes sharing a perichondrial origin",
+          "Chondrocytes formed by appositional growth",
+          "Clusters of chondrocytes derived from a single parent cell",
+          "Aggregates of degenerating chondrocytes",
+        ],
+        correct: 2,
+        explanation:
+          "Isogenous groups result from mitotic division of one chondrocyte, reflecting interstitial growth.",
+      },
+      {
+        text: "The basophilia of cartilage matrix is mainly due to:",
+        options: [
+          "Sulfated glycosaminoglycans",
+          "Elastic fibers",
+          "Type II collagen",
+          "Chondronectin",
+        ],
+        correct: 0,
+        explanation:
+          "Sulfated GAGs (e.g., chondroitin sulfate) bind basic dyes, producing basophilia.",
+      },
+      {
+        text: "Which cartilage type is best adapted to resist both compression and tensile forces?",
+        options: [
+          "Hyaline cartilage",
+          "Elastic cartilage",
+          "Fibrocartilage",
+          "Articular cartilage",
+        ],
+        correct: 2,
+        explanation:
+          "Fibrocartilage contains dense type I collagen, enabling resistance to tensile stress while proteoglycans handle compression.",
+      },
+      {
+        text: "Which feature distinguishes articular cartilage histologically?",
+        options: [
+          "Presence of elastic fibers",
+          "Thick perichondrium",
+          "Zonal arrangement of chondrocytes",
+          "Numerous isogenous groups",
+        ],
+        correct: 2,
+        explanation:
+          "Articular cartilage has superficial, transitional, deep, and calcified zones, each with distinct chondrocyte orientation.",
+      },
+      {
+        text: "Which statement regarding the perichondrium is TRUE?",
+        options: [
+          "It is essential for interstitial growth",
+          "It contains chondrocytes in lacunae",
+          "It contributes to appositional growth",
+          "It is present in all cartilages",
+        ],
+        correct: 2,
+        explanation:
+          "Perichondrium supplies chondroblasts for appositional growth. It is absent in fibrocartilage and articular cartilage.",
+      },
+      {
+        text: "Loss of which molecule would most severely impair cartilage hydration?",
+        options: ["Type II collagen", "Elastin", "Aggrecan", "Fibronectin"],
+        correct: 2,
+        explanation:
+          "Aggrecan binds water via negatively charged GAGs, maintaining matrix hydration.",
+      },
+      {
+        text: "Which cartilage type is most metabolically active?",
+        options: [
+          "Hyaline cartilage",
+          "Elastic cartilage",
+          "Fibrocartilage",
+          "Articular cartilage",
+        ],
+        correct: 1,
+        explanation:
+          "Elastic cartilage has more chondrocytes and richer matrix turnover due to elastic fiber maintenance.",
+      },
+      {
+        text: "The territorial matrix is best described as:",
+        options: [
+          "Light-staining matrix between isogenous groups",
+          "Matrix rich in collagen fibers",
+          "Basophilic matrix immediately surrounding lacunae",
+          "Matrix continuous with perichondrium",
+        ],
+        correct: 2,
+        explanation:
+          "Territorial matrix stains deeply due to high proteoglycan concentration around lacunae.",
+      },
+      {
+        text: "Which change occurs in aging cartilage?",
+        options: [
+          "Increased proteoglycan synthesis",
+          "Increased elasticity",
+          "Decreased water content",
+          "Enhanced repair capacity",
+        ],
+        correct: 2,
+        explanation:
+          "Aging reduces proteoglycan content, lowering water retention and resilience.",
+      },
+      {
+        text: "Which cartilage is most likely to undergo physiological calcification?",
+        options: [
+          "Elastic cartilage",
+          "Hyaline cartilage of trachea",
+          "Fibrocartilage of intervertebral disc",
+          "Articular cartilage",
+        ],
+        correct: 1,
+        explanation:
+          "Hyaline cartilage often calcifies with age, especially in costal and tracheal cartilage.",
+      },
+      {
+        text: "The primary function of chondronectin is to:",
+        options: [
+          "Bind calcium",
+          "Attach chondrocytes to collagen fibers",
+          "Promote angiogenesis",
+          "Degrade proteoglycans",
+        ],
+        correct: 1,
+        explanation:
+          "Chondronectin mediates adhesion between chondrocytes and collagen matrix.",
+      },
+      {
+        text: "Which feature explains the glassy appearance of hyaline cartilage?",
+        options: [
+          "High elastin content",
+          "Masking of collagen fibers by proteoglycans",
+          "Absence of collagen",
+          "Low water content",
+        ],
+        correct: 1,
+        explanation:
+          "Type II collagen fibers are present but masked by proteoglycans, creating a smooth, glassy look.",
+      },
+      {
+        text: "Which cartilage lacks both perichondrium AND type II collagen?",
+        options: [
+          "Elastic cartilage",
+          "Hyaline cartilage",
+          "Fibrocartilage",
+          "Articular cartilage",
+        ],
+        correct: 2,
+        explanation:
+          "Fibrocartilage contains dense type I collagen and lacks perichondrium.",
+      },
+      {
+        text: "Nutrient diffusion in cartilage primarily occurs through:",
+        options: [
+          "Blood vessels",
+          "Canaliculi",
+          "Ground substance",
+          "Perichondrium only",
+        ],
+        correct: 2,
+        explanation:
+          "Cartilage relies on diffusion through hydrated ground substance due to avascularity.",
+      },
+      {
+        text: "Which histological feature best correlates with load-bearing function in cartilage?",
+        options: [
+          "Elastic fiber density",
+          "Chondrocyte mitotic rate",
+          "Proteoglycan concentration",
+          "Perichondrial thickness",
+        ],
+        correct: 2,
+        explanation:
+          "High proteoglycan concentration allows resistance to compressive loads.",
+      },
+    ],
+    Bones: [
+      {
+        text: "Which ultrastructural feature most directly explains the birefringence of bone under polarized light?",
+        options: [
+          "Osteocyte canaliculi",
+          "Hydroxyapatite crystals",
+          "Parallel orientation of collagen fibrils",
+          "Lamellar vascular arrangement",
+        ],
+        correct: 2,
+        explanation:
+          "Bone birefringence results from the ordered, parallel arrangement of type I collagen fibrils within lamellae—not from minerals or vessels.",
+      },
+      {
+        text: "The reversal line in bone histology most accurately represents:",
+        options: [
+          "Boundary between compact and cancellous bone",
+          "Site of osteoblast apoptosis",
+          "Interface between bone resorption and deposition",
+          "Junction between woven and lamellar bone",
+        ],
+        correct: 2,
+        explanation:
+          "A reversal line marks the transition where osteoclastic resorption ends and osteoblastic deposition begins.",
+      },
+      {
+        text: "Which statement best explains why osteocytes survive despite being embedded in mineralized matrix?",
+        options: [
+          "They are metabolically inactive",
+          "Lacunae contain interstitial fluid under pressure",
+          "Gap junctions permit nutrient diffusion via canaliculi",
+          "Bone matrix is semi-permeable",
+        ],
+        correct: 2,
+        explanation:
+          "Gap junctions through canaliculi allow metabolic exchange between osteocytes and surface cells.",
+      },
+      {
+        text: "Which bone cell shows the highest expression of alkaline phosphatase?",
+        options: ["Osteoclast", "Osteoblast", "Osteocyte", "Bone lining cell"],
+        correct: 1,
+        explanation:
+          "Alkaline phosphatase is critical for mineralization and is most abundant in active osteoblasts.",
+      },
+      {
+        text: "The cement line of an osteon differs from surrounding lamellae primarily because it:",
+        options: [
+          "Contains type II collagen",
+          "Is hypermineralized and collagen-poor",
+          "Contains elastic fibers",
+          "Lacks osteocytes",
+        ],
+        correct: 1,
+        explanation:
+          "Cement lines are highly mineralized and poor in collagen, making them mechanically weak planes.",
+      },
+      {
+        text: "Which feature distinguishes woven bone from lamellar bone histologically?",
+        options: [
+          "Presence of osteons",
+          "High mineral content",
+          "Random collagen fiber orientation",
+          "Absence of osteocytes",
+        ],
+        correct: 2,
+        explanation:
+          "Woven bone has randomly arranged collagen fibers, unlike orderly lamellae.",
+      },
+      {
+        text: "The Haversian canal differs from Volkmann’s canal because it:",
+        options: [
+          "Is lined by endosteum",
+          "Contains lymphatics",
+          "Runs perpendicular to bone surface",
+          "Lacks nerves",
+        ],
+        correct: 0,
+        explanation:
+          "Haversian canals are endosteum-lined and run parallel to the long axis of the bone.",
+      },
+      {
+        text: "Which component primarily accounts for bone’s tensile strength?",
+        options: [
+          "Hydroxyapatite",
+          "Proteoglycans",
+          "Type I collagen",
+          "Osteoid fluid",
+        ],
+        correct: 2,
+        explanation:
+          "Type I collagen provides tensile strength, while minerals provide compressive strength.",
+      },
+      {
+        text: "Failure of osteoid mineralization would most directly affect which zone?",
+        options: [
+          "Cement line",
+          "Interstitial lamellae",
+          "Osteoid seam",
+          "Canaliculi",
+        ],
+        correct: 2,
+        explanation:
+          "The osteoid seam is newly formed, unmineralized bone matrix.",
+      },
+      {
+        text: "Which statement regarding osteoclasts is histologically correct?",
+        options: [
+          "Derived from mesenchymal stem cells",
+          "Possess a ruffled border facing bone surface",
+          "Reside in lacunae called osteons",
+          "Secrete alkaline phosphatase",
+        ],
+        correct: 1,
+        explanation:
+          "Osteoclasts are multinucleated, hematopoietic-derived cells with a ruffled border for resorption.",
+      },
+      {
+        text: "How does compact bone primarily differ from cancellous bone histologically?",
+        options: [
+          "Presence of osteocytes",
+          "Presence of osteoblasts",
+          "Organization into osteons",
+          "Mineral composition",
+        ],
+        correct: 2,
+        explanation:
+          "Compact bone is organized into osteons, whereas cancellous bone is not.",
+      },
+      {
+        text: "Which feature best explains rapid calcium exchange in cancellous bone?",
+        options: [
+          "Thick lamellae",
+          "Numerous cement lines",
+          "Large surface-to-volume ratio",
+          "Abundant osteocytes",
+        ],
+        correct: 2,
+        explanation:
+          "Cancellous bone has a high surface-to-volume ratio, facilitating mineral exchange.",
+      },
+      {
+        text: "The endosteum is best described as:",
+        options: [
+          "Dense irregular connective tissue",
+          "Simple squamous epithelium",
+          "Osteogenic connective tissue lining internal bone surfaces",
+          "Mineralized extracellular matrix",
+        ],
+        correct: 2,
+        explanation:
+          "Endosteum is thin, osteogenic connective tissue lining marrow cavities and canals.",
+      },
+      {
+        text: "Which change would most directly impair osteocyte mechanosensation?",
+        options: [
+          "Loss of lacunae",
+          "Reduction in canalicular network",
+          "Increased mineralization",
+          "Thickened cement lines",
+        ],
+        correct: 1,
+        explanation:
+          "Mechanosensation depends on canaliculi transmitting mechanical signals.",
+      },
+      {
+        text: "Why do interstitial lamellae lack a central canal?",
+        options: [
+          "They are newly formed bone",
+          "They are remnants of remodeled osteons",
+          "They are avascular",
+          "They contain woven bone",
+        ],
+        correct: 1,
+        explanation:
+          "Interstitial lamellae are remnants of old osteons left after remodeling.",
+      },
+      {
+        text: "Which histological feature indicates active bone remodeling?",
+        options: [
+          "Uniform lamellae",
+          "Numerous reversal lines",
+          "Thick cement lines",
+          "Absence of osteoclasts",
+        ],
+        correct: 1,
+        explanation:
+          "Reversal lines indicate cycles of resorption and deposition.",
+      },
+      {
+        text: "The organic component of bone matrix is primarily synthesized by:",
+        options: [
+          "Osteocytes",
+          "Osteoclasts",
+          "Osteoblasts",
+          "Bone lining cells",
+        ],
+        correct: 2,
+        explanation:
+          "Osteoblasts synthesize osteoid, the organic matrix of bone.",
+      },
+      {
+        text: "Which structure allows diffusion of nutrients in mineralized bone?",
+        options: [
+          "Haversian canal",
+          "Volkmann’s canal",
+          "Canaliculi",
+          "Cement line",
+        ],
+        correct: 2,
+        explanation:
+          "Canaliculi permit diffusion between osteocytes and blood supply.",
+      },
+      {
+        text: "Which histological finding is most characteristic of pathological bone softening?",
+        options: [
+          "Increased osteon density",
+          "Thickened cement lines",
+          "Accumulation of unmineralized osteoid",
+          "Loss of canaliculi",
+        ],
+        correct: 2,
+        explanation:
+          "Bone softening (e.g., osteomalacia) shows excess unmineralized osteoid.",
+      },
+      {
+        text: "Why is bone considered a dynamic tissue histologically?",
+        options: [
+          "Presence of marrow",
+          "Constant mineral deposition",
+          "Continuous remodeling by opposing cell populations",
+          "High collagen turnover",
+        ],
+        correct: 2,
+        explanation:
+          "Bone is dynamic due to continuous remodeling by osteoblasts and osteoclasts.",
+      },
+    ],
+    "Muscular Tissue": [
+      {
+        text: "Which structural feature distinguishes cardiac muscle from skeletal muscle under a light microscope?",
+        options: [
+          "Presence of striations",
+          "Multinucleation",
+          "Intercalated discs",
+          "Peripheral nuclei",
+        ],
+        correct: 2,
+        explanation:
+          "Cardiac muscle cells are connected via intercalated discs, specialized junctions for mechanical and electrical coupling; skeletal muscle lacks them.",
+      },
+      {
+        text: "Which protein is primarily responsible for the passive elasticity of muscle?",
+        options: ["Actin", "Myosin", "Titin", "Nebulin"],
+        correct: 2,
+        explanation:
+          "Titin spans from Z line to M line and acts as a molecular spring, contributing to passive tension.",
+      },
+      {
+        text: "Which type of skeletal muscle fiber has the highest oxidative capacity and fatigue resistance?",
+        options: ["Type I", "Type IIa", "Type IIb", "Type IIx"],
+        correct: 0,
+        explanation:
+          "Type I fibers are slow-twitch, rich in mitochondria and myoglobin, ideal for endurance.",
+      },
+      {
+        text: "In smooth muscle, contraction is initiated primarily by:",
+        options: [
+          "Troponin-tropomyosin complex",
+          "Calmodulin binding to Ca²⁺",
+          "Action of titin",
+          "Direct actin-myosin ATPase activation",
+        ],
+        correct: 1,
+        explanation:
+          "Smooth muscle lacks troponin; Ca²⁺ binds calmodulin, activating myosin light chain kinase.",
+      },
+      {
+        text: "Which histological stain best demonstrates the Z line of striated muscle?",
+        options: ["H&E", "Masson’s trichrome", "Phalloidin staining", "PAS"],
+        correct: 2,
+        explanation:
+          "Phalloidin binds F-actin, highlighting Z lines specifically in striated muscle fibers.",
+      },
+      {
+        text: "The feature “diad” in cardiac muscle refers to:",
+        options: [
+          "One T-tubule + one SR terminal cistern",
+          "Two nuclei per cell",
+          "Two sarcomeres per fiber",
+          "Paired intercalated discs",
+        ],
+        correct: 0,
+        explanation:
+          "Cardiac muscle diads consist of T-tubule + single SR cistern, unlike skeletal muscle triads.",
+      },
+      {
+        text: "Which skeletal muscle fiber type predominantly relies on glycolysis?",
+        options: ["Type I", "Type IIa", "Type IIb", "Smooth muscle"],
+        correct: 2,
+        explanation:
+          "Type IIb fibers are fast-twitch, low mitochondria, high glycogen, suited for short bursts.",
+      },
+      {
+        text: "Dense bodies in smooth muscle are analogous to which skeletal muscle structure?",
+        options: ["Z line", "M line", "I band", "A band"],
+        correct: 0,
+        explanation:
+          "Dense bodies anchor actin filaments in smooth muscle, functionally equivalent to Z lines.",
+      },
+      {
+        text: "Which of the following structures ensures electrical coupling in cardiac muscle?",
+        options: [
+          "Gap junctions",
+          "Tight junctions",
+          "Desmosomes",
+          "Hemidesmosomes",
+        ],
+        correct: 0,
+        explanation:
+          "Gap junctions allow ions to pass directly, enabling synchronized contraction.",
+      },
+      {
+        text: "Which protein regulates actin-myosin interaction in smooth muscle?",
+        options: ["Troponin C", "Calmodulin", "Nebulin", "Dystrophin"],
+        correct: 1,
+        explanation:
+          "Calmodulin binds Ca²⁺, activating myosin light chain kinase, regulating contraction.",
+      },
+      {
+        text: "Skeletal muscle regeneration is primarily mediated by:",
+        options: [
+          "Fibroblasts",
+          "Satellite cells",
+          "Myoblasts in adults",
+          "Pericytes",
+        ],
+        correct: 1,
+        explanation:
+          "Satellite cells are quiescent myogenic stem cells activated after injury.",
+      },
+      {
+        text: "Which muscle type exhibits spontaneous rhythmic contractions?",
+        options: [
+          "Skeletal muscle",
+          "Cardiac muscle",
+          "Smooth muscle of large arteries only",
+          "None",
+        ],
+        correct: 1,
+        explanation:
+          "Cardiac muscle cells are autorhythmic, generating spontaneous APs via pacemaker cells.",
+      },
+      {
+        text: "The T-tubules in skeletal muscle are located at:",
+        options: ["Z line", "M line", "A-I junction", "H zone"],
+        correct: 2,
+        explanation:
+          "Skeletal T-tubules penetrate at A-I junctions for optimal excitation-contraction coupling.",
+      },
+      {
+        text: "Which ion is essential for cross-bridge detachment in all muscle types?",
+        options: ["Na⁺", "K⁺", "Mg²⁺", "Ca²⁺"],
+        correct: 2,
+        explanation:
+          "Mg²⁺ is a cofactor for ATP hydrolysis, allowing myosin head detachment from actin.",
+      },
+      {
+        text: "Intercalated discs contain all EXCEPT:",
+        options: [
+          "Fascia adherens",
+          "Desmosomes",
+          "Gap junctions",
+          "Neuromuscular junctions",
+        ],
+        correct: 3,
+        explanation:
+          "Intercalated discs mediate mechanical/electrical coupling, not synaptic innervation.",
+      },
+      {
+        text: "Smooth muscle contraction is slower than skeletal due to:",
+        options: [
+          "Faster calcium removal",
+          "Absence of troponin",
+          "Latch-bridge mechanism",
+          "Lower actin content",
+        ],
+        correct: 2,
+        explanation:
+          "Latch-bridge allows sustained tension with minimal ATP, slowing contraction/relaxation.",
+      },
+      {
+        text: "Which histological feature differentiates Type IIa and IIb fibers?",
+        options: [
+          "Nucleus position",
+          "Mitochondrial density",
+          "Presence of striations",
+          "Fiber length",
+        ],
+        correct: 1,
+        explanation:
+          "Type IIa are oxidative-glycolytic (more mitochondria), Type IIb are glycolytic (fewer mitochondria).",
+      },
+      {
+        text: "Which of the following is true about cardiac muscle nuclei?",
+        options: [
+          "Always peripheral",
+          "Single, central",
+          "Multinucleated, peripheral",
+          "Multinucleated, central",
+        ],
+        correct: 1,
+        explanation:
+          "Cardiac myocytes usually have one centrally located nucleus; skeletal fibers are multinucleated with peripheral nuclei.",
+      },
+      {
+        text: "The neuromuscular junction in skeletal muscle is specialized for:",
+        options: [
+          "Hormone release",
+          "Electrical conduction only",
+          "Chemical transmission",
+          "Mechanical junction",
+        ],
+        correct: 2,
+        explanation:
+          "Acetylcholine release at NMJ triggers skeletal muscle depolarization and contraction.",
+      },
+      {
+        text: "Which feature of smooth muscle allows it to maintain tone over long periods?",
+        options: [
+          "High mitochondria content",
+          "Latch-bridge mechanism",
+          "Extensive T-tubules",
+          "Triad structures",
+        ],
+        correct: 1,
+        explanation:
+          "Smooth muscle can sustain tonic contraction efficiently via latch bridges without ATP depletion.",
+      },
+    ],
+    "Nervous System": [
+      {
+        text: "Which of the following neuroglial cells is derived from mesoderm rather than ectoderm?",
+        options: [
+          "Astrocytes",
+          "Oligodendrocytes",
+          "Microglia",
+          "Ependymal cells",
+        ],
+        correct: 2,
+        explanation:
+          "Microglia are derived from mesodermal (yolk sac) precursors, unlike other glial cells, which are of neuroectodermal origin.",
+      },
+      {
+        text: "Which region of the neuron contains the highest density of voltage-gated sodium channels?",
+        options: [
+          "Dendritic spine",
+          "Soma",
+          "Axon initial segment",
+          "Node of Ranvier",
+        ],
+        correct: 2,
+        explanation:
+          "The axon initial segment is specialized for action potential initiation due to its high density of voltage-gated Na⁺ channels.",
+      },
+      {
+        text: "In the central nervous system, myelin sheaths are produced by:",
+        options: [
+          "Schwann cells",
+          "Oligodendrocytes",
+          "Astrocytes",
+          "Ependymal cells",
+        ],
+        correct: 1,
+        explanation:
+          "Oligodendrocytes myelinate multiple axons in the CNS; Schwann cells do so in the PNS.",
+      },
+      {
+        text: "Nissl bodies in neurons represent:",
+        options: [
+          "Smooth endoplasmic reticulum",
+          "Golgi apparatus",
+          "Rough endoplasmic reticulum and ribosomes",
+          "Mitochondria clusters",
+        ],
+        correct: 2,
+        explanation:
+          "Nissl bodies are aggregates of RER and ribosomes, involved in protein synthesis.",
+      },
+      {
+        text: "Which type of synapse predominantly mediates fast inhibitory neurotransmission in the CNS?",
+        options: [
+          "Glutamatergic synapse",
+          "GABAergic synapse",
+          "Cholinergic synapse",
+          "Dopaminergic synapse",
+        ],
+        correct: 1,
+        explanation:
+          "GABAergic synapses open Cl⁻ channels causing hyperpolarization and fast inhibition.",
+      },
+      {
+        text: "Which of the following structures is NOT part of the blood-brain barrier?",
+        options: [
+          "Endothelial tight junctions",
+          "Pericytes",
+          "Astrocyte end-feet",
+          "Microglial phagocytes",
+        ],
+        correct: 3,
+        explanation:
+          "Microglia are immune cells, not structural components of the BBB.",
+      },
+      {
+        text: "The primary difference between unipolar and bipolar neurons is:",
+        options: [
+          "Bipolar neurons have one axon only",
+          "Unipolar neurons have dendrites and axon fused",
+          "Bipolar neurons are always motor neurons",
+          "Unipolar neurons are only in the CNS",
+        ],
+        correct: 1,
+        explanation:
+          "Unipolar (pseudounipolar) neurons have a single process splitting into dendritic and axonal branches.",
+      },
+      {
+        text: "Which glial cell participates actively in the formation of scar tissue following CNS injury?",
+        options: [
+          "Microglia",
+          "Oligodendrocytes",
+          "Astrocytes",
+          "Schwann cells",
+        ],
+        correct: 2,
+        explanation:
+          "Reactive astrocytes form glial scars and secrete extracellular matrix components after injury.",
+      },
+      {
+        text: "Which statement about nodes of Ranvier is correct?",
+        options: [
+          "They are continuous myelin segments",
+          "Ion channels are sparse",
+          "They enable saltatory conduction",
+          "Found only in CNS",
+        ],
+        correct: 2,
+        explanation:
+          "Nodes of Ranvier are gaps in myelin where ion exchange allows rapid signal conduction.",
+      },
+      {
+        text: "Which neurotransmitter is predominantly excitatory in the CNS?",
+        options: ["GABA", "Glycine", "Glutamate", "Dopamine"],
+        correct: 2,
+        explanation:
+          "Glutamate depolarizes postsynaptic neurons via AMPA and NMDA receptors.",
+      },
+      {
+        text: "The ependymal cells lining the ventricles are characterized by:",
+        options: [
+          "Tight junctions forming a complete barrier",
+          "Cilia and microvilli",
+          "Myelination of axons",
+          "Phagocytic activity",
+        ],
+        correct: 1,
+        explanation:
+          "Ependymal cells have cilia for CSF movement and microvilli for absorption.",
+      },
+      {
+        text: "Which type of neuron has the fastest conduction velocity?",
+        options: [
+          "Small, unmyelinated C fibers",
+          "Large, myelinated Aα fibers",
+          "Medium, myelinated Aδ fibers",
+          "Small, myelinated B fibers",
+        ],
+        correct: 1,
+        explanation:
+          "Conduction velocity increases with axon diameter and myelination.",
+      },
+      {
+        text: "Which statement about oligodendrocytes is FALSE?",
+        options: [
+          "They myelinate multiple axons",
+          "Found only in CNS",
+          "Derived from neuroectoderm",
+          "Capable of phagocytosing debris",
+        ],
+        correct: 3,
+        explanation:
+          "Only microglia are phagocytic in CNS; oligodendrocytes produce myelin.",
+      },
+      {
+        text: "The axon hillock is histologically distinct because:",
+        options: [
+          "It contains dense Nissl bodies",
+          "Lacks Nissl bodies",
+          "Has abundant Golgi complexes",
+          "Is the site of synapse formation",
+        ],
+        correct: 1,
+        explanation:
+          "Nissl bodies are absent in axon hillock; this region initiates action potentials.",
+      },
+      {
+        text: "Which glial cell can present antigens in CNS?",
+        options: [
+          "Astrocytes",
+          "Oligodendrocytes",
+          "Microglia",
+          "Ependymal cells",
+        ],
+        correct: 2,
+        explanation:
+          "Microglia are the resident immune cells and can present antigens to T cells.",
+      },
+      {
+        text: "Which component of the neuron is primarily responsible for retrograde transport?",
+        options: [
+          "Kinesin along microtubules",
+          "Dynein along microtubules",
+          "Actin filaments",
+          "Myosin along actin",
+        ],
+        correct: 1,
+        explanation:
+          "Dynein carries materials from axon terminals back to the soma.",
+      },
+      {
+        text: "Which of the following is true regarding Schwann cells?",
+        options: [
+          "Myelinate multiple axons simultaneously",
+          "Form nodes of Ranvier in CNS",
+          "Participate in peripheral nerve regeneration",
+          "Derived from mesoderm",
+        ],
+        correct: 2,
+        explanation:
+          "Schwann cells support axon regrowth by forming regeneration tubes; they myelinate single axons.",
+      },
+      {
+        text: "Which type of synapse allows direct electrical communication between neurons?",
+        options: [
+          "Chemical excitatory synapse",
+          "Electrical gap junction",
+          "GABAergic inhibitory synapse",
+          "Cholinergic neuromuscular junction",
+        ],
+        correct: 1,
+        explanation:
+          "Gap junctions allow ions to flow directly between cells for rapid transmission.",
+      },
+      {
+        text: "Which statement about dendritic spines is TRUE?",
+        options: [
+          "They contain myelin",
+          "Site of axonal action potential initiation",
+          "Are dynamic structures influenced by synaptic activity",
+          "Found only in the PNS",
+        ],
+        correct: 2,
+        explanation:
+          "Dendritic spines remodel with synaptic strength and plasticity.",
+      },
+      {
+        text: "Which neuroglial cell regulates extracellular ion concentrations and neurotransmitter levels?",
+        options: [
+          "Oligodendrocytes",
+          "Astrocytes",
+          "Microglia",
+          "Ependymal cells",
+        ],
+        correct: 1,
+        explanation:
+          "Astrocytes maintain K⁺ and glutamate homeostasis in the CNS.",
+      },
+    ],
+    "Blood & Mononuclear System": [
+      {
+        text: "Which of the following granules is unique to neutrophils and contains myeloperoxidase?",
+        options: [
+          "Azurophilic granules",
+          "Specific granules",
+          "Tertiary granules",
+          "Secretory vesicles",
+        ],
+        correct: 0,
+        explanation:
+          "Azurophilic (primary) granules contain myeloperoxidase and are characteristic of neutrophils, unlike specific (secondary) granules, which lack MPO.",
+      },
+      {
+        text: "Which plasma protein is mainly responsible for maintaining osmotic pressure in blood?",
+        options: ["Albumin", "Fibrinogen", "Immunoglobulin G", "Complement C3"],
+        correct: 0,
+        explanation:
+          "Albumin, synthesized by the liver, is the major contributor to plasma osmotic (colloid) pressure.",
+      },
+      {
+        text: "Which leukocyte has a bilobed nucleus and strongly eosinophilic granules?",
+        options: ["Neutrophil", "Eosinophil", "Basophil", "Monocyte"],
+        correct: 1,
+        explanation:
+          "Eosinophils have bilobed nuclei and red-orange granules due to major basic protein staining with eosin.",
+      },
+      {
+        text: "Kupffer cells in the liver are derived from:",
+        options: [
+          "Lymphoid stem cells",
+          "Myeloid progenitors in bone marrow",
+          "Erythroid progenitors",
+          "Endothelial cells",
+        ],
+        correct: 1,
+        explanation:
+          "Kupffer cells are tissue macrophages part of MPS, originating from monocytes in the myeloid lineage.",
+      },
+      {
+        text: "Which blood cells have no mitochondria and rely entirely on glycolysis?",
+        options: ["Lymphocytes", "Neutrophils", "Erythrocytes", "Monocytes"],
+        correct: 2,
+        explanation:
+          "Mature erythrocytes lack mitochondria, relying on anaerobic glycolysis for energy.",
+      },
+      {
+        text: "Monocytes transform into macrophages upon entering tissues. Which marker is highly expressed in mature macrophages?",
+        options: ["CD3", "CD68", "CD19", "CD56"],
+        correct: 1,
+        explanation:
+          "CD68 is a lysosomal marker highly expressed in macrophages and tissue monocytes.",
+      },
+      {
+        text: "Which of the following granulocytes has histamine-rich granules that stain intensely with basic dyes?",
+        options: ["Neutrophils", "Eosinophils", "Basophils", "Monocytes"],
+        correct: 2,
+        explanation:
+          "Basophils contain basophilic granules rich in histamine and heparin.",
+      },
+      {
+        text: "Platelets derive from:",
+        options: ["Lymphocytes", "Megakaryocytes", "Monocytes", "Erythrocytes"],
+        correct: 1,
+        explanation:
+          "Platelets are cytoplasmic fragments of megakaryocytes in the bone marrow.",
+      },
+      {
+        text: "The half-life of circulating neutrophils is approximately:",
+        options: ["6–8 hours", "2–3 days", "10–14 days", "1 month"],
+        correct: 0,
+        explanation:
+          "Neutrophils are short-lived in circulation; tissue half-life is longer.",
+      },
+      {
+        text: "Which mononuclear phagocyte is specialized in antigen presentation?",
+        options: [
+          "Kupffer cells",
+          "Langerhans cells",
+          "Alveolar macrophages",
+          "Osteoclasts",
+        ],
+        correct: 1,
+        explanation:
+          "Langerhans cells in the epidermis are specialized dendritic cells presenting antigens to T cells.",
+      },
+      {
+        text: "In histology, azurophilic granules in neutrophils are derived from:",
+        options: [
+          "Endoplasmic reticulum",
+          "Golgi complex",
+          "Mitochondria",
+          "Lysosomal fusion",
+        ],
+        correct: 1,
+        explanation:
+          "Primary granules form in the Golgi during neutrophil development and are lysosome-like.",
+      },
+      {
+        text: "Which plasma cell marker indicates active immunoglobulin secretion?",
+        options: ["CD3", "CD20", "CD138", "CD68"],
+        correct: 2,
+        explanation:
+          "CD138 (syndecan-1) is highly expressed on plasma cells actively secreting antibodies.",
+      },
+      {
+        text: "Which of the following is NOT a function of the mononuclear phagocyte system?",
+        options: [
+          "Phagocytosis of pathogens",
+          "Antigen presentation",
+          "Oxygen transport",
+          "Tissue remodeling",
+        ],
+        correct: 2,
+        explanation:
+          "Oxygen transport is the role of erythrocytes, not macrophages or MPS cells.",
+      },
+      {
+        text: "The primary site of hematopoiesis in adults is:",
+        options: ["Liver", "Spleen", "Red bone marrow", "Lymph nodes"],
+        correct: 2,
+        explanation:
+          "Red bone marrow is the main site of production for all blood cell lineages in adults.",
+      },
+      {
+        text: "Which enzyme in monocytes/macrophages generates reactive oxygen species to kill microbes?",
+        options: ["Lysozyme", "NADPH oxidase", "Elastase", "Myeloperoxidase"],
+        correct: 1,
+        explanation:
+          "NADPH oxidase generates superoxide radicals in the respiratory burst during phagocytosis.",
+      },
+      {
+        text: "Erythrocyte sedimentation rate (ESR) is influenced primarily by:",
+        options: [
+          "Platelet count",
+          "Plasma fibrinogen and globulins",
+          "Erythrocyte size alone",
+          "Leukocyte numbers",
+        ],
+        correct: 1,
+        explanation:
+          "ESR increases with plasma proteins that promote RBC aggregation.",
+      },
+      {
+        text: "Which cell type in the MPS is multinucleated and participates in bone resorption?",
+        options: [
+          "Kupffer cells",
+          "Osteoclasts",
+          "Langerhans cells",
+          "Alveolar macrophages",
+        ],
+        correct: 1,
+        explanation:
+          "Osteoclasts are large, multinucleated macrophage-derived cells that resorb bone.",
+      },
+      {
+        text: "Which leukocyte contains specific granules with collagenase and lactoferrin?",
+        options: ["Neutrophil", "Eosinophil", "Basophil", "Monocyte"],
+        correct: 0,
+        explanation:
+          "Secondary granules in neutrophils contain collagenase, lactoferrin, and other enzymes aiding tissue infiltration.",
+      },
+      {
+        text: "Hemosiderin-laden macrophages are most commonly seen in:",
+        options: [
+          "Healthy liver",
+          "Pulmonary alveoli after hemorrhage",
+          "Circulating blood",
+          "Lymph nodes",
+        ],
+        correct: 1,
+        explanation:
+          "Macrophages phagocytose extravasated RBCs, degrading hemoglobin to iron-containing hemosiderin.",
+      },
+      {
+        text: "Which cytokine is most critical for monocyte differentiation into macrophages?",
+        options: ["IL-2", "GM-CSF", "TNF-α", "IL-10"],
+        correct: 1,
+        explanation:
+          "Granulocyte-macrophage colony-stimulating factor (GM-CSF) drives differentiation of monocytes into tissue macrophages.",
+      },
+    ],
+  },
 };
 
 // ==========================================
@@ -10440,10 +11783,16 @@ const questionBank = {
 const state = {
   currentSubcourseKey: null,
   currentModuleIndex: null,
+  currentModuleName: null,
   questions: [],
   currentIndex: 0,
   score: 0,
+  moduleData: {},
   isAnswered: false,
+  multimedia: {},
+  timerInterval: null,
+  timeRemaining: 0,
+  isTimerPaused: false,
 };
 
 // ==========================================
@@ -10466,15 +11815,19 @@ const selectedSubcourseTitle = document.getElementById(
 // Quiz Elements
 const quizTopicTitle = document.getElementById("quiz-topic-title");
 const quizProgress = document.getElementById("quiz-progress");
+const quizTimer = document.getElementById("quiz-timer");
+const btnPauseTimer = document.getElementById("btn-pause-timer");
 const progressBarFill = document.getElementById("progress-bar-fill");
 const questionText = document.getElementById("question-text");
 const optionsContainer = document.getElementById("options-container");
 
+const multimediaContainer = document.getElementById("multimedia-container");
 // Feedback Elements
 const feedbackContainer = document.getElementById("feedback-container");
 const feedbackTitle = document.getElementById("feedback-title");
 const feedbackText = document.getElementById("feedback-text");
 const btnNext = document.getElementById("btn-next-question");
+const btnPrev = document.getElementById("btn-prev-question");
 
 // Result Elements
 const scorePercentage = document.getElementById("score-percentage");
@@ -10486,9 +11839,55 @@ const btnBackHome = document.getElementById("btn-back-home");
 const btnRetry = document.getElementById("btn-retry");
 const btnBackTopics = document.getElementById("btn-back-topics");
 const btnHome = document.getElementById("btn-home");
+const btnQuizHome = document.getElementById("btn-quiz-home");
 
 // ==========================================
-// 5. NAVIGATION & VIEW LOGIC
+// 5. QUESTION FORMAT CONVERSION (Per-Option Explanations)
+// ==========================================
+
+/**
+ * Converts questions from old format (string options) to new format (option objects with explanations)
+ * This enables unique explanations for each multiple-choice option
+ */
+function convertToPerOptionFormat(questions) {
+  console.log(
+    "Converting questions to per-option format:",
+    questions.length,
+    "questions",
+  );
+  return questions.map((question, qIndex) => {
+    // If options are already objects, return as-is
+    if (typeof question.options[0] === "object") {
+      console.log(`Question ${qIndex}: Already in object format`);
+      return question;
+    }
+
+    console.log(`Question ${qIndex}: Converting from string to object format`);
+
+    // Convert string options to option objects with explanations
+    const correctIndex = question.correct;
+    const correctOption = question.options[correctIndex];
+    const generalExplanation =
+      question.explanation || "Review the course material for this topic.";
+
+    question.options = question.options.map((optionText, idx) => ({
+      text: optionText,
+      explanation:
+        idx === correctIndex
+          ? generalExplanation // Correct answer gets the original explanation
+          : `This is not the correct answer. The correct answer is "${correctOption}" - ${generalExplanation}`, // Wrong answers get contextual explanation
+    }));
+
+    // Remove the old general explanation field to encourage using per-option explanations
+    delete question.explanation;
+
+    console.log(`Question ${qIndex}: Converted successfully`);
+    return question;
+  });
+}
+
+// ==========================================
+// 6. NAVIGATION & VIEW LOGIC
 // ==========================================
 
 function switchView(viewId) {
@@ -10505,7 +11904,30 @@ function switchView(viewId) {
 
 function init() {
   renderSubcourses();
+  loadDailyFact();
+  loadLastScore();
   switchView("view-subcourses");
+}
+
+function loadLastScore() {
+  const lastScoreCard = document.getElementById("last-score-card");
+  const lastScoreModule = document.getElementById("last-score-module");
+  const lastScoreValue = document.getElementById("last-score-value");
+  const btnReviewLastQuiz = document.getElementById("btn-review-last-quiz");
+
+  const lastScoreData = localStorage.getItem("lastQuizScore");
+
+  if (lastScoreData && lastScoreCard) {
+    const data = JSON.parse(lastScoreData);
+    lastScoreModule.innerText = data.moduleName;
+    lastScoreValue.innerText = `${data.score}/${data.total} (${data.percentage}%)`;
+    lastScoreCard.classList.remove("hidden");
+
+    btnReviewLastQuiz.addEventListener("click", () => {
+      loadTopics(data.subcourseKey);
+      startQuiz(data.moduleIndex, data.moduleName);
+    });
+  }
 }
 
 function renderSubcourses() {
@@ -10526,6 +11948,15 @@ function renderSubcourses() {
 
     subcourseGrid.appendChild(card);
   });
+}
+
+function loadDailyFact() {
+  const factElement = document.getElementById("daily-fact-text");
+  if (factElement) {
+    const randomFact =
+      anatomyFacts[Math.floor(Math.random() * anatomyFacts.length)];
+    factElement.innerText = randomFact;
+  }
 }
 
 function loadTopics(key) {
@@ -10560,27 +11991,61 @@ function loadTopics(key) {
 function startQuiz(moduleIndex, moduleName) {
   // 1. Reset State
   state.currentModuleIndex = moduleIndex;
+  state.currentModuleName = moduleName;
   state.currentIndex = 0;
   state.score = 0;
   state.isAnswered = false;
+  state.isTimerPaused = false;
+
+  if (btnPauseTimer) btnPauseTimer.innerText = "⏸️ Pause";
+  if (quizTimer) quizTimer.classList.remove("danger");
 
   // 2. Get Questions from Question Bank
   const subcourseKey = state.currentSubcourseKey;
 
-  // Check if questions exist for this specific module
-  if (
-    questionBank[subcourseKey] &&
-    questionBank[subcourseKey][moduleName] &&
-    questionBank[subcourseKey][moduleName].length > 0
-  ) {
-    state.questions = questionBank[subcourseKey][moduleName];
+  if (subcourseKey === "general-anatomy") {
+    state.questions = generateGeneralAnatomyQuiz();
+    // Convert to per-option format for unique explanations
+    state.questions = convertToPerOptionFormat(state.questions);
   } else {
-    // Fallback if no questions are added yet (prevents crashing)
-    alert(
-      "Questions for this module are coming soon! Loading demo placeholder...",
-    );
-    state.questions = generateFallbackQuestions(moduleName);
+    // Check if questions exist for this specific module
+    if (
+      questionBank[subcourseKey] &&
+      questionBank[subcourseKey][moduleName] &&
+      questionBank[subcourseKey][moduleName].length > 0
+    ) {
+      state.questions = questionBank[subcourseKey][moduleName];
+    } else {
+      // Fallback if no questions are added yet (prevents crashing)
+      alert(
+        "Questions for this module are coming soon! Loading demo placeholder...",
+      );
+      state.questions = generateFallbackQuestions(moduleName);
+    }
+    state.questions = convertToPerOptionFormat(state.questions);
   }
+
+  // 2.5 Clear previous user answers (if retrying module)
+  state.questions.forEach((q) => {
+    delete q.userAnswer;
+    delete q.isCorrect;
+  });
+
+  // 2.6 Timer Logic: Suggests 1 minute (60 seconds) per question
+  clearInterval(state.timerInterval);
+  state.timeRemaining = state.questions.length * 60;
+  updateTimerDisplay();
+  state.timerInterval = setInterval(() => {
+    if (!state.isTimerPaused) {
+      state.timeRemaining--;
+      updateTimerDisplay();
+      if (state.timeRemaining <= 0) {
+        clearInterval(state.timerInterval);
+        alert("Time is up! Submitting your quiz...");
+        showResults();
+      }
+    }
+  }, 1000);
 
   // 3. Update UI Headers
   quizTopicTitle.innerText = moduleName;
@@ -10590,20 +12055,81 @@ function startQuiz(moduleIndex, moduleName) {
   renderQuestion();
 }
 
+function updateTimerDisplay() {
+  if (!quizTimer) return;
+  const minutes = Math.floor(state.timeRemaining / 60);
+  const seconds = state.timeRemaining % 60;
+  quizTimer.innerText = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+  // Apply blink/red effect if 3 minutes (180 seconds) or less remaining
+  if (state.timeRemaining <= 180 && state.timeRemaining > 0) {
+    quizTimer.classList.add("danger");
+  } else {
+    quizTimer.classList.remove("danger");
+  }
+}
+
+function generateGeneralAnatomyQuiz(count = 30) {
+  const allQuestions = [];
+  // Iterate over all subcourses in the question bank
+  for (const subcourseKey in questionBank) {
+    const modules = questionBank[subcourseKey];
+    // Iterate over all modules in the subcourse
+    for (const moduleName in modules) {
+      const questions = modules[moduleName];
+      // Add all questions from the module to our collection
+      allQuestions.push(...questions);
+    }
+  }
+
+  // Shuffle the collected questions
+  for (let i = allQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+  }
+
+  // Return a slice of the specified count
+  return allQuestions.slice(0, count);
+}
+
 // Helper to keep the app running if you haven't filled a module yet
 function generateFallbackQuestions(moduleName) {
   return [
     {
       text: `This is a placeholder. Please add questions for '${moduleName}' in script.js`,
-      options: ["Option A", "Option B", "Option C", "Option D"],
+      options: [
+        {
+          text: "Option A",
+          explanation: "This is the specific explanation for Option A.",
+        },
+        {
+          text: "Option B",
+          explanation: "This is the specific explanation for Option B.",
+        },
+        {
+          text: "Option C",
+          explanation: "This is the specific explanation for Option C.",
+        },
+        {
+          text: "Option D",
+          explanation: "This is the specific explanation for Option D.",
+        },
+      ],
       correct: 0,
-      explanation: "This is a default explanation.",
     },
   ];
 }
 
 function renderQuestion() {
   const question = state.questions[state.currentIndex];
+
+  // Ensure unpaused when rendering new questions
+  state.isTimerPaused = false;
+  if (btnPauseTimer) btnPauseTimer.innerText = "⏸️ Pause";
+  optionsContainer.classList.remove("hidden");
+  if (questionText.dataset.originalText) {
+    questionText.innerText = questionText.dataset.originalText;
+  }
 
   // Update Progress
   quizProgress.innerText = `Question ${state.currentIndex + 1} of ${state.questions.length}`;
@@ -10615,18 +12141,80 @@ function renderQuestion() {
 
   // Render Options
   optionsContainer.innerHTML = "";
+  console.log("Rendering question options:", question.options);
   question.options.forEach((opt, index) => {
     const btn = document.createElement("button");
     btn.className = "option-btn";
-    btn.innerText = opt;
+    // Handle both new format (objects with text property) and old format (strings)
+    btn.innerText = typeof opt === "string" ? opt : opt.text;
+    console.log(`Option ${index}:`, opt, "Text:", btn.innerText);
+
+    // Store the explanation as a data attribute for later use
+    if (typeof opt === "object" && opt.explanation) {
+      btn.setAttribute("data-explanation", opt.explanation);
+      console.log(`Option ${index}: Set explanation:`, opt.explanation);
+    } else {
+      console.log(`Option ${index}: No explanation found`);
+    }
     btn.addEventListener("click", () => handleAnswer(index, btn));
     optionsContainer.appendChild(btn);
   });
 
-  // Hide Feedback
-  feedbackContainer.classList.add("hidden");
-  feedbackContainer.classList.remove("success", "error");
-  state.isAnswered = false;
+  // Handle Previous Button visibility
+  if (state.currentIndex > 0) {
+    btnPrev.classList.remove("hidden");
+  } else {
+    btnPrev.classList.add("hidden");
+  }
+
+  //Render multimedia, if any
+
+  multimediaContainer.innerHTML = "";
+  if (question.multimedia) {
+    const imgElement = document.createElement("img");
+    imgElement.src = question.multimedia;
+    imgElement.alt = "Related Diagram";
+    multimediaContainer.appendChild(imgElement);
+    multimediaContainer.classList.remove("hidden");
+  } else {
+    multimediaContainer.classList.add("hidden");
+  }
+
+  // Check if user already answered this question previously
+  if (question.userAnswer !== undefined) {
+    state.isAnswered = true;
+    const allOptions = optionsContainer.querySelectorAll(".option-btn");
+    allOptions.forEach((btn) => (btn.disabled = true));
+
+    const selectedBtn = allOptions[question.userAnswer];
+    const optionExplanation =
+      selectedBtn.getAttribute("data-explanation") ||
+      "Review the course material.";
+
+    if (question.isCorrect) {
+      selectedBtn.classList.add("correct");
+      document.getElementById("feedback-text").innerHTML = optionExplanation;
+      showFeedback(true, "Correct!");
+    } else {
+      selectedBtn.classList.add("wrong");
+      allOptions[question.correct].classList.add("correct");
+
+      const correctExplanation =
+        allOptions[question.correct].getAttribute("data-explanation") ||
+        "Review the course material.";
+      document.getElementById("feedback-text").innerHTML = `
+        <div style="margin-bottom: 10px;">${optionExplanation}</div>
+        <div style="padding-top: 10px; border-top: 1px solid #e2e8f0;">
+          <strong>Correct Answer Explanation:</strong> ${correctExplanation}
+        </div>
+      `;
+      showFeedback(false, "Incorrect");
+    }
+  } else {
+    state.isAnswered = false;
+    feedbackContainer.classList.add("hidden");
+    feedbackContainer.classList.remove("success", "error");
+  }
 }
 
 function handleAnswer(selectedIndex, btnElement) {
@@ -10636,32 +12224,92 @@ function handleAnswer(selectedIndex, btnElement) {
   const question = state.questions[state.currentIndex];
   const isCorrect = selectedIndex === question.correct;
 
+  // Save user's selection to state
+  question.userAnswer = selectedIndex;
+  question.isCorrect = isCorrect;
+
   const allOptions = optionsContainer.querySelectorAll(".option-btn");
   allOptions.forEach((btn) => (btn.disabled = true));
 
+  // Get the explanation specific to the selected option
+  const optionExplanation =
+    btnElement.getAttribute("data-explanation") ||
+    "Review the course material.";
+
   if (isCorrect) {
     btnElement.classList.add("correct");
-    state.score++;
-    showFeedback(true, "Correct!", question.explanation);
+    document.getElementById("feedback-text").innerHTML = optionExplanation;
+    showFeedback(true, "Correct!");
   } else {
     btnElement.classList.add("wrong");
     // Highlight correct
     allOptions[question.correct].classList.add("correct");
-    showFeedback(false, "Incorrect", question.explanation);
+
+    // Get correct explanation to show alongside the wrong option explanation
+    const correctExplanation =
+      allOptions[question.correct].getAttribute("data-explanation") ||
+      "Review the course material.";
+    document.getElementById("feedback-text").innerHTML = `
+      <div style="margin-bottom: 10px;">${optionExplanation}</div>
+      <div style="padding-top: 10px; border-top: 1px solid #e2e8f0;">
+        <strong>Correct Answer Explanation:</strong> ${correctExplanation}
+      </div>
+    `;
+    showFeedback(false, "Incorrect");
   }
 }
 
-function showFeedback(isSuccess, title, text) {
+function showFeedback(isSuccess, title) {
   feedbackContainer.classList.remove("hidden");
   feedbackContainer.classList.add(isSuccess ? "success" : "error");
   feedbackTitle.innerText = title;
-  feedbackText.innerText = text;
+  console.log(state.currentIndex, state.questions.length);
 
   if (state.currentIndex === state.questions.length - 1) {
-    btnNext.innerText = "Finish Quiz";
+    btnNext.innerText = "Finish Quiz"; //Change the button to finish
   } else {
     btnNext.innerText = "Next Question";
   }
+}
+
+if (btnPauseTimer) {
+  btnPauseTimer.addEventListener("click", () => {
+    state.isTimerPaused = !state.isTimerPaused;
+    if (state.isTimerPaused) {
+      btnPauseTimer.innerText = "▶️ Resume";
+      optionsContainer.classList.add("hidden");
+      questionText.dataset.originalText = questionText.innerText;
+      questionText.innerText = "⏸️ Quiz Paused";
+
+      if (!multimediaContainer.classList.contains("hidden")) {
+        multimediaContainer.dataset.paused = "true";
+        multimediaContainer.classList.add("hidden");
+      }
+      if (!feedbackContainer.classList.contains("hidden")) {
+        feedbackContainer.dataset.paused = "true";
+        feedbackContainer.classList.add("hidden");
+      }
+      if (!btnPrev.classList.contains("hidden")) {
+        btnPrev.dataset.paused = "true";
+        btnPrev.classList.add("hidden");
+      }
+    } else {
+      btnPauseTimer.innerText = "⏸️ Pause";
+      optionsContainer.classList.remove("hidden");
+      if (questionText.dataset.originalText)
+        questionText.innerText = questionText.dataset.originalText;
+
+      if (multimediaContainer.dataset.paused === "true") {
+        multimediaContainer.classList.remove("hidden");
+      }
+      if (feedbackContainer.dataset.paused === "true") {
+        feedbackContainer.classList.remove("hidden");
+      }
+      if (btnPrev.dataset.paused === "true") {
+        btnPrev.classList.remove("hidden");
+      }
+    }
+  });
 }
 
 btnNext.addEventListener("click", () => {
@@ -10673,16 +12321,39 @@ btnNext.addEventListener("click", () => {
   }
 });
 
+btnPrev.addEventListener("click", () => {
+  if (state.currentIndex > 0) {
+    state.currentIndex--;
+    renderQuestion();
+  }
+});
+
 // ==========================================
 // 7. RESULTS LOGIC
 // ==========================================
 
 function showResults() {
+  clearInterval(state.timerInterval); // Stop timer
+  quizTimer.classList.remove("danger"); // Remove blinking effect
+
+  // Accurately calculate score based on saved answers (prevents double-counting if they go back)
+  state.score = state.questions.filter((q) => q.isCorrect === true).length;
+
   const total = state.questions.length;
   const percentage = Math.round((state.score / total) * 100);
-
   scorePercentage.innerText = `${percentage}%`;
-  scoreText.innerText = `You scored ${state.score} out of ${total}`;
+  scoreText.innerText = `You scored ${state.score} out of ${total}`; //You scored 16 out of 20
+
+  // Save the score to localStorage
+  const lastScoreData = {
+    score: state.score,
+    total: total,
+    percentage: percentage,
+    moduleName: state.currentModuleName,
+    subcourseKey: state.currentSubcourseKey,
+    moduleIndex: state.currentModuleIndex,
+  };
+  localStorage.setItem("lastQuizScore", JSON.stringify(lastScoreData));
 
   if (percentage >= 80) {
     resultMessage.innerText = "Excellent work! You have mastered this module.";
@@ -10712,6 +12383,43 @@ btnRetry.addEventListener("click", () => {
 
 btnBackTopics.addEventListener("click", () => switchView("view-topics"));
 btnHome.addEventListener("click", () => switchView("view-subcourses"));
+btnQuizHome.addEventListener("click", () => switchView("view-subcourses"));
+
+const feedbackForm = document.getElementById("feedback-form");
+if (feedbackForm) {
+  feedbackForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = document.getElementById("feedback-name").value || "Student";
+    const message = document.getElementById("feedback-message").value;
+    if (message.trim()) {
+      window.open(
+        `mailto:otochris204@gmail.com?subject=GradeLift Feedback from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`,
+        "_blank",
+      );
+      alert("Opening your email client to send the feedback...");
+      feedbackForm.reset();
+    }
+  });
+}
+
+// ==========================================
+// 9. THEME TOGGLE
+// ==========================================
+const themeToggle = document.getElementById("theme-toggle");
+const html = document.documentElement;
+
+// Check local storage
+if (localStorage.getItem("theme") === "dark") {
+  html.setAttribute("data-theme", "dark");
+  themeToggle.innerText = "☀️";
+}
+
+themeToggle.addEventListener("click", () => {
+  const isDark = html.getAttribute("data-theme") === "dark";
+  html.setAttribute("data-theme", isDark ? "light" : "dark");
+  localStorage.setItem("theme", isDark ? "light" : "dark");
+  themeToggle.innerText = isDark ? "🌙" : "☀️";
+});
 
 // Start App
 init();

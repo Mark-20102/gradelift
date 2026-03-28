@@ -1,25 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gradelift Anatomy Quiz</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/jpeg" href="logo.jpeg" />
-  
-  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-content">
         <div class="brand-identity">
-          <img
-            src="logo.jpeg"
-            alt="Gradelift Logo"
-            class="site-logo"
-          />
+          <img src="logo.jpeg" alt="Gradelift Logo" class="site-logo" />
           <h1>Gradelift Anatomy Quiz</h1>
         </div>
+        <button
+          id="theme-toggle"
+          class="btn-text"
+          style="margin-left: auto; margin-bottom: 0"
+        >
+          🌙
+        </button>
       </div>
     </header>
 
@@ -28,16 +32,32 @@
         <div class="cta-section hero-cta">
           <div class="cta-card whatsapp-style">
             <h3>Join the Community</h3>
-            <p>Get daily anatomy tips, quizzes, and simplified explanation of medical topics.</p>
+            <p>Get daily anatomy tips, quizzes, and support.</p>
             <a
               href="https://whatsapp.com/channel/0029VbBheDSBPzjbBauMMO03"
               target="_blank"
               class="btn-cta btn-whatsapp"
             >
-              Join GradeLift WhatsApp Channel
+              Join GradeLift WhatsApp
             </a>
           </div>
-          
+        </div>
+
+        <div id="daily-fact-container" class="daily-fact-card">
+          <h3>💡 Daily Anatomy Fact</h3>
+          <p id="daily-fact-text">Loading fact...</p>
+        </div>
+
+        <div id="last-score-card" class="last-score-card hidden">
+          <h3>📊 Your Last Quiz Score</h3>
+          <p>
+            Module: <strong id="last-score-module">N/A</strong><br />
+            Score: <strong id="last-score-value">0/0 (0%)</strong>
+          </p>
+          <button id="btn-review-last-quiz" class="btn-secondary">
+            Retry Module
+          </button>
+        </div>
 
         <div class="section-header">
           <h2>Select an Anatomy Subcourse</h2>
@@ -45,6 +65,46 @@
         </div>
 
         <div id="subcourse-grid" class="grid-layout"></div>
+
+        <div class="section-header">
+          <h2>Why Use GradeLift?</h2>
+          <p>
+            Gradelift is designed by medical students, for medical students. We
+            understand your study struggles and have crafted this tool to help.
+          </p>
+        </div>
+
+        <div class="feedback-section">
+          <h3>We Value Your Feedback</h3>
+          <p>Spot an error? Have a suggestion? Let us know!</p>
+          <form id="feedback-form">
+            <input
+              type="text"
+              id="feedback-name"
+              placeholder="Your Name (Optional)"
+              class="form-input"
+            />
+            <textarea
+              id="feedback-message"
+              placeholder="Your feedback here..."
+              class="form-textarea"
+              required
+            ></textarea>
+            <button type="submit" class="btn-primary">Send Feedback</button>
+          </form>
+          <div class="contact-links">
+            <p>
+              Or email us at:
+              <a href="mailto:otochris204@gmail.com" target="_blank"
+                >otochris204@gmail.com</a
+              >
+            </p>
+            <p style="margin-top: 5px">
+              Call/WhatsApp:
+              <a href="tel:09167211790">09167211790</a>
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="view-topics" class="view hidden">
@@ -60,8 +120,25 @@
 
       <section id="view-quiz" class="view hidden">
         <div class="quiz-header">
+          <button id="btn-quiz-home" class="home-tab">🏠 Home</button>
           <div class="quiz-meta">
             <span id="quiz-topic-title">Topic Name</span>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span id="quiz-timer" class="quiz-timer">20:00</span>
+              <button
+                id="btn-pause-timer"
+                class="btn-secondary"
+                style="
+                  padding: 4px 10px;
+                  margin: 0;
+                  font-size: 0.85rem;
+                  width: auto;
+                  border-radius: 20px;
+                "
+              >
+                ⏸️ Pause
+              </button>
+            </div>
             <span id="quiz-progress">Question 1 of 20</span>
           </div>
           <div class="progress-bar-container">
@@ -72,7 +149,16 @@
         <div class="question-card">
           <h3 id="question-text">Question text?</h3>
           <div id="options-container" class="options-container"></div>
+          <div style="margin-top: 15px">
+            <button id="btn-prev-question" class="btn-secondary hidden">
+              ← Previous Question
+            </button>
+          </div>
         </div>
+        <div
+          id="multimedia-container"
+          class="multimedia-container hidden"
+        ></div>
 
         <div id="feedback-container" class="feedback-container hidden">
           <h4 id="feedback-title">Correct!</h4>
@@ -110,10 +196,8 @@
               target="_blank"
               class="btn-cta btn-whatsapp full-width"
             >
-              Join GradeLift WhatsApp Channel
+              Join GradeLift WhatsApp
             </a>
-
-            
           </div>
         </div>
       </section>
@@ -121,8 +205,13 @@
 
     <footer class="site-footer">
       <p>Built by Gradelift – helping medical students learn smarter</p>
+      <p>
+        Content Aligned with Gray's Anatomy, Moore's Clinically Oriented Anatomy
+        and Netter's Atlas
+      </p>
+      <p><strong>Made by OCMU ét MCMU</strong></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>
