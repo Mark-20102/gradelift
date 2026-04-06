@@ -17,17 +17,119 @@
           <img src="logo.jpeg" alt="Gradelift Logo" class="site-logo" />
           <h1>Gradelift Anatomy Quiz</h1>
         </div>
-        <button
-          id="theme-toggle"
-          class="btn-text"
-          style="margin-left: auto; margin-bottom: 0"
+        <div
+          class="header-actions"
+          style="
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+          "
         >
-          🌙
-        </button>
+          <button id="btn-nav-auth" class="btn-text" style="margin-bottom: 0">
+            👤 Sign In
+          </button>
+          <button id="theme-toggle" class="btn-text" style="margin-bottom: 0">
+            🌙
+          </button>
+        </div>
       </div>
     </header>
 
     <main class="container">
+      <section id="view-auth" class="view hidden">
+        <div class="auth-wrapper">
+          <div class="auth-left">
+            <img src="logo.jpeg" alt="Gradelift Logo" class="site-logo" />
+            <h2>Welcome to Gradelift</h2>
+            <p>
+              Master clinical anatomy with precision. Track your progress, save
+              your scores, and study smarter.
+            </p>
+          </div>
+          <div class="auth-right">
+            <button type="button" id="btn-auth-home" class="home-tab">
+              🏠 Home
+            </button>
+            <div class="auth-form-container">
+              <h3>Sign In</h3>
+              <p>Access your saved progress and quizzes.</p>
+              <form id="login-form">
+                <div class="input-group">
+                  <label for="auth-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="auth-email"
+                    placeholder="you@medicalschool.edu"
+                    class="form-input"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    <label for="auth-password" style="margin-bottom: 0"
+                      >Password</label
+                    >
+                    <button
+                      type="button"
+                      id="btn-forgot-password"
+                      class="btn-text-small"
+                    >
+                      Forgot password?
+                    </button>
+                  </div>
+                  <input
+                    type="password"
+                    id="auth-password"
+                    placeholder="••••••••"
+                    class="form-input"
+                    required
+                  />
+                </div>
+                <button type="button" id="btn-login" class="btn-primary">
+                  Log In
+                </button>
+                <button type="button" id="btn-signup" class="btn-secondary">
+                  Create Account
+                </button>
+                <div class="auth-divider"><span>OR</span></div>
+                <button type="button" id="btn-google" class="btn-social">
+                  <img
+                    src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                    alt="Google"
+                    class="social-icon"
+                  />
+                  Sign in with Google
+                </button>
+                <button type="button" id="btn-guest" class="btn-guest">
+                  Continue as Guest
+                </button>
+              </form>
+              <p id="auth-message" class="auth-message"></p>
+              <div id="auth-logged-in-state" class="hidden">
+                <p>
+                  You are currently logged in as
+                  <span id="user-email-display"></span>
+                </p>
+                <button type="button" id="btn-go-study" class="btn-primary">
+                  Go to Dashboard
+                </button>
+                <button type="button" id="btn-logout" class="btn-secondary">
+                  Log Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="view-subcourses" class="view active-view">
         <div class="cta-section hero-cta">
           <div class="cta-card whatsapp-style">
@@ -203,6 +305,23 @@
       </section>
     </main>
 
+    <!-- Login Reminder Modal -->
+    <div id="login-modal" class="modal-overlay hidden">
+      <div class="modal-content">
+        <h3>💾 Save Your Progress!</h3>
+        <p>
+          Create a free account or log in to automatically save your quiz scores
+          and track your mastery of anatomy across all devices.
+        </p>
+        <div class="modal-actions">
+          <button id="btn-modal-login" class="btn-primary">
+            Log In / Sign Up
+          </button>
+          <button id="btn-modal-close" class="btn-outline">Maybe Later</button>
+        </div>
+      </div>
+    </div>
+
     <footer class="site-footer">
       <p>Built by Gradelift – helping medical students learn smarter</p>
       <p>
@@ -212,6 +331,6 @@
       <p><strong>Made by OCMU ét MCMU</strong></p>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script type="module" src="script.js?v=2"></script>
   </body>
 </html>

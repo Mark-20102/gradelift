@@ -4,6 +4,224 @@
  */
 
 // ==========================================
+// 0. FIREBASE SETUP (The Bouncer & Filing Cabinet)
+// ==========================================
+
+// Import the Firebase tools we need from the internet
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+  sendPasswordResetEmail,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  query,
+  where,
+  orderBy,
+  limit,
+  getDocs,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-analytics.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyC3Xluz8I3uFAptAKU57fZWNcI2s9wWF8s",
+  authDomain: "gradelift-7ca8f.firebaseapp.com",
+  projectId: "gradelift-7ca8f",
+  storageBucket: "gradelift-7ca8f.firebasestorage.app",
+  messagingSenderId: "97769130808",
+  appId: "1:97769130808:web:aefc5b55e7f118a8ed8fcd",
+  measurementId: "G-HGK69HKHN4"
+};
+
+// Wake up the helpers
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app); // The Bouncer
+const db = getFirestore(app); // The Filing Cabinet
+const analytics = getAnalytics(app); // Firebase Analytics
+const googleProvider = new GoogleAuthProvider(); // Social Login Provider
+
+// ==========================================
+// FIRESTORE FUNCTIONS (Saving User Data)
+// ==========================================
+
+// Save quiz score to Firestore for logged-in users
+async function saveQuizScoreToFirestore(scoreData) {
+  if (!auth.currentUser) return; // Only save if user is logged in
+
+  try {
+    await addDoc(collection(db, "quizScores"), {
+      userId: auth.currentUser.uid,
+      userEmail: auth.currentUser.email,
+      score: scoreData.score,
+      total: scoreData.total,
+      percentage: scoreData.percentage,
+      moduleName: scoreData.moduleName,
+      subcourseKey: scoreData.subcourseKey,
+      moduleIndex: scoreData.moduleIndex,
+      timestamp: serverTimestamp(),
+    });
+    console.log("Quiz score saved to Firestore");
+  } catch (error) {
+    console.error("Error saving quiz score:", error);
+  }
+}
+
+// Load last quiz score from Firestore for logged-in users
+async function loadLastScoreFromFirestore() {
+  if (!auth.currentUser) return null;
+
+  try {
+    const q = query(
+      collection(db, "quizScores"),
+      where("userId", "==", auth.currentUser.uid),
+      orderBy("timestamp", "desc"),
+      limit(1),
+    );
+
+    const querySnapshot = await getDocs(q);
+    if (!querySnapshot.empty) {
+      const doc = querySnapshot.docs[0];
+      const data = doc.data();
+      return {
+        score: data.score,
+        total: data.total,
+        percentage: data.percentage,
+        moduleName: data.moduleName,
+        subcourseKey: data.subcourseKey,
+        moduleIndex: data.moduleIndex,
+      };
+    }
+  } catch (error) {
+    console.error("Error loading quiz score from Firestore:", error);
+  }
+  return null;
+}
+
+// Grab the buttons and inputs from our HTML
+const emailInput = document.getElementById("auth-email");
+const passwordInput = document.getElementById("auth-password");
+const btnLogin = document.getElementById("btn-login");
+const btnSignup = document.getElementById("btn-signup");
+const btnLogout = document.getElementById("btn-logout");
+const authMessage = document.getElementById("auth-message");
+const btnGoogle = document.getElementById("btn-google");
+const btnForgotPassword = document.getElementById("btn-forgot-password");
+
+// Tell the Sign Up button what to do
+btnSignup?.addEventListener("click", async () => {
+  try {
+    await createUserWithEmailAndPassword(
+      auth,
+      emailInput.value,
+      passwordInput.value,
+    );
+    authMessage.innerText = "Account created! You are logged in.";
+    authMessage.className = "auth-message success";
+  } catch (error) {
+    authMessage.innerText = "Error: " + error.message;
+    authMessage.className = "auth-message";
+  }
+});
+
+// Tell the Log In button what to do
+btnLogin?.addEventListener("click", async () => {
+  try {
+    await signInWithEmailAndPassword(
+      auth,
+      emailInput.value,
+      passwordInput.value,
+    );
+    authMessage.innerText = "Welcome back!";
+    authMessage.className = "auth-message success";
+  } catch (error) {
+    authMessage.innerText = "Error: " + error.message;
+    authMessage.className = "auth-message";
+  }
+});
+
+// Tell the Log Out button what to do
+btnLogout?.addEventListener("click", async () => {
+  await signOut(auth);
+  authMessage.innerText = "You have logged out.";
+  authMessage.className = "auth-message success";
+});
+
+// Tell the Google button what to do
+btnGoogle?.addEventListener("click", async () => {
+  try {
+    await signInWithPopup(auth, googleProvider);
+    authMessage.innerText = "Logged in with Google!";
+    authMessage.className = "auth-message success";
+  } catch (error) {
+    authMessage.innerText = "Error: " + error.message;
+    authMessage.className = "auth-message";
+  }
+});
+
+// Tell the Forgot Password button what to do
+btnForgotPassword?.addEventListener("click", async () => {
+  const email = emailInput.value.trim();
+  if (!email) {
+    authMessage.innerText = "Please type your email address first, then click 'Forgot password?'.";
+    authMessage.className = "auth-message";
+    return;
+  }
+  
+  try {
+    await sendPasswordResetEmail(auth, email);
+    authMessage.innerText = "Password reset email sent! Check your inbox.";
+    authMessage.className = "auth-message success";
+  } catch (error) {
+    authMessage.innerText = "Error: " + error.message;
+    authMessage.className = "auth-message";
+  }
+});
+
+// The Bouncer watches to see if someone logs in or out and changes the buttons
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    // Someone is logged in! Show the logged-in state in Auth View.
+    if (loginForm) loginForm.classList.add("hidden");
+    if (authLoggedInState) authLoggedInState.classList.remove("hidden");
+    if (userEmailDisplay) userEmailDisplay.innerText = user.email;
+    if (btnNavAuth) btnNavAuth.innerText = "👤 Profile";
+
+    // If this is the initial load or user is on auth screen, route to dashboard
+    if (!state.hasStarted || viewAuth.classList.contains("active-view")) {
+      switchView("view-subcourses");
+      state.hasStarted = true;
+    }
+
+    // Load user's last score from Firestore
+    await loadLastScore();
+  } else {
+    // Nobody is logged in. Show the login form.
+    if (loginForm) loginForm.classList.remove("hidden");
+    if (authLoggedInState) authLoggedInState.classList.add("hidden");
+    if (btnNavAuth) btnNavAuth.innerText = "👤 Sign In";
+
+    // On initial load, show the dashboard (subcourses view)
+    if (!state.hasStarted) {
+      switchView("view-subcourses");
+      state.hasStarted = true;
+    }
+
+    // Load from localStorage when not logged in
+    loadLastScore();
+  }
+});
+
+// ==========================================
 // 1. NAVIGATION DATA (Subcourses & Modules)
 // ==========================================
 
@@ -11793,6 +12011,7 @@ const state = {
   timerInterval: null,
   timeRemaining: 0,
   isTimerPaused: false,
+  hasStarted: false,
 };
 
 // ==========================================
@@ -11804,6 +12023,7 @@ const viewSubcourses = document.getElementById("view-subcourses");
 const viewTopics = document.getElementById("view-topics");
 const viewQuiz = document.getElementById("view-quiz");
 const viewResults = document.getElementById("view-results");
+const viewAuth = document.getElementById("view-auth");
 
 // Dynamic Content Areas
 const subcourseGrid = document.getElementById("subcourse-grid");
@@ -11840,6 +12060,20 @@ const btnRetry = document.getElementById("btn-retry");
 const btnBackTopics = document.getElementById("btn-back-topics");
 const btnHome = document.getElementById("btn-home");
 const btnQuizHome = document.getElementById("btn-quiz-home");
+
+// Auth Elements
+const btnNavAuth = document.getElementById("btn-nav-auth");
+const loginForm = document.getElementById("login-form");
+const authLoggedInState = document.getElementById("auth-logged-in-state");
+const userEmailDisplay = document.getElementById("user-email-display");
+const btnGuest = document.getElementById("btn-guest");
+const btnGoStudy = document.getElementById("btn-go-study");
+const btnAuthHome = document.getElementById("btn-auth-home");
+
+// Modal Elements
+const loginModal = document.getElementById("login-modal");
+const btnModalLogin = document.getElementById("btn-modal-login");
+const btnModalClose = document.getElementById("btn-modal-close");
 
 // ==========================================
 // 5. QUESTION FORMAT CONVERSION (Per-Option Explanations)
@@ -11891,41 +12125,68 @@ function convertToPerOptionFormat(questions) {
 // ==========================================
 
 function switchView(viewId) {
-  [viewSubcourses, viewTopics, viewQuiz, viewResults].forEach((el) => {
-    el.classList.add("hidden");
-    el.classList.remove("active-view");
+  [viewSubcourses, viewTopics, viewQuiz, viewResults, viewAuth].forEach((el) => {
+    if (el) {
+      el.classList.add("hidden");
+      el.classList.remove("active-view");
+    }
   });
 
   const activeEl = document.getElementById(viewId);
-  activeEl.classList.remove("hidden");
-  activeEl.classList.add("active-view");
+  if (activeEl) {
+    activeEl.classList.remove("hidden");
+    activeEl.classList.add("active-view");
+  }
   window.scrollTo(0, 0);
+
+  // Trigger login reminder popup on home page if not logged in
+  if (viewId === "view-subcourses" && !auth.currentUser) {
+    if (!sessionStorage.getItem("loginReminderShown")) {
+      setTimeout(() => {
+        // Double check they haven't navigated away from the home page in the last 3 seconds
+        if (!auth.currentUser && document.getElementById("view-subcourses").classList.contains("active-view")) {
+          loginModal?.classList.remove("hidden");
+          sessionStorage.setItem("loginReminderShown", "true");
+        }
+      }, 3000); // 3-second delay
+    }
+  }
 }
 
-function init() {
+async function init() {
   renderSubcourses();
   loadDailyFact();
-  loadLastScore();
-  switchView("view-subcourses");
 }
 
-function loadLastScore() {
+async function loadLastScore() {
   const lastScoreCard = document.getElementById("last-score-card");
   const lastScoreModule = document.getElementById("last-score-module");
   const lastScoreValue = document.getElementById("last-score-value");
   const btnReviewLastQuiz = document.getElementById("btn-review-last-quiz");
 
-  const lastScoreData = localStorage.getItem("lastQuizScore");
+  let lastScoreData = null;
+
+  // Try to load from Firestore if user is logged in
+  if (auth.currentUser) {
+    lastScoreData = await loadLastScoreFromFirestore();
+  }
+
+  // Fall back to localStorage if not logged in or no Firestore data
+  if (!lastScoreData) {
+    const localData = localStorage.getItem("lastQuizScore");
+    if (localData) {
+      lastScoreData = JSON.parse(localData);
+    }
+  }
 
   if (lastScoreData && lastScoreCard) {
-    const data = JSON.parse(lastScoreData);
-    lastScoreModule.innerText = data.moduleName;
-    lastScoreValue.innerText = `${data.score}/${data.total} (${data.percentage}%)`;
+    lastScoreModule.innerText = lastScoreData.moduleName;
+    lastScoreValue.innerText = `${lastScoreData.score}/${lastScoreData.total} (${lastScoreData.percentage}%)`;
     lastScoreCard.classList.remove("hidden");
 
     btnReviewLastQuiz.addEventListener("click", () => {
-      loadTopics(data.subcourseKey);
-      startQuiz(data.moduleIndex, data.moduleName);
+      loadTopics(lastScoreData.subcourseKey);
+      startQuiz(lastScoreData.moduleIndex, lastScoreData.moduleName);
     });
   }
 }
@@ -12355,6 +12616,9 @@ function showResults() {
   };
   localStorage.setItem("lastQuizScore", JSON.stringify(lastScoreData));
 
+  // Save to Firestore if user is logged in
+  saveQuizScoreToFirestore(lastScoreData);
+
   if (percentage >= 80) {
     resultMessage.innerText = "Excellent work! You have mastered this module.";
   } else if (percentage >= 50) {
@@ -12384,6 +12648,24 @@ btnRetry.addEventListener("click", () => {
 btnBackTopics.addEventListener("click", () => switchView("view-topics"));
 btnHome.addEventListener("click", () => switchView("view-subcourses"));
 btnQuizHome.addEventListener("click", () => switchView("view-subcourses"));
+
+if (btnGuest) btnGuest.addEventListener("click", () => switchView("view-subcourses"));
+if (btnGoStudy) btnGoStudy.addEventListener("click", () => switchView("view-subcourses"));
+if (btnNavAuth) btnNavAuth.addEventListener("click", () => switchView("view-auth"));
+if (btnAuthHome) btnAuthHome.addEventListener("click", () => switchView("view-subcourses"));
+
+// Modal Listeners
+if (btnModalClose) {
+  btnModalClose.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+  });
+}
+if (btnModalLogin) {
+  btnModalLogin.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+    switchView("view-auth");
+  });
+}
 
 const feedbackForm = document.getElementById("feedback-form");
 if (feedbackForm) {
